@@ -1,18 +1,16 @@
 type Props = {
     width: string;
-    height: string;
     children: React.ReactNode;
 };
 
-export const Card: React.FC<Props> = ({ children, width, height }) => {
+export const Card: React.FC<Props> = ({ children, width }) => {
     return (
         <div className="card">
             {children}
             <style jsx>{`
                 .card {
                     width: ${width};
-                    height: ${height};
-                    padding: 0.5rem 2rem;
+                    padding: 1rem 2rem;
                     background-color: #fff;
                     border-radius: 1rem;
                     border: 1px solid black;

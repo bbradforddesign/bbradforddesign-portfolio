@@ -7,19 +7,28 @@ export default {
 } as ComponentMeta<typeof Card>;
 
 export const Large: ComponentStory<typeof Card> = () => (
-    <Card height="30vh" width="40vw">
+    <Card width="40vw">
         <p>Hello!</p>
     </Card>
 );
 
 export const Medium: ComponentStory<typeof Card> = () => (
-    <Card height="25vh" width="25vw">
+    <Card width="25vw">
         <p>Hello!</p>
     </Card>
 );
 
 export const Small: ComponentStory<typeof Card> = () => (
-    <Card height="20vh" width="15vw">
-        <p>Hello!</p>
+    <Card width="15vw">
+        <h2>Hello!</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+        </p>
     </Card>
 );
