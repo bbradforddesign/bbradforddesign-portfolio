@@ -1,6 +1,5 @@
-import useState from "react";
-
 import { Card } from "./Card";
+import { Icon } from "../icon/Icon";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
@@ -9,7 +8,7 @@ export default {
 } as ComponentMeta<typeof Card>;
 
 export const Active: ComponentStory<typeof Card> = () => (
-    <Card width="450px">
+    <Card width="50vw">
         <div className="header">
             <h2>Medium</h2>
             <button className="toggle">&mdash;</button>
@@ -18,7 +17,55 @@ export const Active: ComponentStory<typeof Card> = () => (
         <p className="date">Remote, 2000-2010</p>
 
         <div className="body">
-            <ul>
+            <ul id="details">
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
+                <li>
+                    Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
+                </li>
                 <li>
                     Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
                 </li>
@@ -32,24 +79,62 @@ export const Active: ComponentStory<typeof Card> = () => (
                     Lorem Ipsum dolor sit amet, consectetur adipiscing elit, set
                 </li>
             </ul>
-            <div>
-                <h3>Tools</h3>
-                <ul className="icon-grid">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>React</li>
-                </ul>
-                <h3>Tools</h3>
-                <ul className="icon-grid">
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>React</li>
-                    <li>React</li>
-                    <li>React</li>
-                    <li>React</li>
-                    <li>React</li>
-                    <li>React</li>
-                </ul>
+            <div id="icons">
+                <div>
+                    <h3>Tools</h3>
+                    <ul className="icon-grid">
+                        <li>
+                            <Icon name="html" color="orange" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="css" color="blue" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="react" color="cyan" size="sm" />
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tools</h3>
+                    <ul className="icon-grid">
+                        <li>
+                            <Icon name="html" color="orange" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="css" color="blue" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="react" color="cyan" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="go" color="cyan" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="html" color="orange" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="css" color="blue" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="react" color="cyan" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="go" color="cyan" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="html" color="orange" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="css" color="blue" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="react" color="cyan" size="sm" />
+                        </li>
+                        <li>
+                            <Icon name="go" color="cyan" size="sm" />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <style jsx>{`
@@ -81,6 +166,46 @@ export const Active: ComponentStory<typeof Card> = () => (
             .icon-grid li {
                 margin: 0.5rem;
                 list-style: none;
+            }
+
+            @media (min-width: 834px) {
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                #icons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                #icons div {
+                    width: 45%;
+                }
+            }
+
+            @media (min-width: 1440px) {
+                .body {
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                #details {
+                    flex: 1;
+                    max-width: 50rem;
+                    margin-right: 2rem;
+                }
+
+                #icons {
+                    flex-direction: column;
+                    max-width: 12rem;
+                    justify-content: flex-start;
+                }
+
+                #icons div {
+                    width: 100%;
+                }
             }
         `}</style>
     </Card>
