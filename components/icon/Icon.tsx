@@ -11,17 +11,13 @@ import {
     SiGmail,
 } from "react-icons/si";
 
+import { Social, Technology, Size } from "../../shared/constants";
+
 type Props = {
     name: Technology | Social;
     size: Size;
     color: string;
 };
-
-type Technology = "html" | "css" | "js" | "react" | "vue" | "go";
-
-type Social = "linkedin" | "github" | "email";
-
-type Size = "sm" | "md" | "lg";
 
 const iconSize = (size: Size) => {
     switch (size) {
@@ -36,12 +32,10 @@ const iconSize = (size: Size) => {
     }
 };
 
-export const Icon: React.FC<Props> = ({ name, size, color }) => {
+export const Icon: React.FC<Props> = ({ name, size }) => {
     const style: React.CSSProperties = {
         fontSize: iconSize(size),
-        color: color,
     };
-
     switch (name) {
         case "html":
             return <SiHtml5 style={style} />;
