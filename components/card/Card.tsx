@@ -10,10 +10,9 @@ export const Card: React.FC<Props> = ({ children, width }) => {
             <style jsx>{`
                 .card {
                     width: ${width};
-                    padding: 1rem 2rem;
-                    background-color: #fff;
+                    padding: 0.5rem 2rem;
+                    background-color: #eee;
                     border-radius: 1rem;
-                    border: 1px solid black;
                     box-shadow: 0.5rem 0.5rem #c4c4c4;
                 }
             `}</style>
