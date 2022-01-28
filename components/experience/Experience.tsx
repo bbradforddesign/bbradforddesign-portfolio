@@ -29,7 +29,12 @@ export const Experience: React.FC<Props> = ({
         location && date ? `${location}, ${date}` : "Location, 2000-2010";
 
     const renderBullets =
-        bullets?.length && bullets.map((e) => <li key="e">{e}</li>);
+        bullets?.length &&
+        bullets.map((e) => (
+            <li key="e">
+                <p>{e}</p>
+            </li>
+        ));
 
     const renderTools =
         tools?.length &&
@@ -78,18 +83,34 @@ export const Experience: React.FC<Props> = ({
                 * {
                     font-family: "Roboto", sans-serif;
                 }
-                p {
-                    margin-vertical: 0;
+
+                p,
+                h1,
+                h2,
+                h3,
+                h4 {
+                    margin: 0;
                 }
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                h3 {
+                    font-size: 1.25rem;
+                }
+
                 .header {
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                 }
-                .header h2 {
+
+                .header {
                     margin: 0.5rem 0;
                 }
+
                 .toggle {
                     padding: 0;
                     border: none;
@@ -97,18 +118,22 @@ export const Experience: React.FC<Props> = ({
                     font-weight: bold;
                     font-size: 1.5rem;
                 }
+
                 .date {
                     font-style: italic;
+                    font-size: 1.25rem;
+                    margin: 0.75rem 0;
+                    text-indent: 1rem;
                 }
-                #icons div h3 {
-                    margin: 0;
-                }
+
                 .icon-grid {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
                     padding: 0;
+                    margin: 0.5rem 0;
                 }
+
                 .icon-grid li {
                     margin: 0.5rem;
                     list-style: none;
