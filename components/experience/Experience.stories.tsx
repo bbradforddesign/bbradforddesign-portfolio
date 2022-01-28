@@ -7,7 +7,16 @@ export default {
 } as ComponentMeta<typeof Experience>;
 
 const Template: ComponentStory<typeof Experience> = (args) => (
-    <Experience {...args} />
+    <div
+        style={{
+            width: "90vw",
+            height: "90vh",
+            minWidth: "40rem",
+            backgroundColor: "#FAFAFA",
+        }}
+    >
+        <Experience {...args} />
+    </div>
 );
 
 export const Default = Template.bind({});

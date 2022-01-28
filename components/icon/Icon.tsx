@@ -38,17 +38,17 @@ export const Icon: React.FC<Props> = ({ name, size }) => {
     };
     switch (name) {
         case "html":
-            return <SiHtml5 style={style} />;
+            return <SiHtml5 style={{ ...style, color: "orange" }} />;
         case "css":
-            return <SiCss3 style={style} />;
+            return <SiCss3 style={{ ...style, color: "blue" }} />;
         case "js":
-            return <SiJavascript style={style} />;
+            return <SiJavascript style={{ ...style, color: "red" }} />;
         case "react":
-            return <SiReact style={style} />;
+            return <SiReact style={{ ...style, color: "blue" }} />;
         case "vue":
-            return <SiVuedotjs style={style} />;
+            return <SiVuedotjs style={{ ...style, color: "green" }} />;
         case "go":
-            return <SiGo style={style} />;
+            return <SiGo style={{ ...style, color: "cyan" }} />;
         case "linkedin":
             return <SiLinkedin style={style} />;
         case "github":

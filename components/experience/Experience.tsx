@@ -78,11 +78,17 @@ export const Experience: React.FC<Props> = ({
                 * {
                     font-family: "Roboto", sans-serif;
                 }
+                p {
+                    margin-vertical: 0;
+                }
                 .header {
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                }
+                .header h2 {
+                    margin: 0.5rem 0;
                 }
                 .toggle {
                     padding: 0;
@@ -111,6 +117,11 @@ export const Experience: React.FC<Props> = ({
                         flex-direction: column;
                     }
 
+                    #details {
+                        flex: 1;
+                        margin: 0;
+                    }
+
                     #icons {
                         display: flex;
                         flex-direction: row;
@@ -129,8 +140,7 @@ export const Experience: React.FC<Props> = ({
                     }
 
                     #details {
-                        flex: 1;
-                        max-width: 50rem;
+                        max-width: 45rem;
                         margin-right: 2rem;
                     }
 
