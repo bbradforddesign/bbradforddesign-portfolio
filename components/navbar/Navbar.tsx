@@ -79,10 +79,10 @@ export const Navbar: React.FC<Props> = ({ links }) => {
                     display: flex;
                     flex-direction: column;
                     list-style-type: none;
-                    margin: 1.5rem 0;
+                    margin: 0;
                     padding: 0;
                     width: 100%;
-                    box-shadow: 0.5rem 0.5rem 0.25rem rgba(196, 196, 196, 0.5);
+                    box-shadow: 0.25rem 0.25rem 0.5rem rgba(196, 196, 196, 0.25);
                 }
 
                 li {
