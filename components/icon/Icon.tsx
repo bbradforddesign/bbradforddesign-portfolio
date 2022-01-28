@@ -18,22 +18,15 @@ type Props = {
     color: string;
 };
 
-const iconSize = (size: Size) => {
-    switch (size) {
-        case "sm":
-            return "30px";
-        case "md":
-            return "60px";
-        case "lg":
-            return "90px";
-        default:
-            return "100px";
-    }
+const iconSize = {
+    sm: "30px",
+    md: "60px",
+    lg: "90px",
 };
 
 export const Icon: React.FC<Props> = ({ name, size }) => {
     const style: React.CSSProperties = {
-        fontSize: iconSize(size),
+        fontSize: iconSize[size],
     };
     switch (name) {
         case "html":
