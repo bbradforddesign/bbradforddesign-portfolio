@@ -6,7 +6,19 @@ export default {
     component: Navbar,
 } as ComponentMeta<typeof Navbar>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: ComponentStory<typeof Navbar> = (args) => (
+    <div
+        style={{
+            width: "90vw",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+        }}
+    >
+        <Navbar {...args} />
+    </div>
+);
 
 export const Default = Template.bind({});
 Default.args = {
