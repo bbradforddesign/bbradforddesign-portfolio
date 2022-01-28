@@ -5,7 +5,7 @@ type Props = {
 
 export const Card: React.FC<Props> = ({ children, width }) => {
     return (
-        <div className="card">
+        <section className="card">
             {children}
             <style jsx>{`
                 .card {
@@ -16,6 +16,6 @@ export const Card: React.FC<Props> = ({ children, width }) => {
                     box-shadow: 0.5rem 0.5rem 0.25rem rgba(196, 196, 196, 0.5);
                 }
             `}</style>
-        </div>
+        </section>
     );
 };

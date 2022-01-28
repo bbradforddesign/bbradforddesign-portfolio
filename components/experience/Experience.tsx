@@ -54,28 +54,28 @@ export const Experience: React.FC<Props> = ({
 
     return (
         <Card width="40%">
-            <div className="header">
-                <h2>{company || "Company"}</h2>
+            <header className="card-header">
+                <h3>{company || "Company"}</h3>
                 <button
                     className="toggle"
                     onClick={() => setViewBody((viewBody) => !viewBody)}
                 >
                     {viewBody ? <FaMinus /> : <FaPlus />}
                 </button>
-            </div>
+            </header>
             <p className="date">{renderLocation}</p>
             {viewBody && (
-                <div className="body">
-                    <ul id="details">{renderBullets}</ul>
-                    <div id="icons">
-                        <div>
-                            <h3>Tools</h3>
+                <div className="card-content">
+                    <ul className="experience-details">{renderBullets}</ul>
+                    <div className="experience-icons">
+                        <section>
+                            <h4>Tools</h4>
                             <ul className="icon-grid">{renderTools}</ul>
-                        </div>
-                        <div>
-                            <h3>Technologies</h3>
+                        </section>
+                        <section>
+                            <h4>Technologies</h4>
                             <ul className="icon-grid">{renderTechnologies}</ul>
-                        </div>
+                        </section>
                     </div>
                 </div>
             )}
@@ -85,18 +85,16 @@ export const Experience: React.FC<Props> = ({
                 }
 
                 p,
-                h1,
-                h2,
                 h3,
                 h4 {
                     margin: 0;
                 }
 
-                h2 {
+                h3 {
                     font-size: 1.5rem;
                 }
 
-                h3,
+                h4,
                 .date {
                     font-size: 1rem;
                 }
@@ -110,7 +108,7 @@ export const Experience: React.FC<Props> = ({
                     margin: 0 0 0.5rem;
                 }
 
-                .header {
+                .card-header {
                     width: 100%;
                     display: flex;
                     justify-content: space-between;
@@ -135,7 +133,7 @@ export const Experience: React.FC<Props> = ({
                     text-indent: 1rem;
                 }
 
-                #details {
+                .experience-details {
                     margin: 1rem 0;
                 }
 
@@ -153,69 +151,43 @@ export const Experience: React.FC<Props> = ({
                 }
 
                 @media (min-width: 834px) {
-                    h2 {
-                        font-size: 1.6rem;
-                    }
-
-                    h3,
-                    .date {
-                        font-size: 1.2rem;
-                    }
-
-                    p {
-                        font-size: 0.9rem;
-                    }
-
-                    .body {
+                    .card-content {
                         display: flex;
                         flex-direction: column;
                     }
 
-                    #details {
+                    .experience-details {
                         flex: 1;
                     }
 
-                    #icons {
+                    .experience-icons {
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
                     }
 
-                    #icons div {
+                    .experience-icons section {
                         width: 45%;
                     }
                 }
 
                 @media (min-width: 1440px) {
-                    h2 {
-                        font-size: 1.8rem;
-                    }
-
-                    h3,
-                    .date {
-                        font-size: 1.25rem;
-                    }
-
-                    p {
-                        font-size: 1rem;
-                    }
-
-                    .body {
+                    .card-content {
                         flex-direction: row;
                         justify-content: space-between;
                     }
 
-                    #details {
+                    .experience-details {
                         max-width: 45rem;
                     }
 
-                    #icons {
+                    .experience-icons {
                         flex-direction: column;
                         max-width: 12rem;
                         justify-content: flex-start;
                     }
 
-                    #icons div {
+                    .experience-icons section {
                         width: 100%;
                     }
                 }
