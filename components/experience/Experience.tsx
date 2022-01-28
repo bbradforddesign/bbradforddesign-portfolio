@@ -100,6 +100,9 @@ export const Experience: React.FC<Props> = ({
                 .date {
                     font-style: italic;
                 }
+                #icons div h3 {
+                    margin: 0;
+                }
                 .icon-grid {
                     display: flex;
                     flex-direction: row;
@@ -119,7 +122,7 @@ export const Experience: React.FC<Props> = ({
 
                     #details {
                         flex: 1;
-                        margin: 0;
+                        margin: 0 0 1rem;
                     }
 
                     #icons {
