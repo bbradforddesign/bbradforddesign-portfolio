@@ -9,7 +9,7 @@ export default {
 const Template: ComponentStory<typeof Navbar> = (args) => (
     <div
         style={{
-            width: "90vw",
+            width: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",

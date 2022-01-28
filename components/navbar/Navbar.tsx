@@ -1,6 +1,7 @@
-import { useState, useLayoutEffect } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { rootCertificates } from "tls";
+
+import { useWindowSize } from "../../shared/hooks";
 
 type Props = {
     links: Link[];
@@ -9,19 +10,6 @@ type Props = {
 type Link = {
     display: string;
     url: string;
-};
-
-const useWindowSize = () => {
-    const [size, setSize] = useState<number[]>([0, 0]);
-    useLayoutEffect(() => {
-        const updateSize: VoidFunction = () => {
-            setSize([window.innerWidth, window.innerHeight]);
-        };
-        window.addEventListener("resize", updateSize);
-        updateSize();
-        return () => window.removeEventListener("resize", updateSize);
-    }, []);
-    return size;
 };
 
 export const Navbar: React.FC<Props> = ({ links }) => {
