@@ -93,11 +93,21 @@ export const Experience: React.FC<Props> = ({
                 }
 
                 h2 {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                 }
 
-                h3 {
-                    font-size: 1.25rem;
+                h3,
+                .date {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.85rem;
+                    line-height: 1rem;
+                }
+
+                li {
+                    margin: 0 0 0.5rem;
                 }
 
                 .header {
@@ -121,9 +131,12 @@ export const Experience: React.FC<Props> = ({
 
                 .date {
                     font-style: italic;
-                    font-size: 1.25rem;
                     margin: 0.75rem 0;
                     text-indent: 1rem;
+                }
+
+                #details {
+                    margin: 1rem 0;
                 }
 
                 .icon-grid {
@@ -140,6 +153,19 @@ export const Experience: React.FC<Props> = ({
                 }
 
                 @media (min-width: 834px) {
+                    h2 {
+                        font-size: 1.6rem;
+                    }
+
+                    h3,
+                    .date {
+                        font-size: 1.2rem;
+                    }
+
+                    p {
+                        font-size: 0.9rem;
+                    }
+
                     .body {
                         display: flex;
                         flex-direction: column;
@@ -147,7 +173,6 @@ export const Experience: React.FC<Props> = ({
 
                     #details {
                         flex: 1;
-                        margin: 0 0 1rem;
                     }
 
                     #icons {
@@ -162,6 +187,19 @@ export const Experience: React.FC<Props> = ({
                 }
 
                 @media (min-width: 1440px) {
+                    h2 {
+                        font-size: 1.8rem;
+                    }
+
+                    h3,
+                    .date {
+                        font-size: 1.25rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+
                     .body {
                         flex-direction: row;
                         justify-content: space-between;
@@ -169,7 +207,6 @@ export const Experience: React.FC<Props> = ({
 
                     #details {
                         max-width: 45rem;
-                        margin-right: 2rem;
                     }
 
                     #icons {
