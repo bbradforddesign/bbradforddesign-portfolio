@@ -1,4 +1,4 @@
-import { Icon } from "../icon/Icon";
+import { Icon } from "./Icon";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
