@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { rootCertificates } from "tls";
 
 type Props = {
     links: Link[];
@@ -73,6 +74,7 @@ export const Navbar: React.FC<Props> = ({ links }) => {
 
                 #nav-hamburger {
                     font-size: 1.5rem;
+                    transform: rotate(${viewNavLinks ? "90deg" : "0"});
                 }
 
                 ul {
@@ -82,7 +84,7 @@ export const Navbar: React.FC<Props> = ({ links }) => {
                     margin: 0;
                     padding: 0;
                     width: 100%;
-                    box-shadow: 0.25rem 0.25rem 0.5rem rgba(196, 196, 196, 0.25);
+                    box-shadow: 0.35rem 0.35rem 0.5rem rgba(196, 196, 196, 0.25);
                 }
 
                 li {

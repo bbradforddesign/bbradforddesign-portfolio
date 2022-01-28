@@ -13,7 +13,7 @@ export const Card: React.FC<Props> = ({ children, width }) => {
                     padding: 1rem 2rem;
                     background-color: #fff;
                     border-radius: 1rem;
-                    box-shadow: 0.25rem 0.25rem 0.5rem rgba(196, 196, 196, 0.25);
+                    box-shadow: 0.35rem 0.35rem 0.5rem rgba(196, 196, 196, 0.25);
                 }
             `}</style>
         </section>
