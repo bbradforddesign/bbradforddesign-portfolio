@@ -74,6 +74,7 @@ export const Navbar: React.FC<Props> = ({ links }) => {
 
                 #nav-hamburger {
                     font-size: 1.5rem;
+                    margin-right: 1rem;
                     transform: rotate(${viewNavLinks ? "90deg" : "0"});
                 }
 
