@@ -53,145 +53,43 @@ export const Experience: React.FC<Props> = ({
         ));
 
     return (
-        <Card width="40%">
-            <header className="card-header">
-                <h3>{company || "Company"}</h3>
-                <button
-                    className="toggle"
-                    onClick={() => setViewBody((viewBody) => !viewBody)}
-                >
-                    {viewBody ? <FaMinus /> : <FaPlus />}
-                </button>
-            </header>
-            <p className="date">{renderLocation}</p>
-            {viewBody && (
-                <div className="card-content">
-                    <ul className="experience-details">{renderBullets}</ul>
-                    <div className="experience-icons">
-                        <section>
-                            <h4>Tools</h4>
-                            <ul className="icon-grid">{renderTools}</ul>
-                        </section>
-                        <section>
-                            <h4>Technologies</h4>
-                            <ul className="icon-grid">{renderTechnologies}</ul>
-                        </section>
-                    </div>
-                </div>
-            )}
-            <style jsx>{`
-                * {
-                    font-family: "Roboto", sans-serif;
-                }
-
-                p,
-                h3,
-                h4 {
-                    margin: 0;
-                }
-
-                h3 {
-                    font-size: 1.5rem;
-                }
-
-                h4,
-                .date {
-                    font-size: 1rem;
-                }
-
-                p {
-                    font-size: 0.85rem;
-                    line-height: 1rem;
-                }
-
-                li {
-                    margin: 0 0 0.5rem;
-                }
-
-                .card-header {
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                .header {
-                    margin: 0.5rem 0;
-                }
-
-                .toggle {
-                    padding: 0;
-                    border: none;
-                    background: none;
-                    font-weight: bold;
-                    font-size: 1.5rem;
-                }
-
-                .date {
-                    font-style: italic;
-                    margin: 0.75rem 0;
-                    text-indent: 1rem;
-                }
-
-                .experience-details {
-                    margin: 1rem 0;
-                }
-
-                .icon-grid {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    padding: 0;
-                    margin: 0.5rem 0;
-                }
-
-                .icon-grid li {
-                    margin: 0.5rem;
-                    list-style: none;
-                }
-
-                @media (min-width: 834px) {
-                    .card-content {
-                        display: flex;
-                        flex-direction: column;
-                    }
-
-                    .experience-details {
-                        flex: 1;
-                    }
-
-                    .experience-icons {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                    }
-
-                    .experience-icons section {
-                        width: 45%;
-                    }
-                }
-
-                @media (min-width: 1440px) {
-                    .card-content {
-                        flex-direction: row;
-                        justify-content: space-between;
-                    }
-
-                    .experience-details {
-                        max-width: 45rem;
-                    }
-
-                    .experience-icons {
-                        flex-direction: column;
-                        max-width: 12rem;
-                        justify-content: flex-start;
-                    }
-
-                    .experience-icons section {
-                        width: 100%;
-                    }
-                }
-            `}</style>
-        </Card>
+        <div className="w-1/2">
+            <Card>
+                <section className="w-full h-full">
+                    <header className="text-xl font-bold w-full flex justify-between items-center">
+                        <h3>{company || "Company"}</h3>
+                        <button
+                            onClick={() => setViewBody((viewBody) => !viewBody)}
+                        >
+                            {viewBody ? <FaMinus /> : <FaPlus />}
+                        </button>
+                    </header>
+                    <p className="text-md italic">{renderLocation}</p>
+                    {viewBody && (
+                        <div className="text-md md:flex md:flex-col lg:flex-row lg:justify-between">
+                            <ul className="mt-4 list-disc ml-4 lg:flex-1 lg:max-w-2xl lg:mr-4">
+                                {renderBullets}
+                            </ul>
+                            <div className="mt-4 gap-4 md:w-full md:flex md:flex-row md:justify-between lg:w-1/4 lg:flex-col lg:max-w-xs lg:justify-start">
+                                <section>
+                                    <h4 className="text-lg font-bold">Tools</h4>
+                                    <ul className="list-none flex flex-row flex-wrap p-0 my-2 gap-2 lg:w-full">
+                                        {renderTools}
+                                    </ul>
+                                </section>
+                                <section>
+                                    <h4 className="text-lg font-bold">
+                                        Technologies
+                                    </h4>
+                                    <ul className="list-none flex flex-row flex-wrap p-0 my-2 gap-2 lg:w-full">
+                                        {renderTechnologies}
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    )}
+                </section>
+            </Card>
+        </div>
     );
 };
