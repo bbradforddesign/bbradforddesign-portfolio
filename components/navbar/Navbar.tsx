@@ -17,7 +17,7 @@ export const Navbar: React.FC<Props> = ({ links }) => {
     const [width, height] = useWindowSize();
 
     const renderNavLinks = links.map((e) => (
-        <li>
+        <li key={e.display}>
             <a href={e.url}>{e.display}</a>
         </li>
     ));
