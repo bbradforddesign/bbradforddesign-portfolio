@@ -6,7 +6,13 @@ export default {
     component: Navbar,
 } as ComponentMeta<typeof Navbar>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: ComponentStory<typeof Navbar> = (args) => (
+    <div>
+        <Navbar {...args} />
+        <div className="w-full h-screen bg-black" />
+        <div className="w-full h-screen bg-white" />
+    </div>
+);
 
 export const Default = Template.bind({});
 Default.args = {
