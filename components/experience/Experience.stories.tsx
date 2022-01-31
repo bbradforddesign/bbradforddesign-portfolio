@@ -7,16 +7,7 @@ export default {
 } as ComponentMeta<typeof Experience>;
 
 const Template: ComponentStory<typeof Experience> = (args) => (
-    <div
-        style={{
-            width: "90vw",
-            height: "90vh",
-            minWidth: "40rem",
-            backgroundColor: "#FAFAFA",
-        }}
-    >
-        <Experience {...args} />
-    </div>
+    <Experience {...args} />
 );
 
 export const Default = Template.bind({});
@@ -27,4 +18,5 @@ Default.args = {
     date: "2021-2022",
     tools: ["css", "go"],
     technologies: ["html", "react", "vue"],
+    className: "w-1/2 min-w-min",
 };

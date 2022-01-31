@@ -13,6 +13,7 @@ type Props = {
     company: string;
     date: string;
     location: string;
+    className: string;
 };
 
 export const Experience: React.FC<Props> = ({
@@ -22,6 +23,7 @@ export const Experience: React.FC<Props> = ({
     company,
     date,
     location,
+    className,
 }) => {
     const [viewBody, setViewBody] = useState<boolean>(true);
 
@@ -53,7 +55,7 @@ export const Experience: React.FC<Props> = ({
         ));
 
     return (
-        <Card className="w-1/2">
+        <Card className={className}>
             <section className="w-full h-full">
                 <header className="text-xl font-bold w-full flex justify-between items-center">
                     <h3>{company || "Company"}</h3>
