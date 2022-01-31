@@ -18,5 +18,5 @@ Default.args = {
     date: "2021-2022",
     tools: ["css", "go"],
     technologies: ["html", "react", "vue"],
-    className: "w-1/2 min-w-min",
+    className: "w-1/2 min-w-fit",
 };

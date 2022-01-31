@@ -19,9 +19,9 @@ type Props = {
 };
 
 const iconSize = {
-    sm: "30px",
-    md: "60px",
-    lg: "90px",
+    sm: "20px",
+    md: "40px",
+    lg: "60px",
 };
 
 export const Icon: React.FC<Props> = ({ name, size }) => {
