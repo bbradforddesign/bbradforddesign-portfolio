@@ -6,7 +6,7 @@ type Props = {
 export const Card: React.FC<Props> = ({ children, className }) => {
     return (
         <div
-            className={`w-full p-4 rounded-xl shadow-md shadow-slate-400 ${className}`}
+            className={`p-4 rounded-xl shadow-md shadow-slate-400 ${className}`}
         >
             {children}
         </div>
