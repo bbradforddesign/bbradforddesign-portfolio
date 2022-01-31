@@ -18,14 +18,14 @@ export const Navbar: React.FC<Props> = ({ links }) => {
 
     const renderNavLinks = links.map((e) => (
         <li key={e.display} className="m-2 lg:my-0">
-            <a href={e.url} className="font-semibold">
+            <a href={e.url} className="font-semibold hover:text-sky-500">
                 {e.display}
             </a>
         </li>
     ));
 
     return (
-        <nav className="flex flex-col justify-between items-start p-4 w-full lg:flex-row lg:items-center">
+        <nav className="flex flex-col justify-between items-start p-4 w-full shadow-md rounded-md lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <h1 className="font-bold text-xl">bbradforddesign</h1>
                 <GiHamburgerMenu
