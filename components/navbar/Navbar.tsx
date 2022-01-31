@@ -17,102 +17,31 @@ export const Navbar: React.FC<Props> = ({ links }) => {
     const [width, height] = useWindowSize();
 
     const renderNavLinks = links.map((e) => (
-        <li key={e.display}>
-            <a href={e.url}>{e.display}</a>
+        <li key={e.display} className="m-2 lg:my-0">
+            <a href={e.url} className="font-semibold">
+                {e.display}
+            </a>
         </li>
     ));
 
     return (
-        <nav>
-            <div className="nav-top">
-                <h1>bbradforddesign</h1>
+        <nav className="flex flex-col justify-between items-start p-4 w-full lg:flex-row lg:items-center">
+            <div className="flex flex-row justify-between items-center w-full">
+                <h1 className="font-bold text-xl">bbradforddesign</h1>
                 <GiHamburgerMenu
-                    id="nav-hamburger"
+                    className={`text-xl mr-2 ${
+                        viewNavLinks && "rotate-90"
+                    } lg:hidden`}
                     onClick={() =>
                         setViewNavLinks((viewNavLinks) => !viewNavLinks)
                     }
                 />
             </div>
-            {(width >= 1440 || viewNavLinks) && <ul>{renderNavLinks}</ul>}
-            <style jsx>{`
-                * {
-                    font-family: "Roboto", sans-serif;
-                }
-
-                nav {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    padding: 1rem;
-                    width: 100%;
-                }
-
-                h1 {
-                    margin: 0;
-                }
-
-                .nav-top {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-
-                #nav-hamburger {
-                    font-size: 1.5rem;
-                    margin-right: 1rem;
-                    transform: rotate(${viewNavLinks ? "90deg" : "0"});
-                }
-
-                ul {
-                    display: flex;
-                    flex-direction: column;
-                    list-style-type: none;
-                    margin: 0;
-                    padding: 0;
-                    width: 100%;
-                    box-shadow: 0.35rem 0.35rem 0.5rem rgba(196, 196, 196, 0.25);
-                }
-
-                li {
-                    margin: 1rem;
-                }
-
-                a {
-                    text-decoration: none;
-                    font-weight: medium;
-                    font-size: 1.125rem;
-                    color: black;
-                }
-
-                @media (min-width: 1440px) {
-                    nav {
-                        flex-direction: row;
-                        align-items: center;
-                    }
-
-                    .nav-top {
-                        width: auto;
-                    }
-
-                    #nav-hamburger {
-                        display: none;
-                    }
-
-                    ul {
-                        margin: 0;
-                        flex-direction: row;
-                        width: auto;
-                        box-shadow: none;
-                    }
-
-                    li {
-                        margin: 0 0 0 1rem;
-                    }
-                }
-            `}</style>
+            {(width >= 1024 || viewNavLinks) && (
+                <ul className="flex flex-col w-full lg:flex-row lg:w-auto">
+                    {renderNavLinks}
+                </ul>
+            )}
         </nav>
     );
 };
