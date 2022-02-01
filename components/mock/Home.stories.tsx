@@ -3,7 +3,7 @@ import { Navbar } from "../navbar/Navbar";
 import { Hero } from "../hero/Hero";
 import { About } from "../about/About";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Experience } from "../experience/Experience";
+import { Projects } from "../projects/Projects";
 
 type Props = {
     children: React.ReactNode;
@@ -31,7 +31,7 @@ const footerLinks = [
     { icon: "email", url: "mailto:test@example.com" },
 ];
 
-const jobs = [
+const projects = [
     {
         bullets: ["testing", "data"],
         company: "Test Company",
@@ -66,7 +66,7 @@ const Template: ComponentStory<typeof Mock> = (args) => (
         <Navbar links={navLinks} />
         <Hero />
         <About />
-        <Experience jobs={jobs} />
+        <Projects projects={projects} />
         <Footer links={footerLinks} />
     </Mock>
 );

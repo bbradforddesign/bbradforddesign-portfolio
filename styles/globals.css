@@ -24,6 +24,10 @@ a {
     @apply flex flex-col justify-center items-center  w-full max-w-4xl h-auto my-4 mx-auto;
 }
 
+.section-header {
+    @apply font-bold text-3xl self-start m-8;
+}
+
 .body-text {
     @apply text-sm my-2 max-w-2xl;
 }
