@@ -32,11 +32,7 @@ const footerLinks = [
 const Template: ComponentStory<typeof Mock> = (args) => (
     <Mock>
         <Navbar links={navLinks} />
-        <Hero
-            name="Blake Bradford"
-            introduction="Hello! My name is..."
-            summary="...and I'm a full-stack developer from Kansas City"
-        />
+        <Hero />
         <div className="bg-red-100 w-full h-screen" />
         <div className="bg-blue-100 w-full h-screen" />
         <Footer links={footerLinks} />

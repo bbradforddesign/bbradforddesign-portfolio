@@ -1,18 +1,12 @@
-type Props = {
-    name: string;
-    introduction: string;
-    summary: string;
-};
-
-export const Hero: React.FC<Props> = ({ name, introduction, summary }) => {
+export const Hero: React.FC = () => {
     return (
         <section className="section-container">
             <p className="text-2xl font-medium max-w-2xl px-8">
-                <span>{introduction}</span>
+                <span>Hello! My name is...</span>
                 <br />
-                <span className="text-4xl font-bold">{name}</span>
+                <span className="text-4xl font-bold">Blake Bradford</span>
                 <br />
-                <span>{summary}</span>
+                <span>...and I'm a full-stack developer from Kansas City</span>
             </p>
         </section>
     );
