@@ -4,13 +4,14 @@ import { Hero } from "../hero/Hero";
 import { About } from "../about/About";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Projects } from "../projects/Projects";
+import { Experience } from "../experience/Experience";
 
 type Props = {
     children: React.ReactNode;
 };
 
 const Mock: React.FC<Props> = ({ children }) => {
-    return <div className="h-auto">{children}</div>;
+    return <div>{children}</div>;
 };
 
 export default {
@@ -20,8 +21,8 @@ export default {
 
 const navLinks = [
     { display: "About", url: "#" },
-    { display: "Job", url: "#" },
     { display: "Projects", url: "#" },
+    { display: "Experience", url: "#" },
     { display: "Contact", url: "#" },
 ];
 
@@ -61,11 +62,31 @@ const projects = [
     },
 ];
 
+const languages = ["html", "css", "js", "ts"];
+const frameworks = ["react", "express", "node", "chi", "next"];
+const databases = ["dgraph", "firebase", "mongodb", "mysql"];
+const tools = [
+    "contentful",
+    "figma",
+    "adobe cc",
+    "jira",
+    "slack",
+    "more",
+    "items",
+    "long",
+];
+
 const Template: ComponentStory<typeof Mock> = (args) => (
     <Mock>
         <Navbar links={navLinks} />
         <Hero />
         <About />
+        <Experience
+            languages={languages}
+            frameworks={frameworks}
+            databases={databases}
+            tools={tools}
+        />
         <Projects projects={projects} />
         <Footer links={footerLinks} />
     </Mock>
