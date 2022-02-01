@@ -18,3 +18,8 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.section-container {
+    height: calc(100vh - theme("spacing.20"));
+    @apply flex flex-col justify-center items-center w-full;
+}

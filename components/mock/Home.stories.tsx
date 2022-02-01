@@ -8,11 +8,7 @@ type Props = {
 };
 
 const Mock: React.FC<Props> = ({ children }) => {
-    return (
-        <div className="w-full flex flex-col justify-between items-center">
-            {children}
-        </div>
-    );
+    return <div className="w-full">{children}</div>;
 };
 
 export default {
