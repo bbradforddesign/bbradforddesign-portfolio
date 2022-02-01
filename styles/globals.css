@@ -21,5 +21,9 @@ a {
 
 .section-container {
     min-height: calc(100vh - theme("spacing.20"));
-    @apply flex grow flex-col justify-center items-center w-full h-auto my-4;
+    @apply flex flex-col justify-center items-center  w-full max-w-4xl h-auto my-4 mx-auto;
+}
+
+.body-text {
+    @apply text-sm my-2 max-w-2xl;
 }
