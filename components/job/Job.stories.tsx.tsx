@@ -1,14 +1,12 @@
-import { Experience } from "./Experience";
+import { Job } from "./Job";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-    title: "Experience",
-    component: Experience,
-} as ComponentMeta<typeof Experience>;
+    title: "Job",
+    component: Job,
+} as ComponentMeta<typeof Job>;
 
-const Template: ComponentStory<typeof Experience> = (args) => (
-    <Experience {...args} />
-);
+const Template: ComponentStory<typeof Job> = (args) => <Job {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

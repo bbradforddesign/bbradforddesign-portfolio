@@ -16,7 +16,7 @@ type Props = {
     className: string;
 };
 
-export const Experience: React.FC<Props> = ({
+export const Job: React.FC<Props> = ({
     bullets,
     tools,
     technologies,

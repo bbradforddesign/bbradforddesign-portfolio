@@ -19,7 +19,7 @@ export default {
 
 const navLinks = [
     { display: "About", url: "#" },
-    { display: "Experience", url: "#" },
+    { display: "Job", url: "#" },
     { display: "Projects", url: "#" },
     { display: "Contact", url: "#" },
 ];
