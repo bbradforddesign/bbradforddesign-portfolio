@@ -3,6 +3,7 @@ import { Navbar } from "../navbar/Navbar";
 import { Hero } from "../hero/Hero";
 import { About } from "../about/About";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Experience } from "../experience/Experience";
 
 type Props = {
     children: React.ReactNode;
@@ -30,11 +31,42 @@ const footerLinks = [
     { icon: "email", url: "mailto:test@example.com" },
 ];
 
+const jobs = [
+    {
+        bullets: ["testing", "data"],
+        company: "Test Company",
+        location: "Remote",
+        date: "2021-2022",
+        tools: ["css", "go"],
+        technologies: ["html", "react", "vue"],
+        className: "w-1/2 min-w-fit",
+    },
+    {
+        bullets: ["testing", "data"],
+        company: "Test Company",
+        location: "Remote",
+        date: "2021-2022",
+        tools: ["css", "go"],
+        technologies: ["html", "react", "vue"],
+        className: "w-1/2 min-w-fit",
+    },
+    {
+        bullets: ["testing", "data"],
+        company: "Test Company",
+        location: "Remote",
+        date: "2021-2022",
+        tools: ["css", "go"],
+        technologies: ["html", "react", "vue"],
+        className: "w-1/2 min-w-fit",
+    },
+];
+
 const Template: ComponentStory<typeof Mock> = (args) => (
     <Mock>
         <Navbar links={navLinks} />
         <Hero />
         <About />
+        <Experience jobs={jobs} />
         <Footer links={footerLinks} />
     </Mock>
 );

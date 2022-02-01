@@ -1,12 +1,14 @@
-import { Job } from "./Job";
+import { JobCard } from "./Job";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-    title: "Job",
-    component: Job,
-} as ComponentMeta<typeof Job>;
+    title: "JobCard",
+    component: JobCard,
+} as ComponentMeta<typeof JobCard>;
 
-const Template: ComponentStory<typeof Job> = (args) => <Job {...args} />;
+const Template: ComponentStory<typeof JobCard> = (args) => (
+    <JobCard {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

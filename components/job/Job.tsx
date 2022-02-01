@@ -1,22 +1,19 @@
 import { useState } from "react";
 import { Card } from "../card/Card";
 import { Icon } from "../icon/Icon";
-
-import { FaMinus, FaPlus } from "react-icons/fa";
-
 import { Technology } from "../../shared/constants";
 
-type Props = {
+export type Job = {
     bullets: string[];
     tools: Technology[];
     technologies: Technology[];
     company: string;
     date: string;
     location: string;
-    className: string;
+    className?: string;
 };
 
-export const Job: React.FC<Props> = ({
+export const JobCard: React.FC<Job> = ({
     bullets,
     tools,
     technologies,
