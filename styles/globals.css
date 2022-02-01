@@ -20,6 +20,6 @@ a {
 }
 
 .section-container {
-    height: calc(100vh - theme("spacing.20"));
-    @apply flex flex-col justify-center items-center w-full;
+    min-height: calc(100vh - theme("spacing.20"));
+    @apply flex grow flex-col justify-center items-center w-full h-auto my-4;
 }

@@ -1,6 +1,7 @@
 import { Footer } from "../footer/Footer";
 import { Navbar } from "../navbar/Navbar";
 import { Hero } from "../hero/Hero";
+import { About } from "../about/About";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 type Props = {
@@ -8,7 +9,7 @@ type Props = {
 };
 
 const Mock: React.FC<Props> = ({ children }) => {
-    return <div className="w-full">{children}</div>;
+    return <div className="h-auto">{children}</div>;
 };
 
 export default {
@@ -33,8 +34,7 @@ const Template: ComponentStory<typeof Mock> = (args) => (
     <Mock>
         <Navbar links={navLinks} />
         <Hero />
-        <div className="bg-red-100 w-full h-screen" />
-        <div className="bg-blue-100 w-full h-screen" />
+        <About />
         <Footer links={footerLinks} />
     </Mock>
 );
