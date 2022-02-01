@@ -50,7 +50,7 @@ export const Navbar: React.FC<Props> = ({ links }) => {
                 />
             </div>
             {(width >= 1024 || viewNavLinks) && (
-                <ul className="flex flex-col w-full lg:flex-row lg:w-auto">
+                <ul className="flex flex-col w-full absolute top-14 left-0 bg-white border-b-2 lg:relative lg:top-0 lg:border-none lg:flex-row lg:w-auto">
                     {renderNavLinks}
                 </ul>
             )}
