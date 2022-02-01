@@ -9,7 +9,7 @@ type Props = {
 
 const Mock: React.FC<Props> = ({ children }) => {
     return (
-        <div className="w-full h-screen flex flex-col justify-between items-center">
+        <div className="w-full flex flex-col justify-between items-center">
             {children}
         </div>
     );
@@ -42,6 +42,7 @@ const Template: ComponentStory<typeof Mock> = (args) => (
             summary="...and I'm a full-stack developer from Kansas City"
         />
         <div className="bg-red-100 w-full h-screen" />
+        <div className="bg-blue-100 w-full h-screen" />
         <Footer links={footerLinks} />
     </Mock>
 );
