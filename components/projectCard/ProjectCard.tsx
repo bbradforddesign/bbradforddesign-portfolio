@@ -1,5 +1,3 @@
-import { Card } from "../card/Card";
-import { Icon } from "../icon/Icon";
 import { Technology } from "../../shared/constants";
 
 export type Project = {
@@ -23,48 +21,27 @@ export const ProjectCard: React.FC<Project> = ({
             </li>
         ));
 
-    const renderTools =
-        tools?.length &&
-        tools.map((e) => (
-            <li key={e}>
-                <Icon name={e} size="sm" color="black" />
-            </li>
-        ));
-
-    const renderTechnologies =
-        technologies?.length &&
-        technologies.map((e) => (
-            <li key={e}>
-                <Icon name={e} size="sm" color="black" />
+    const renderListItems = (list: Array<string>) =>
+        list.map((e) => (
+            <li key={e} className="py-1 px-2 rounded-md bg-zinc-700">
+                <p className="font-medium text-sm text-white">{e}</p>
             </li>
         ));
 
     return (
-        <Card className={`min-w-fit`}>
-            <section className="w-full h-full">
-                <header className="text-xl font-bold w-full flex justify-between items-center gap-8">
-                    <h3>{title || "Project Title"}</h3>
-                </header>
-                <div className="text-md w-full flex justify-between md:flex-col">
-                    <ul className="mt-4 list-disc ml-4 w-auto max-w-2xl md:mr-4">
-                        {renderBullets}
-                    </ul>
-                    <div className="mt-4 w-auto flex  flex-col gap-4 justify-between md:flex-row">
-                        <section>
-                            <h4 className="text-lg font-bold">Tools</h4>
-                            <ul className="list-none flex flex-row flex-wrap p-0 my-2 gap-2">
-                                {renderTools}
-                            </ul>
-                        </section>
-                        <section>
-                            <h4 className="text-lg font-bold">Technologies</h4>
-                            <ul className="list-none flex flex-row flex-wrap p-0 my-2 gap-2">
-                                {renderTechnologies}
-                            </ul>
-                        </section>
-                    </div>
-                </div>
+        <section className="card w-full h-full flex flex-col justify-between">
+            <header className="text-xl font-bold">
+                <h3>{title || "Project Title"}</h3>
+            </header>
+            <ul className="my-4 list-disc ml-4 w-auto max-w-2xl md:mr-4">
+                {renderBullets}
+            </ul>
+            <section>
+                <h4 className="text-md font-bold mb-2">Tools & Technologies</h4>
+                <ul className="flex gap-1 w-full">
+                    {renderListItems(technologies)}
+                </ul>
             </section>
-        </Card>
+        </section>
     );
 };

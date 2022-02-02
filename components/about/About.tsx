@@ -2,12 +2,10 @@ export const About: React.FC = () => {
     return (
         <section className="section-container">
             <h2 className="section-header">About</h2>
-            <div className=" w-full md:flex md:flex-row">
-                <div className="w-full md:w-1/2 h-72 bg-slate-100" />
-                <div className="w-full my-4 md:w-1/2 md:my-0 md:ml-4">
-                    <p className="font-bold text-xl my-4 md:mt-0">
-                        Nice to Meet You!
-                    </p>
+            <div className=" w-full grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="w-full h-72 bg-slate-100" />
+                <div className="w-full">
+                    <p className="font-bold text-xl">Nice to Meet You!</p>
                     <p className="body-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore

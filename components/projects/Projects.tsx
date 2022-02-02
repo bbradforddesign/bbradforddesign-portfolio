@@ -6,7 +6,7 @@ type Props = {
 
 export const Projects: React.FC<Props> = ({ projects }) => {
     const renderProjects = projects.map((e) => (
-        <li key={e.title} className="w-full p-2 md:w-1/2">
+        <li key={e.title} className="w-full">
             <ProjectCard
                 bullets={e.bullets}
                 title={e.title}
@@ -18,7 +18,9 @@ export const Projects: React.FC<Props> = ({ projects }) => {
     return (
         <section className="section-container">
             <h2 className="section-header">Projects</h2>
-            <ul className="flex flex-row flex-wrap">{renderProjects}</ul>
+            <ul className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {renderProjects}
+            </ul>
         </section>
     );
 };

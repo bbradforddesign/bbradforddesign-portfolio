@@ -5,6 +5,7 @@ import { About } from "../about/About";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Projects } from "../projects/Projects";
 import { Experience } from "../experience/Experience";
+import { Contact } from "../contact/Contact";
 
 type Props = {
     children: React.ReactNode;
@@ -79,6 +80,7 @@ const Template: ComponentStory<typeof Mock> = (args) => (
             tools={tools}
         />
         <Projects projects={projects} />
+        <Contact />
         <Footer links={footerLinks} />
     </Mock>
 );
