@@ -73,11 +73,13 @@ export const ContactForm: React.FC = () => {
                     }
                 />
             </div>
-            <input
+            <button
                 className="bg-black text-white w-1/2 max-w-8 px-4 py-2 my-4 rounded-md self-center hover:bg-slate-600"
                 type="submit"
-                value="Send Message"
-            />
+                onClick={() => window.alert("Message sent!")}
+            >
+                Send Message
+            </button>
         </form>
     );
 };

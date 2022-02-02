@@ -14,7 +14,7 @@ export const Footer: React.FC<Props> = ({ links }) => {
     const renderSocialLinks = links.map((e) => (
         <li key={e.icon} className="w-min">
             <a href={e.url}>
-                <Icon name={e.icon} size="sm" color="black" />
+                <Icon icon={e.icon} />
             </a>
         </li>
     ));

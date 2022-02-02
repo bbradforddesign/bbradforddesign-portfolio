@@ -30,7 +30,7 @@ const navLinks = [
 const footerLinks = [
     { icon: "github", url: "https://github.com" },
     { icon: "linkedin", url: "https://linkedin.com" },
-    { icon: "gmail", url: "mailto:test@example.com" },
+    { icon: "email", url: "mailto:test@example.com" },
 ];
 
 const projects = [
