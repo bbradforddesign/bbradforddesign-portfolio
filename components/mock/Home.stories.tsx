@@ -29,7 +29,7 @@ const navLinks = [
 const footerLinks = [
     { icon: "github", url: "https://github.com" },
     { icon: "linkedin", url: "https://linkedin.com" },
-    { icon: "email", url: "mailto:test@example.com" },
+    { icon: "gmail", url: "mailto:test@example.com" },
 ];
 
 const projects = [
@@ -62,19 +62,10 @@ const projects = [
     },
 ];
 
-const languages = ["html", "css", "js", "ts"];
-const frameworks = ["react", "express", "node", "chi", "next"];
+const languages = ["html", "css", "javascript", "typescript", "go"];
+const frameworks = ["react", "express", "node", "next"];
 const databases = ["dgraph", "firebase", "mongodb", "mysql"];
-const tools = [
-    "contentful",
-    "figma",
-    "adobe cc",
-    "jira",
-    "slack",
-    "more",
-    "items",
-    "long",
-];
+const tools = ["contentful", "figma", "adobe", "jira", "slack"];
 
 const Template: ComponentStory<typeof Mock> = (args) => (
     <Mock>
