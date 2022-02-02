@@ -21,13 +21,13 @@ a {
 
 .section-container {
     min-height: calc(100vh - theme("spacing.20"));
-    @apply flex flex-col justify-center items-center  w-full max-w-4xl h-auto my-4 mx-auto;
+    @apply flex flex-col justify-center items-center  w-full max-w-6xl h-auto my-4 mx-auto px-12;
 }
 
 .section-header {
-    @apply font-bold text-3xl self-start m-8;
+    @apply font-bold text-4xl my-12 ml-36 self-start;
 }
 
 .body-text {
-    @apply text-sm my-2 max-w-2xl;
+    @apply text-sm my-2 max-w-xl;
 }

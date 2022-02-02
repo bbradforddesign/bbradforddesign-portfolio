@@ -63,7 +63,7 @@ const projects = [
 ];
 
 const languages = ["html", "css", "javascript", "typescript", "go"];
-const frameworks = ["react", "express", "node", "next"];
+const frameworks = ["react", "express", "node", "next", "wordpress"];
 const databases = ["dgraph", "firebase", "mongodb", "mysql"];
 const tools = ["contentful", "figma", "adobe", "jira", "slack"];
 
