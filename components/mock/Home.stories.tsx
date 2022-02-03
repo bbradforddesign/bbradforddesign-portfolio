@@ -71,7 +71,11 @@ const tools = ["contentful", "figma", "adobe", "jira", "slack"];
 const Template: ComponentStory<typeof Mock> = (args) => (
     <Mock>
         <Navbar links={navLinks} />
-        <Hero />
+        <Hero
+            greeting="Hello! My name is..."
+            name="Blake Bradford"
+            summary="...and I'm a full-stack developer from Kansas City, KS"
+        />
         <About />
         <Experience
             languages={languages}
