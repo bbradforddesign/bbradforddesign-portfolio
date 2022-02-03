@@ -8,7 +8,7 @@ export const NavLink: React.FC<Props> = ({ link }) => {
     return (
         <li className="m-2 lg:my-0">
             <a
-                href={`#${link.display}`}
+                href={`#/${link.display}`}
                 aria-label={`Scroll to ${link.display}`}
                 className="font-semibold hover:text-sky-500"
                 onClick={() =>
