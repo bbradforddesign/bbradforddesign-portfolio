@@ -1,33 +1,21 @@
-import React, { useState, useEffect } from "react";
+import { ScrollLink } from "../../pages";
 
 type Props = {
-    linkName: string;
+    link: ScrollLink;
 };
 
-export const NavLink: React.FC<Props> = ({ linkName }) => {
-    const [scrollTarget, setScrollTarget] = useState<HTMLElement | null>(null);
-
-    useEffect(() => {
-        setScrollTarget(document.getElementById(linkName));
-    }, [linkName]);
-
-    const handleClick: React.MouseEventHandler = (e) => {
-        e.preventDefault();
-        if (!scrollTarget) {
-            return;
-        }
-        scrollTarget.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-
+export const NavLink: React.FC<Props> = ({ link }) => {
     return (
         <li className="m-2 lg:my-0">
             <a
-                href={`#${linkName}`}
-                aria-label={`Scroll to ${linkName}`}
+                href={`#${link.display}`}
+                aria-label={`Scroll to ${link.display}`}
                 className="font-semibold hover:text-sky-500"
-                onClick={handleClick}
+                onClick={() =>
+                    link?.ref?.current?.scrollIntoView({ behavior: "smooth" })
+                }
             >
-                {linkName}
+                {link.display}
             </a>
         </li>
     );

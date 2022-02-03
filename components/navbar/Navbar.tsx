@@ -1,11 +1,12 @@
 import { useState, useLayoutEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { ScrollLink } from "../../pages";
 
 import { useWindowSize } from "../../shared/hooks";
 import { NavLink } from "../navLink/NavLink";
 
 type Props = {
-    links: string[];
+    links: ScrollLink[];
 };
 
 export const Navbar: React.FC<Props> = ({ links }) => {
@@ -17,7 +18,9 @@ export const Navbar: React.FC<Props> = ({ links }) => {
         setViewAnimation(false);
     }, [width]);
 
-    const renderNavLinks = links.map((e) => <NavLink key={e} linkName={e} />);
+    const renderNavLinks = links.map((e) => (
+        <NavLink key={e.display} link={e} />
+    ));
 
     const handleMenuButton = () => {
         setViewNavLinks((viewNavLinks) => !viewNavLinks);
@@ -27,7 +30,9 @@ export const Navbar: React.FC<Props> = ({ links }) => {
     return (
         <nav className="flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 bg-white border-b-2 lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
-                <h1 className="font-bold text-xl">bbradforddesign</h1>
+                <a href="#">
+                    <h1 className="font-bold text-xl">bbradforddesign</h1>
+                </a>
                 <GiHamburgerMenu
                     className={`text-xl mr-2 ${
                         viewNavLinks
