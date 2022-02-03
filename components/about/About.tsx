@@ -1,6 +1,6 @@
 export const About: React.FC = () => {
     return (
-        <section className="section-container">
+        <section className="section-container" id="About">
             <h2 className="section-header">About</h2>
             <div className=" w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="w-full h-72 bg-slate-100" />

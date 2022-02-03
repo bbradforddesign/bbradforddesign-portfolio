@@ -2,14 +2,10 @@ import { useState, useLayoutEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { useWindowSize } from "../../shared/hooks";
+import { NavLink } from "../navLink/NavLink";
 
 type Props = {
-    links: Link[];
-};
-
-type Link = {
-    display: string;
-    url: string;
+    links: string[];
 };
 
 export const Navbar: React.FC<Props> = ({ links }) => {
@@ -21,13 +17,7 @@ export const Navbar: React.FC<Props> = ({ links }) => {
         setViewAnimation(false);
     }, [width]);
 
-    const renderNavLinks = links.map((e) => (
-        <li key={e.display} className="m-2 lg:my-0">
-            <a href={e.url} className="font-semibold hover:text-sky-500">
-                {e.display}
-            </a>
-        </li>
-    ));
+    const renderNavLinks = links.map((e) => <NavLink key={e} linkName={e} />);
 
     const handleMenuButton = () => {
         setViewNavLinks((viewNavLinks) => !viewNavLinks);
