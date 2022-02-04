@@ -1,5 +1,9 @@
+import { useTheme } from "../../context/ThemeContext";
+
 import { Social } from "../../shared/constants";
 import { Icon } from "../icon/Icon";
+
+import { BsSunFill, BsMoonFill } from "react-icons/bs";
 
 type Props = {
     links: SocialLink[];
@@ -11,6 +15,8 @@ type SocialLink = {
 };
 
 export const Footer: React.FC<Props> = ({ links }) => {
+    const { darkMode, toggleDarkMode } = useTheme();
+
     const renderSocialLinks = links.map((e) => (
         <li key={e.icon} className="w-min">
             <a href={e.url}>
@@ -20,9 +26,15 @@ export const Footer: React.FC<Props> = ({ links }) => {
     ));
 
     return (
-        <footer className="w-full p-4 bg-white sticky bottom-0 flex justify-center gap-24 md:justify-between">
+        <footer className="w-full py-4 px-8 bg-white sticky bottom-0 flex justify-between">
             <ul className="flex gap-4">{renderSocialLinks}</ul>
-            <button>Light/Dark</button>
+            <button onClick={toggleDarkMode}>
+                {darkMode ? (
+                    <BsSunFill style={{ fontSize: "1.5rem" }} />
+                ) : (
+                    <BsMoonFill style={{ fontSize: "1.5rem" }} />
+                )}
+            </button>
         </footer>
     );
 };
