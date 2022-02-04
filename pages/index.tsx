@@ -1,5 +1,3 @@
-import { RefObject, useRef } from "react";
-
 import { createClient, EntryCollection } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -42,24 +40,14 @@ type Props = {
     text: EntryCollection<unknown>;
 };
 
-export type ScrollLink = {
-    display: string;
-    ref: RefObject<HTMLElement>;
-};
-
 const Home: NextPage<Props> = ({ text }) => {
-    // targets for scrolling nav links
-    const aboutRef = useRef(null);
-    const experienceRef = useRef(null);
-    const projectsRef = useRef(null);
-    const contactRef = useRef(null);
-
-    // package targets with display text for easy access
-    const links: ScrollLink[] = [
-        { display: "About", ref: aboutRef },
-        { display: "Experience", ref: experienceRef },
-        { display: "Projects", ref: projectsRef },
-        { display: "Contact", ref: contactRef },
+    // links to components on home page; won't load generated pages
+    // each requires a unique child component, so declared statically
+    const samePageLinks: string[] = [
+        "About",
+        "Experience",
+        "Projects",
+        "Contact",
     ];
 
     // placeholder data to be pulled from CMS
@@ -109,7 +97,7 @@ const Home: NextPage<Props> = ({ text }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Navbar links={links} />
+            <Navbar samePageLinks={samePageLinks} />
 
             <main>
                 <Hero
@@ -117,16 +105,15 @@ const Home: NextPage<Props> = ({ text }) => {
                     name={text[0].fields.name}
                     summary={text[0].fields.summary}
                 />
-                <About ref={aboutRef} />
+                <About />
                 <Experience
-                    ref={experienceRef}
                     languages={languages}
                     frameworks={frameworks}
                     databases={databases}
                     tools={tools}
                 />
-                <Projects ref={projectsRef} projects={projects} />
-                <Contact ref={contactRef} />
+                <Projects projects={projects} />
+                <Contact />
             </main>
 
             <Footer links={footerLinks} />

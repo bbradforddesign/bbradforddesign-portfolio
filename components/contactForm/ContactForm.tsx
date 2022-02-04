@@ -16,7 +16,7 @@ export const ContactForm: React.FC = () => {
     });
 
     return (
-        <form className="card flex flex-col gap-2 w-full max-w-sm mx-auto">
+        <form className="card flex flex-col gap-2 w-full max-w-xs mx-auto">
             <div className="flex flex-col items-start">
                 <label htmlFor="name" className="my-2">
                     Name
@@ -66,7 +66,7 @@ export const ContactForm: React.FC = () => {
                 </label>
                 <textarea
                     id="message"
-                    className="form-input h-40"
+                    className="form-input h-30"
                     name="message"
                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
                         setFormData({ ...formData, message: e.target.value })

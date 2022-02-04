@@ -20,7 +20,7 @@ export const Footer: React.FC<Props> = ({ links }) => {
     ));
 
     return (
-        <footer className="w-full p-4 bg-white sticky bottom-0 flex justify-center gap-24 md:justify-end">
+        <footer className="w-full p-4 bg-white sticky bottom-0 flex justify-center gap-24 md:justify-between">
             <ul className="flex gap-4">{renderSocialLinks}</ul>
             <button>Light/Dark</button>
         </footer>
