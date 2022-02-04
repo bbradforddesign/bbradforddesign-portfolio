@@ -3,7 +3,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 
 import { useWindowSize } from "../../shared/hooks";
-import { useTheme } from "../../context/ThemeContext";
 
 type Props = {
     samePageLinks: string[];
@@ -13,7 +12,6 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
     const [viewNavLinks, setViewNavLinks] = useState<boolean>(false);
     const [viewAnimation, setViewAnimation] = useState<boolean>(false);
     const [width, height] = useWindowSize();
-    const { darkMode } = useTheme();
 
     useLayoutEffect(() => {
         setViewAnimation(false);
@@ -24,7 +22,7 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
     const renderSamePageLinks = samePageLinks.map((e) => (
         <li className="m-2 lg:my-0" key={e}>
             <Link href={`#${e}`}>
-                <a className="font-semibold hover:text-yellow-500">{e}</a>
+                <a className="font-semibold hover:text-sky-500">{e}</a>
             </Link>
         </li>
     ));
@@ -35,11 +33,7 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
     };
 
     return (
-        <nav
-            className={`${
-                darkMode ? "bg-black" : "bg-white"
-            } flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 border-b-2 lg:flex-row lg:items-center`}
-        >
+        <nav className="flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 bg-white border-b-2 lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="#">
                     <a>
@@ -58,11 +52,7 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
                 />
             </div>
             {(width >= 1024 || viewNavLinks) && (
-                <ul
-                    className={`${
-                        darkMode ? "bg-black" : "bg-white"
-                    } flex flex-col w-full absolute top-14 left-0 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex-row lg:w-auto`}
-                >
+                <ul className="flex flex-col w-full absolute top-14 left-0 bg-white border-b-2 lg:relative lg:top-0 lg:border-none lg:flex-row lg:w-auto">
                     {renderSamePageLinks}
                 </ul>
             )}

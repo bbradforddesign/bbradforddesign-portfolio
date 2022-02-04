@@ -10,8 +10,6 @@ import { Projects } from "../components/projects/Projects";
 import { Contact } from "../components/contact/Contact";
 import { Footer } from "../components/footer/Footer";
 
-import { useTheme } from "../context/ThemeContext";
-
 export const getStaticProps = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
     const space = process.env.CONTENTFUL_SPACE_ID;
@@ -51,8 +49,6 @@ const Home: NextPage<Props> = ({ text }) => {
         "Projects",
         "Contact",
     ];
-
-    const { darkMode } = useTheme();
 
     // placeholder data to be pulled from CMS
     const languages = ["HTML", "CSS"];
@@ -94,9 +90,7 @@ const Home: NextPage<Props> = ({ text }) => {
         { icon: "email", url: "mailto:test@example.com" },
     ];
     return (
-        <div
-            className={darkMode ? "text-white bg-black" : "text-black bg-white"}
-        >
+        <div>
             <Head>
                 <title>bbradforddesign</title>
                 <meta name="description" content="Blake Bradford" />
