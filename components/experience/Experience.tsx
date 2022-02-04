@@ -1,4 +1,4 @@
-import { ExperienceList } from "../experienceList/ExperienceList";
+import { ExperienceList } from "./experienceList/ExperienceList";
 
 type Props = {
     languages: string[];
