@@ -1,5 +1,6 @@
 module.exports = {
     content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+    purge: ["./components/**/*.tsx", "./pages/**/*.tsx"],
     theme: {
         extend: {
             keyframes: {
