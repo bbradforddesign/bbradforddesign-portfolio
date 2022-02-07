@@ -1,7 +1,13 @@
 module.exports = {
     content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
     darkMode: "class",
-    purge: ["./components/**/*.tsx", "./pages/**/*.tsx"],
+    purge: {
+        enabled: true,
+        content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
+        options: {
+            safelist: ["dark"],
+        },
+    },
     theme: {
         extend: {
             keyframes: {

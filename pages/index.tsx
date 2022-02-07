@@ -1,6 +1,7 @@
 import { createClient, EntryCollection } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useTheme } from "next-themes";
 
 import { Navbar } from "../components/navbar/Navbar";
 import { Hero } from "../components/hero/Hero";
@@ -50,6 +51,8 @@ const Home: NextPage<Props> = ({ text }) => {
         "Contact",
     ];
 
+    const { theme, setTheme } = useTheme();
+
     // placeholder data to be pulled from CMS
     const languages = ["HTML", "CSS"];
     const frameworks = ["React", "NextJS"];
@@ -90,7 +93,7 @@ const Home: NextPage<Props> = ({ text }) => {
         { icon: "email", url: "mailto:test@example.com" },
     ];
     return (
-        <div>
+        <div className="dark:bg-slate-900">
             <Head>
                 <title>bbradforddesign</title>
                 <meta name="description" content="Blake Bradford" />

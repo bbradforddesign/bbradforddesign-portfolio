@@ -23,8 +23,13 @@ export const ProjectCard: React.FC<Project> = ({
 
     const renderListItems = (list: Array<string>) =>
         list.map((e) => (
-            <li key={e} className="py-1 px-2 rounded-md bg-zinc-700">
-                <p className="font-medium text-sm text-white">{e}</p>
+            <li
+                key={e}
+                className="py-1 px-2 rounded-md bg-slate-700 dark:bg-slate-100"
+            >
+                <p className="font-medium text-sm text-white dark:text-slate-900">
+                    {e}
+                </p>
             </li>
         ));
 

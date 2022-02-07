@@ -1,3 +1,5 @@
+import { useTheme } from "next-themes";
+
 import { Social } from "../../shared/constants";
 import { Icon } from "../icon/Icon";
 
@@ -11,6 +13,8 @@ type SocialLink = {
 };
 
 export const Footer: React.FC<Props> = ({ links }) => {
+    const { theme, setTheme } = useTheme();
+
     const renderSocialLinks = links.map((e) => (
         <li key={e.icon} className="w-min">
             <a href={e.url}>
@@ -20,9 +24,13 @@ export const Footer: React.FC<Props> = ({ links }) => {
     ));
 
     return (
-        <footer className="w-full p-4 bg-white sticky bottom-0 flex justify-center gap-24 md:justify-end">
+        <footer className="w-full p-4 bg-white dark:bg-slate-900 sticky bottom-0 flex justify-between">
             <ul className="flex gap-4">{renderSocialLinks}</ul>
-            <button>Light/Dark</button>
+            <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+                Light/Dark
+            </button>
         </footer>
     );
 };

@@ -33,7 +33,7 @@ a {
 }
 
 .card {
-    @apply p-4 rounded-xl shadow-md;
+    @apply p-4 rounded-xl shadow-md dark:bg-slate-800;
 }
 
 .form-input {
