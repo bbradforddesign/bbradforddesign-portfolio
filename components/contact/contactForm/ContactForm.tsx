@@ -13,6 +13,28 @@ export const ContactForm: React.FC = () => {
         message: "",
     });
 
+    const handleMessageSubmit: React.MouseEventHandler = async (
+        e: React.MouseEvent
+    ) => {
+        try {
+            e.preventDefault();
+
+            const resp = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+            if (resp.status === 200) {
+                alert("Success!");
+            }
+        } catch (err: any) {
+            console.log(err);
+        }
+    };
+
     return (
         <form className="card flex flex-col gap-2 w-full max-w-sm mx-auto">
             <div className="flex flex-col items-start">
@@ -60,10 +82,7 @@ export const ContactForm: React.FC = () => {
             <button
                 className="bg-black text-white w-1/2 max-w-8 px-4 py-2 my-4 rounded-md self-center hover:bg-slate-600"
                 type="submit"
-                onClick={(e) => {
-                    e.preventDefault();
-                    window.alert("Message sent!");
-                }}
+                onClick={(e) => handleMessageSubmit(e)}
             >
                 Send Message
             </button>
