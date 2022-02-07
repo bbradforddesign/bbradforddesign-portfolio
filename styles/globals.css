@@ -37,5 +37,5 @@ a {
 }
 
 .form-input {
-    @apply border border-2 border-slate-300 w-full rounded;
+    @apply py-1 px-2 border border-2 border-slate-300 dark:border-slate-600 w-full rounded;
 }
