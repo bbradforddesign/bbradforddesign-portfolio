@@ -40,7 +40,7 @@ export const Experience: React.FC<Props> = ({
                         non proident, sunt in culpa qui officia deserunt mollit
                         anim id est laborum.
                     </p>
-                    <button className="font-bold hover:text-slate-400">
+                    <button className="font-bold text-2xl hover:text-slate-400">
                         View Resume
                     </button>
                 </div>

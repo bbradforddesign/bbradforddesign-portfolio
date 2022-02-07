@@ -39,3 +39,7 @@ a {
 .form-input {
     @apply py-1 px-2 border border-2 border-slate-300 dark:border-slate-600 w-full rounded;
 }
+
+.highlight-text {
+    @apply text-blue-600 dark:text-yellow-300;
+}

@@ -51,8 +51,6 @@ const Home: NextPage<Props> = ({ text }) => {
         "Contact",
     ];
 
-    const { theme, setTheme } = useTheme();
-
     // placeholder data to be pulled from CMS
     const languages = ["HTML", "CSS"];
     const frameworks = ["React", "NextJS"];

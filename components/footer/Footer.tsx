@@ -29,7 +29,7 @@ export const Footer: React.FC<Props> = ({ links }) => {
             <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-                Light/Dark
+                <Icon icon="lightbulb" />
             </button>
         </footer>
     );

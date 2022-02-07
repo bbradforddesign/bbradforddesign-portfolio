@@ -25,9 +25,9 @@ export const ProjectCard: React.FC<Project> = ({
         list.map((e) => (
             <li
                 key={e}
-                className="py-1 px-2 rounded-md bg-slate-700 dark:bg-slate-100"
+                className="py-1 px-2 rounded-md bg-slate-700 dark:bg-yellow-300"
             >
-                <p className="font-medium text-sm text-white dark:text-slate-900">
+                <p className="font-semibold text-sm text-white dark:text-slate-900">
                     {e}
                 </p>
             </li>
