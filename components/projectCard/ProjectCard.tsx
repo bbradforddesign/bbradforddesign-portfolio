@@ -16,20 +16,15 @@ export const ProjectCard: React.FC<Project> = ({
     const renderBullets =
         bullets?.length &&
         bullets.map((e) => (
-            <li key="e">
+            <li key={e}>
                 <p>{e}</p>
             </li>
         ));
 
     const renderListItems = (list: Array<string>) =>
         list.map((e) => (
-            <li
-                key={e}
-                className="py-1 px-2 rounded-md bg-slate-700 dark:bg-yellow-300"
-            >
-                <p className="font-semibold text-sm text-white dark:text-slate-900">
-                    {e}
-                </p>
+            <li key={e} className="py-1 px-2 rounded-md highlight-background">
+                <p className="font-semibold text-sm">{e}</p>
             </li>
         ));
 

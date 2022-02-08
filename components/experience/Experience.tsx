@@ -40,9 +40,7 @@ export const Experience: React.FC<Props> = ({
                         non proident, sunt in culpa qui officia deserunt mollit
                         anim id est laborum.
                     </p>
-                    <button className="font-bold text-2xl hover:text-slate-400">
-                        View Resume
-                    </button>
+                    <button className="solid-button mt-4">View Resume</button>
                 </div>
                 <div className="flex flex-col gap-4">
                     {languages.length > 0 && (

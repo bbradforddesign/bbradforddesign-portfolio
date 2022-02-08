@@ -59,30 +59,18 @@ const Home: NextPage<Props> = ({ text }) => {
     const projects = [
         {
             bullets: ["testing", "data"],
-            company: "Test Company",
-            location: "Remote",
-            date: "2021-2022",
-            tools: ["css", "go"],
+            title: "A",
             technologies: ["html", "react", "vue"],
-            className: "w-1/2 min-w-fit",
         },
         {
             bullets: ["testing", "data"],
-            company: "Test Company",
-            location: "Remote",
-            date: "2021-2022",
-            tools: ["css", "go"],
+            title: "B",
             technologies: ["html", "react", "vue"],
-            className: "w-1/2 min-w-fit",
         },
         {
             bullets: ["testing", "data"],
-            company: "Test Company",
-            location: "Remote",
-            date: "2021-2022",
-            tools: ["css", "go"],
+            title: "C",
             technologies: ["html", "react", "vue"],
-            className: "w-1/2 min-w-fit",
         },
     ];
     const footerLinks = [

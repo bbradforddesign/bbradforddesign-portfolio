@@ -6,13 +6,8 @@ type Props = {
 export const ExperienceList: React.FC<Props> = ({ title, list }) => {
     const renderListItems = (list: Array<string>) =>
         list.map((e) => (
-            <li
-                key={e}
-                className="p-1 px-2 rounded-md bg-slate-700 dark:bg-yellow-300"
-            >
-                <p className="text-sm font-semibold text-white dark:text-slate-900">
-                    {e}
-                </p>
+            <li key={e} className="p-1 px-2 rounded-md highlight-background">
+                <p className="text-sm font-semibold">{e}</p>
             </li>
         ));
     return (

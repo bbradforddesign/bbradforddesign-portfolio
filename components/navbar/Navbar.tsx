@@ -22,7 +22,9 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
     const renderSamePageLinks = samePageLinks.map((e) => (
         <li className="m-2 lg:my-0" key={e}>
             <Link href={`#${e}`}>
-                <a className="font-semibold hover:text-sky-500">{e}</a>
+                <a className="font-semibold hover:text-blue-600 dark:hover:text-yellow-300">
+                    {e}
+                </a>
             </Link>
         </li>
     ));
