@@ -10,7 +10,7 @@ export const Hero: React.FC<Props> = ({ greeting, name, summary }) => {
             <p className="text-2xl font-medium max-w-2xl px-8">
                 <span>{greeting}</span>
                 <br />
-                <span className="text-4xl font-bold highlight-text">
+                <span className="text-5xl font-bold highlight-text">
                     {name}
                 </span>
                 <br />

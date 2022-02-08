@@ -5,7 +5,9 @@ export const About: React.FC = () => {
             <div className=" w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="w-full h-72 bg-slate-100" />
                 <div className="w-full">
-                    <p className="font-bold text-xl">Nice to Meet You!</p>
+                    <p className="font-bold text-xl highlight-text">
+                        Nice to Meet You!
+                    </p>
                     <p className="body-text">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore

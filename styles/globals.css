@@ -47,6 +47,7 @@ h3 {
 
 .highlight-text {
     @apply text-blue-600 dark:text-yellow-300;
+    font-family: "Lora", serif;
 }
 
 .highlight-background {

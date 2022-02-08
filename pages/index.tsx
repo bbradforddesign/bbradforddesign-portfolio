@@ -44,7 +44,7 @@ type Props = {
 const Home: NextPage<Props> = ({ text }) => {
     // links to components on home page; won't load generated pages
     // each requires a unique child component, so declared statically
-    const samePageLinks: string[] = [
+    const homepageLinks: string[] = [
         "About",
         "Experience",
         "Projects",
@@ -90,7 +90,7 @@ const Home: NextPage<Props> = ({ text }) => {
                 />
             </Head>
 
-            <Navbar samePageLinks={samePageLinks} />
+            <Navbar homepageLinks={homepageLinks} />
 
             <main>
                 <Hero

@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useWindowSize } from "../../shared/hooks";
 
 type Props = {
-    samePageLinks: string[];
+    homepageLinks: string[];
 };
 
-export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
+export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
     const [viewNavLinks, setViewNavLinks] = useState<boolean>(false);
     const [viewAnimation, setViewAnimation] = useState<boolean>(false);
     const [width, height] = useWindowSize();
@@ -19,7 +19,7 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
 
     // render links to same-page components; not generated pages
     // uses Link to take advantage of Next's routing
-    const renderSamePageLinks = samePageLinks.map((e) => (
+    const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="m-2 lg:my-0" key={e}>
             <Link href={`#${e}`}>
                 <a className="font-semibold hover:text-blue-600 dark:hover:text-yellow-300">
@@ -55,7 +55,7 @@ export const Navbar: React.FC<Props> = ({ samePageLinks }) => {
             </div>
             {(width >= 1024 || viewNavLinks) && (
                 <ul className="flex flex-col w-full absolute top-14 left-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex-row lg:w-auto">
-                    {renderSamePageLinks}
+                    {renderHomepageLinks}
                 </ul>
             )}
         </nav>
