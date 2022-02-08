@@ -57,8 +57,7 @@ const Home: NextPage<Props> = ({ sections }) => {
 
     const aboutSection = sections.filter(
         (e) => e.sys.contentType.sys.id === "about"
-    );
-    console.log(aboutSection.fields);
+    )[0];
 
     const aboutText = [
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -122,7 +121,7 @@ const Home: NextPage<Props> = ({ sections }) => {
 
             <main>
                 <Hero section={heroSection} />
-                <About text={aboutText} />
+                <About section={aboutSection} />
                 <Experience
                     languages={languages}
                     frameworks={frameworks}

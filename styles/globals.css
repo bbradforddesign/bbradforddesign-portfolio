@@ -24,6 +24,10 @@ h3 {
     font-family: "Lora", serif;
 }
 
+.body-text p {
+    @apply my-2;
+}
+
 .section-container {
     min-height: calc(100vh - theme("spacing.80"));
     @apply flex flex-col justify-center items-center  w-full max-w-6xl h-auto my-4 mx-auto p-12;
@@ -48,6 +52,10 @@ h3 {
 .highlight-text {
     @apply text-blue-600 dark:text-yellow-300;
     font-family: "Lora", serif;
+}
+
+b {
+    @apply highlight-text text-xl;
 }
 
 .highlight-background {
