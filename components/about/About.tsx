@@ -12,14 +12,17 @@ export const About: React.FC<Props> = ({ section }) => {
     return (
         <section className="section-container" id="About">
             <h2 className="section-header">About</h2>
-            <div className=" w-full grid grid-cols-1 gap-4 md:grid-cols-2">
-                <Image
-                    className="w-full"
-                    src={`https:${profile?.fields.file.url}`}
-                    width={profile?.fields.file.details.image?.width}
-                    height={profile?.fields.file.details.image?.height}
-                    alt="Professional headshot for About section"
-                />
+            <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="flex justify-center max-h-96">
+                    <Image
+                        src={`https:${profile?.fields.file.url}`}
+                        width={300}
+                        height={300}
+                        objectFit="cover"
+                        className="object-top card"
+                        alt="Professional headshot for About section"
+                    />
+                </div>
                 <div className="w-full body-text">
                     {body && documentToReactComponents(body)}
                 </div>
