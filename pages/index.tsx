@@ -84,6 +84,10 @@ const Home: NextPage<Props> = ({ text }) => {
                 <title>bbradforddesign</title>
                 <meta name="description" content="Blake Bradford" />
                 <link rel="icon" href="/favicon.ico" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
 
             <Navbar samePageLinks={samePageLinks} />
