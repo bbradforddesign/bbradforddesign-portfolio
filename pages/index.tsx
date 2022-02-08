@@ -1,7 +1,6 @@
 import { createClient, EntryCollection } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useTheme } from "next-themes";
 
 import { Navbar } from "../components/navbar/Navbar";
 import { Hero } from "../components/hero/Hero";
@@ -28,20 +27,21 @@ export const getStaticProps = async () => {
     });
 
     // retrieve content by type
-    const response = await client.getEntries({ content_type: "hero" });
+    const response = await client.getEntries({ content_type: "page" });
+    const parsedResponse = await client.parseEntries(response);
     return {
         props: {
-            text: response.items,
+            sections: parsedResponse.items[0].fields.sections,
         },
         revalidate: 1,
     };
 };
 
 type Props = {
-    text: EntryCollection<unknown>;
+    sections: EntryCollection<unknown>;
 };
 
-const Home: NextPage<Props> = ({ text }) => {
+const Home: NextPage<Props> = ({ sections }) => {
     // links to components on home page; won't load generated pages
     // each requires a unique child component, so declared statically
     const homepageLinks: string[] = [
@@ -51,7 +51,35 @@ const Home: NextPage<Props> = ({ text }) => {
         "Contact",
     ];
 
-    // placeholder data to be pulled from CMS
+    const heroSection = sections.filter(
+        (e) => e.sys.contentType.sys.id === "hero"
+    )[0];
+
+    const aboutSection = sections.filter(
+        (e) => e.sys.contentType.sys.id === "about"
+    );
+    console.log(aboutSection.fields);
+
+    const aboutText = [
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.`,
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.`,
+    ];
     const languages = ["HTML", "CSS"];
     const frameworks = ["React", "NextJS"];
     const databases = ["Dgraph", "MySQL"];
@@ -93,12 +121,8 @@ const Home: NextPage<Props> = ({ text }) => {
             <Navbar homepageLinks={homepageLinks} />
 
             <main>
-                <Hero
-                    greeting={text[0].fields.greeting}
-                    name={text[0].fields.name}
-                    summary={text[0].fields.summary}
-                />
-                <About />
+                <Hero section={heroSection} />
+                <About text={aboutText} />
                 <Experience
                     languages={languages}
                     frameworks={frameworks}
