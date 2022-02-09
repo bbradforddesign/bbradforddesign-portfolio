@@ -1,15 +1,11 @@
-import { Technology } from "../../shared/constants";
-
 export type Project = {
     bullets: string[];
-    tools: Technology[];
-    technologies: Technology[];
+    technologies: string[];
     title: string;
 };
 
 export const ProjectCard: React.FC<Project> = ({
     bullets,
-    tools,
     technologies,
     title,
 }) => {
