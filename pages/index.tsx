@@ -13,6 +13,8 @@ import {
     IAbout,
     IExperience,
     IHero,
+    IHomepage,
+    IHomepageFields,
     IPageFields,
 } from "../@types/generated/contentful";
 
@@ -32,19 +34,21 @@ export const getStaticProps = async () => {
         space: space,
     });
 
-    // retrieve content by type
-    const response = await client.getEntries({ content_type: "page" });
-    const parsedResponse: EntryCollection<IPageFields> =
-        await client.parseEntries(response);
+    // retrieve homepage content by ID
+    const response: Entry<IHomepageFields> = await client.getEntry(
+        "LBrW2sfLs2xkMbx4o2jJU"
+    );
+
+    console.log(response.fields);
     return {
         props: {
-            sections: parsedResponse.items[0].fields.sections,
+            fields: response.fields,
         },
         revalidate: 1,
     };
 };
 
-const Home: NextPage<IPageFields> = ({ sections }) => {
+const Home: NextPage<IHomepage> = ({ fields }) => {
     // links to components on home page; won't load generated pages
     // each requires a unique child component, so declared statically
     const homepageLinks: string[] = [
@@ -54,6 +58,7 @@ const Home: NextPage<IPageFields> = ({ sections }) => {
         "Contact",
     ];
 
+    /*
     const heroSection = sections?.filter(
         (e): e is IHero => e.sys.contentType.sys.id === "hero"
     )[0];
@@ -65,24 +70,7 @@ const Home: NextPage<IPageFields> = ({ sections }) => {
     const experienceSection = sections?.filter(
         (e): e is IExperience => e.sys.contentType.sys.id === "experience"
     )[0];
-
-    const projects = [
-        {
-            bullets: ["testing", "data"],
-            title: "A",
-            technologies: ["html", "react", "vue"],
-        },
-        {
-            bullets: ["testing", "data"],
-            title: "B",
-            technologies: ["html", "react", "vue"],
-        },
-        {
-            bullets: ["testing", "data"],
-            title: "C",
-            technologies: ["html", "react", "vue"],
-        },
-    ];
+*/
     const footerLinks = [
         { icon: "github", url: "https://github.com" },
         { icon: "linkedin", url: "https://linkedin.com" },
@@ -103,12 +91,14 @@ const Home: NextPage<IPageFields> = ({ sections }) => {
             <Navbar homepageLinks={homepageLinks} />
 
             <main>
-                {heroSection && <Hero section={heroSection} />}
+                <Hero text={fields?.hero} />
+                {/* 
                 {aboutSection && <About section={aboutSection} />}
                 {experienceSection && (
                     <Experience section={experienceSection} />
                 )}
-                {projects && <Projects projects={projects} />}
+                <Projects projects={fields?.projects} />
+                */}
                 <Contact />
             </main>
 
