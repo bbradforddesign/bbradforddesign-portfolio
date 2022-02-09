@@ -92,8 +92,8 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
 
             <main>
                 <Hero text={fields?.hero} />
+                <About text={fields?.about} photo={fields?.headshot} />}
                 {/* 
-                {aboutSection && <About section={aboutSection} />}
                 {experienceSection && (
                     <Experience section={experienceSection} />
                 )}
