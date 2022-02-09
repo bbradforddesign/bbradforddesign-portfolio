@@ -1,22 +1,16 @@
-import { IHero } from "../../@types/generated/contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { Document } from "@contentful/rich-text-types";
 
 type Props = {
-    section: IHero;
+    text: Document;
 };
 
-export const Hero: React.FC<Props> = ({ section }) => {
-    const { greeting, name, summary } = section.fields;
+export const Hero: React.FC<Props> = ({ text }) => {
     return (
         <section className="section-container">
-            <p className="text-2xl font-medium max-w-2xl px-8">
-                <span>{greeting}</span>
-                <br />
-                <span className="text-5xl font-bold highlight-text">
-                    {name}
-                </span>
-                <br />
-                <span>{summary}</span>
-            </p>
+            <div className="hero-text">
+                {text && documentToReactComponents(text)}
+            </div>
         </section>
     );
 };

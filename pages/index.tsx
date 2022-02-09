@@ -1,4 +1,4 @@
-import { createClient, Entry, EntryCollection } from "contentful";
+import { createClient, Entry } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -9,12 +9,7 @@ import { Experience } from "../components/experience/Experience";
 import { Projects } from "../components/projects/Projects";
 import { Contact } from "../components/contact/Contact";
 import { Footer } from "../components/footer/Footer";
-import {
-    IAbout,
-    IExperience,
-    IHero,
-    IPageFields,
-} from "../@types/generated/contentful";
+import { IHomepage, IHomepageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -32,19 +27,21 @@ export const getStaticProps = async () => {
         space: space,
     });
 
-    // retrieve content by type
-    const response = await client.getEntries({ content_type: "page" });
-    const parsedResponse: EntryCollection<IPageFields> =
-        await client.parseEntries(response);
+    // retrieve homepage content by ID
+    const response: Entry<IHomepageFields> = await client.getEntry(
+        "LBrW2sfLs2xkMbx4o2jJU"
+    );
+
+    console.log(response.fields);
     return {
         props: {
-            sections: parsedResponse.items[0].fields.sections,
+            fields: response.fields,
         },
         revalidate: 1,
     };
 };
 
-const Home: NextPage<IPageFields> = ({ sections }) => {
+const Home: NextPage<IHomepage> = ({ fields }) => {
     // links to components on home page; won't load generated pages
     // each requires a unique child component, so declared statically
     const homepageLinks: string[] = [
@@ -54,40 +51,23 @@ const Home: NextPage<IPageFields> = ({ sections }) => {
         "Contact",
     ];
 
-    const heroSection = sections?.filter(
-        (e): e is IHero => e.sys.contentType.sys.id === "hero"
-    )[0];
+    const {
+        hero,
+        headshot,
+        about,
+        experience,
+        languages,
+        frameworks,
+        databases,
+        tools,
+    } = fields;
 
-    const aboutSection = sections?.filter(
-        (e): e is IAbout => e.sys.contentType.sys.id === "about"
-    )[0];
-
-    const experienceSection = sections?.filter(
-        (e): e is IExperience => e.sys.contentType.sys.id === "experience"
-    )[0];
-
-    const projects = [
-        {
-            bullets: ["testing", "data"],
-            title: "A",
-            technologies: ["html", "react", "vue"],
-        },
-        {
-            bullets: ["testing", "data"],
-            title: "B",
-            technologies: ["html", "react", "vue"],
-        },
-        {
-            bullets: ["testing", "data"],
-            title: "C",
-            technologies: ["html", "react", "vue"],
-        },
-    ];
     const footerLinks = [
         { icon: "github", url: "https://github.com" },
         { icon: "linkedin", url: "https://linkedin.com" },
         { icon: "email", url: "mailto:test@example.com" },
     ];
+
     return (
         <div className="dark:bg-slate-900">
             <Head>
@@ -103,12 +83,18 @@ const Home: NextPage<IPageFields> = ({ sections }) => {
             <Navbar homepageLinks={homepageLinks} />
 
             <main>
-                {heroSection && <Hero section={heroSection} />}
-                {aboutSection && <About section={aboutSection} />}
-                {experienceSection && (
-                    <Experience section={experienceSection} />
-                )}
-                {projects && <Projects projects={projects} />}
+                <Hero text={hero} />
+                <About text={about} photo={headshot} />
+                <Experience
+                    text={experience}
+                    languages={languages}
+                    frameworks={frameworks}
+                    databases={databases}
+                    tools={tools}
+                />
+                {/* 
+                <Projects projects={fields?.projects} />
+                */}
                 <Contact />
             </main>
 

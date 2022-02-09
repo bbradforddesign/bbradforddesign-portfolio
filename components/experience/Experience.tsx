@@ -1,22 +1,29 @@
-import { IExperience } from "../../@types/generated/contentful";
+import { Document } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { SkillList } from "../skillList/SkillList";
 
 type Props = {
-    section: IExperience;
+    text?: Document;
+    languages?: string[];
+    frameworks?: string[];
+    databases?: string[];
+    tools?: string[];
 };
 
-export const Experience: React.FC<Props> = ({ section }) => {
-    const { body, languages, frameworks, databases, tools } = section.fields;
-
-    console.log("languages: " + languages);
+export const Experience: React.FC<Props> = ({
+    text,
+    languages,
+    frameworks,
+    databases,
+    tools,
+}) => {
     return (
         <section className="section-container" id="Experience">
             <h2 className="section-header">Experience</h2>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
                     <div className="w-full body-text">
-                        {body && documentToReactComponents(body)}
+                        {text && documentToReactComponents(text)}
                     </div>
                     <button className="solid-button mt-4">View Resume</button>
                 </div>
