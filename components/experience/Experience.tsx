@@ -1,62 +1,40 @@
-import { ExperienceList } from "./experienceList/ExperienceList";
+import { IExperience } from "../../@types/generated/contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { SkillList } from "../skillList/SkillList";
 
 type Props = {
-    languages: string[];
-    frameworks: string[];
-    databases: string[];
-    tools: string[];
+    section: IExperience;
 };
 
-export const Experience: React.FC<Props> = ({
-    languages,
-    frameworks,
-    databases,
-    tools,
-}) => {
+export const Experience: React.FC<Props> = ({ section }) => {
+    const { body, languages, frameworks, databases, tools } = section.fields;
+
+    console.log("languages: " + languages);
     return (
         <section className="section-container" id="Experience">
             <h2 className="section-header">Experience</h2>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div>
-                    <p className="body-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                    </p>
-                    <p className="body-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                    </p>
+                    <div className="w-full body-text">
+                        {body && documentToReactComponents(body)}
+                    </div>
                     <button className="solid-button mt-4">View Resume</button>
                 </div>
                 <div className="flex flex-col gap-4">
-                    {languages.length > 0 && (
-                        <ExperienceList title="Languages" list={languages} />
+                    {languages && (
+                        <SkillList title="Languages" list={languages} />
                     )}
-                    {frameworks.length > 0 && (
-                        <ExperienceList
+                    {frameworks && (
+                        <SkillList
                             title="Libraries & Frameworks"
                             list={frameworks}
                         />
                     )}
-                    {databases.length > 0 && (
-                        <ExperienceList title="Databases" list={databases} />
+                    {databases && (
+                        <SkillList title="Databases" list={databases} />
                     )}
-                    {tools.length > 0 && (
-                        <ExperienceList title="Tools" list={tools} />
+                    {tools && (
+                        <SkillList title="Tools & Services" list={tools} />
                     )}
                 </div>
             </div>

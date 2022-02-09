@@ -9,6 +9,7 @@ import { Experience } from "../components/experience/Experience";
 import { Projects } from "../components/projects/Projects";
 import { Contact } from "../components/contact/Contact";
 import { Footer } from "../components/footer/Footer";
+import { IPageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -28,7 +29,8 @@ export const getStaticProps = async () => {
 
     // retrieve content by type
     const response = await client.getEntries({ content_type: "page" });
-    const parsedResponse = await client.parseEntries(response);
+    const parsedResponse: EntryCollection<IPageFields> =
+        await client.parseEntries(response);
     return {
         props: {
             sections: parsedResponse.items[0].fields.sections,
@@ -37,11 +39,7 @@ export const getStaticProps = async () => {
     };
 };
 
-type Props = {
-    sections: EntryCollection<unknown>;
-};
-
-const Home: NextPage<Props> = ({ sections }) => {
+const Home: NextPage<IPageFields> = ({ sections }) => {
     // links to components on home page; won't load generated pages
     // each requires a unique child component, so declared statically
     const homepageLinks: string[] = [
@@ -51,18 +49,18 @@ const Home: NextPage<Props> = ({ sections }) => {
         "Contact",
     ];
 
-    const heroSection = sections.filter(
+    const heroSection = sections?.filter(
         (e) => e.sys.contentType.sys.id === "hero"
     )[0];
 
-    const aboutSection = sections.filter(
+    const aboutSection = sections?.filter(
         (e) => e.sys.contentType.sys.id === "about"
     )[0];
 
-    const languages = ["HTML", "CSS"];
-    const frameworks = ["React", "NextJS"];
-    const databases = ["Dgraph", "MySQL"];
-    const tools = ["VSCode", "Vim", "Git", "Github"];
+    const experienceSection = sections?.filter(
+        (e) => e.sys.contentType.sys.id === "experience"
+    )[0];
+
     const projects = [
         {
             bullets: ["testing", "data"],
@@ -100,15 +98,12 @@ const Home: NextPage<Props> = ({ sections }) => {
             <Navbar homepageLinks={homepageLinks} />
 
             <main>
-                <Hero section={heroSection} />
-                <About section={aboutSection} />
-                <Experience
-                    languages={languages}
-                    frameworks={frameworks}
-                    databases={databases}
-                    tools={tools}
-                />
-                <Projects projects={projects} />
+                {heroSection && <Hero section={heroSection} />}
+                {aboutSection && <About section={aboutSection} />}
+                {experienceSection && (
+                    <Experience section={experienceSection} />
+                )}
+                {projects && <Projects projects={projects} />}
                 <Contact />
             </main>
 
