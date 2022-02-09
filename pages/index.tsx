@@ -1,4 +1,4 @@
-import { createClient, EntryCollection } from "contentful";
+import { createClient, Entry, EntryCollection } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -9,7 +9,12 @@ import { Experience } from "../components/experience/Experience";
 import { Projects } from "../components/projects/Projects";
 import { Contact } from "../components/contact/Contact";
 import { Footer } from "../components/footer/Footer";
-import { IPageFields } from "../@types/generated/contentful";
+import {
+    IAbout,
+    IExperience,
+    IHero,
+    IPageFields,
+} from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -50,15 +55,15 @@ const Home: NextPage<IPageFields> = ({ sections }) => {
     ];
 
     const heroSection = sections?.filter(
-        (e) => e.sys.contentType.sys.id === "hero"
+        (e): e is IHero => e.sys.contentType.sys.id === "hero"
     )[0];
 
     const aboutSection = sections?.filter(
-        (e) => e.sys.contentType.sys.id === "about"
+        (e): e is IAbout => e.sys.contentType.sys.id === "about"
     )[0];
 
     const experienceSection = sections?.filter(
-        (e) => e.sys.contentType.sys.id === "experience"
+        (e): e is IExperience => e.sys.contentType.sys.id === "experience"
     )[0];
 
     const projects = [
