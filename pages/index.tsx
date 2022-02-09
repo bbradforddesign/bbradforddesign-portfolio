@@ -1,4 +1,4 @@
-import { createClient, Entry, EntryCollection } from "contentful";
+import { createClient, Entry } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -9,14 +9,7 @@ import { Experience } from "../components/experience/Experience";
 import { Projects } from "../components/projects/Projects";
 import { Contact } from "../components/contact/Contact";
 import { Footer } from "../components/footer/Footer";
-import {
-    IAbout,
-    IExperience,
-    IHero,
-    IHomepage,
-    IHomepageFields,
-    IPageFields,
-} from "../@types/generated/contentful";
+import { IHomepage, IHomepageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -58,24 +51,23 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
         "Contact",
     ];
 
-    /*
-    const heroSection = sections?.filter(
-        (e): e is IHero => e.sys.contentType.sys.id === "hero"
-    )[0];
+    const {
+        hero,
+        headshot,
+        about,
+        experience,
+        languages,
+        frameworks,
+        databases,
+        tools,
+    } = fields;
 
-    const aboutSection = sections?.filter(
-        (e): e is IAbout => e.sys.contentType.sys.id === "about"
-    )[0];
-
-    const experienceSection = sections?.filter(
-        (e): e is IExperience => e.sys.contentType.sys.id === "experience"
-    )[0];
-*/
     const footerLinks = [
         { icon: "github", url: "https://github.com" },
         { icon: "linkedin", url: "https://linkedin.com" },
         { icon: "email", url: "mailto:test@example.com" },
     ];
+
     return (
         <div className="dark:bg-slate-900">
             <Head>
@@ -91,12 +83,16 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
             <Navbar homepageLinks={homepageLinks} />
 
             <main>
-                <Hero text={fields?.hero} />
-                <About text={fields?.about} photo={fields?.headshot} />}
+                <Hero text={hero} />
+                <About text={about} photo={headshot} />
+                <Experience
+                    text={experience}
+                    languages={languages}
+                    frameworks={frameworks}
+                    databases={databases}
+                    tools={tools}
+                />
                 {/* 
-                {experienceSection && (
-                    <Experience section={experienceSection} />
-                )}
                 <Projects projects={fields?.projects} />
                 */}
                 <Contact />
