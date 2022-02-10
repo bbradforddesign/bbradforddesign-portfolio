@@ -15,7 +15,7 @@ export const ProjectCard: React.FC<IProjectFields> = ({
             <header className="text-xl font-bold">
                 <h3>{title}</h3>
             </header>
-            <div className="my-4 list-disc ml-4 w-auto max-w-2xl md:mr-4">
+            <div className="project-card-summary my-4 ml-4 w-auto max-w-prose md:mr-4">
                 {documentToReactComponents(summary)}
             </div>
             <section>

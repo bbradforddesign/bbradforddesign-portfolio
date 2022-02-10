@@ -53,6 +53,14 @@ h3 {
     @apply p-4 rounded-xl shadow-md dark:bg-slate-800;
 }
 
+.project-card-summary ul {
+    @apply list-disc;
+}
+
+.project-card-summary ul li {
+    @apply text-sm;
+}
+
 .form-input {
     @apply py-1 px-2 border border-2 border-slate-300 dark:border-slate-600 w-full rounded;
 }
