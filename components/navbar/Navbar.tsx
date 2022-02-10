@@ -35,7 +35,7 @@ export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
     };
 
     return (
-        <nav className="flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
+        <nav className="flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 opacity-95 bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="#">
                     <a>

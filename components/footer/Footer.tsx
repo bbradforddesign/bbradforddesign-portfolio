@@ -24,7 +24,7 @@ export const Footer: React.FC<Props> = ({ links }) => {
     ));
 
     return (
-        <footer className="w-full p-4 bg-white dark:bg-slate-900 sticky bottom-0 flex justify-between">
+        <footer className="w-full p-4 opacity-95 bg-white dark:bg-slate-900 sticky bottom-0 flex justify-between">
             <ul className="flex gap-4">{renderSocialLinks}</ul>
             <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
