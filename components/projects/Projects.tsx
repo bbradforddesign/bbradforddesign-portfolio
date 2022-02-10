@@ -1,20 +1,27 @@
-import { Project, ProjectCard } from "../projectCard/ProjectCard";
+import { IProject } from "../../@types/generated/contentful";
+import { ProjectCard } from "./projectCard/ProjectCard";
 
 type Props = {
-    projects: Project[];
+    projects: IProject[];
 };
 
 export const Projects: React.FC<Props> = ({ projects }) => {
-    const renderProjects = projects.map((e) => (
-        <li key={e.title} className="w-full">
-            <ProjectCard
-                bullets={e.bullets}
-                title={e.title}
-                tools={e.tools}
-                technologies={e.technologies}
-            />
-        </li>
-    ));
+    const renderProjects = projects.map((e) => {
+        const { thumbnail, title, url, summary, technologies } = e.fields;
+
+        return (
+            <li key={e.sys.id} className="w-full">
+                <ProjectCard
+                    thumbnail={thumbnail}
+                    title={title}
+                    url={url}
+                    summary={summary}
+                    technologies={technologies}
+                />
+            </li>
+        );
+    });
+
     return (
         <section className="section-container" id="Projects">
             <h2 className="section-header">Projects</h2>

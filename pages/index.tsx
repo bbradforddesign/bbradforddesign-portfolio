@@ -60,6 +60,7 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
         frameworks,
         databases,
         tools,
+        projects,
     } = fields;
 
     const footerLinks = [
@@ -92,9 +93,7 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
                     databases={databases}
                     tools={tools}
                 />
-                {/* 
-                <Projects projects={fields?.projects} />
-                */}
+                <Projects projects={projects} />
                 <Contact />
             </main>
 
