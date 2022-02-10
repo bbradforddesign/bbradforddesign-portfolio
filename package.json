@@ -8,7 +8,7 @@
         "lint": "next lint",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "contentful-typescript-codegen": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
+        "contentful-types": "contentful-typescript-codegen --output @types/generated/contentful.d.ts"
     },
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^15.11.1",

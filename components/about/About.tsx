@@ -4,7 +4,7 @@ import { Document } from "@contentful/rich-text-types";
 import { Asset } from "contentful";
 
 type Props = {
-    text?: Document;
+    text: Document;
     photo: Asset;
 };
 
@@ -24,7 +24,7 @@ export const About: React.FC<Props> = ({ text, photo }) => {
                     />
                 </div>
                 <div className="w-full body-text">
-                    {text && documentToReactComponents(text)}
+                    {documentToReactComponents(text)}
                 </div>
             </div>
         </section>

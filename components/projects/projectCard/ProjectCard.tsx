@@ -10,13 +10,6 @@ export const ProjectCard: React.FC<IProjectFields> = ({
     summary,
     technologies,
 }) => {
-    const renderListItems = (list: Array<string>) =>
-        list.map((e) => (
-            <li key={e} className="py-1 px-2 rounded-md highlight-background">
-                <p className="font-semibold text-sm">{e}</p>
-            </li>
-        ));
-
     return (
         <section className="card w-full h-full flex flex-col justify-between">
             <header className="text-xl font-bold">
