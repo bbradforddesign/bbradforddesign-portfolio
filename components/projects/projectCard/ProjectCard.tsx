@@ -13,14 +13,18 @@ export const ProjectCard: React.FC<IProjectFields> = ({
 }) => {
     return (
         <section className="card w-full h-full flex flex-col justify-between">
-            <a href={url} target="_blank" rel="noreferrer">
+            <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:bg-slate-200 dark:hover:bg-slate-900 rounded-lg h-60 relative"
+            >
                 <Image
                     src={`https:${thumbnail.fields.file.url}`}
-                    width={600}
-                    height={400}
+                    layout="fill"
                     objectFit="cover"
                     alt="Project thumbnail image"
-                    className="rounded-lg h-80 absolute inset-0 hover:opacity-50"
+                    className="rounded-lg hover:opacity-40"
                 />
             </a>
             <header className="text-xl font-bold my-2">

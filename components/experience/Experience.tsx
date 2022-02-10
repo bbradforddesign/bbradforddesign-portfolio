@@ -21,11 +21,13 @@ export const Experience: React.FC<Props> = ({
         <section className="section-container" id="Experience">
             <h2 className="section-header">Experience</h2>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
-                <div>
-                    <div className="w-full body-text">
+                <div className="flex flex-col md:w-4/5">
+                    <div className="body-text">
                         {text && documentToReactComponents(text)}
                     </div>
-                    <button className="solid-button mt-4">View Resume</button>
+                    <button className="solid-button self-center mt-4">
+                        View Resume
+                    </button>
                 </div>
                 <div className="flex flex-col gap-4">
                     {languages && (
