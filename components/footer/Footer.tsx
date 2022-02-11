@@ -28,6 +28,8 @@ export const Footer: React.FC<Props> = ({ links }) => {
             <ul className="flex gap-4">{renderSocialLinks}</ul>
             <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                name="Dark mode toggle"
+                aria-label="Dark mode toggle"
             >
                 <Icon icon="lightbulb" />
             </button>
