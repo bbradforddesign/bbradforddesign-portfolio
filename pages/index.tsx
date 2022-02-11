@@ -69,15 +69,8 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
             <Head>
                 <title>bbradforddesign</title>
                 <meta name="description" content="Blake Bradford" />
-                <link rel="icon" href="/favicon.ico" />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap"
-                    rel="stylesheet"
-                />
             </Head>
-
             <Navbar homepageLinks={homepageLinks} />
-
             <main>
                 <Hero text={hero} />
                 <About text={about} photo={headshot} />
@@ -91,7 +84,6 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
                 <Projects projects={projects} />
                 <Contact contact={contact} />
             </main>
-
             <Footer links={socialLinks} />
         </div>
     );
