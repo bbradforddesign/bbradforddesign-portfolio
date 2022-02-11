@@ -17,7 +17,12 @@ export const Footer: React.FC<Props> = ({ links }) => {
 
             return (
                 <li key={title} className="w-min">
-                    <a href={url} target="_blank" rel="noreferrer">
+                    <a
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={title}
+                    >
                         <Icon icon={title} />
                     </a>
                 </li>
