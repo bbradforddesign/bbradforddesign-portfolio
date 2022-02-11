@@ -32,7 +32,6 @@ export const getStaticProps = async () => {
         "LBrW2sfLs2xkMbx4o2jJU"
     );
 
-    console.log(response.fields);
     return {
         props: {
             fields: response.fields,
