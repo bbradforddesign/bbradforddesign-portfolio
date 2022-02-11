@@ -16,10 +16,12 @@ export const SkillList: React.FC<Props> = ({ title, list }) => {
             );
         });
 
-    return (
+    return title ? (
         <section className="w-full">
-            {title && <h3 className="text-xl font-bold my-2">{title}</h3>}
+            <h3 className="text-xl font-bold my-2">{title}</h3>
             <ul className="flex gap-2 flex-wrap">{renderSkills()}</ul>
         </section>
+    ) : (
+        <ul className="my-4 w-full flex gap-2 flex-wrap">{renderSkills()}</ul>
     );
 };

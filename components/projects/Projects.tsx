@@ -1,5 +1,5 @@
 import { IProject } from "../../@types/generated/contentful";
-import { ProjectCard } from "./projectCard/ProjectCard";
+import { SummaryCard } from "./summaryCard/SummaryCard";
 
 type Props = {
     projects: IProject[];
@@ -11,7 +11,7 @@ export const Projects: React.FC<Props> = ({ projects }) => {
 
         return (
             <li key={e.sys.id} className="w-full">
-                <ProjectCard
+                <SummaryCard
                     thumbnail={thumbnail}
                     title={title}
                     url={url}

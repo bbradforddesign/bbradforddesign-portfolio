@@ -4,7 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { SkillList } from "../../skillList/SkillList";
 import Image from "next/image";
 
-export const ProjectCard: React.FC<IProjectFields> = ({
+export const SummaryCard: React.FC<IProjectFields> = ({
     thumbnail,
     title,
     url,
@@ -33,10 +33,7 @@ export const ProjectCard: React.FC<IProjectFields> = ({
             <div className="project-card-summary my-2 ml-4 w-auto max-w-prose md:mr-4">
                 {documentToReactComponents(summary)}
             </div>
-            <section>
-                <h4 className="text-md font-bold my-2">Tools & Technologies</h4>
-                <SkillList list={technologies} />
-            </section>
+            <SkillList list={technologies} />
         </section>
     );
 };
