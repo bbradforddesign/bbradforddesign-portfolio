@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-type ContactFields = {
+export type ContactFields = {
     name: string;
     email: string;
     message: string;
