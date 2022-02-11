@@ -61,13 +61,9 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
         databases,
         tools,
         projects,
+        contact,
+        socialLinks,
     } = fields;
-
-    const footerLinks = [
-        { icon: "github", url: "https://github.com" },
-        { icon: "linkedin", url: "https://linkedin.com" },
-        { icon: "email", url: "mailto:test@example.com" },
-    ];
 
     return (
         <div className="dark:bg-slate-900">
@@ -94,10 +90,10 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
                     tools={tools}
                 />
                 <Projects projects={projects} />
-                <Contact />
+                <Contact contact={contact} />
             </main>
 
-            <Footer links={footerLinks} />
+            <Footer links={socialLinks} />
         </div>
     );
 };

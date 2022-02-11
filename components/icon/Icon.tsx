@@ -7,13 +7,13 @@ type Props = {
 
 export const Icon: React.FC<Props> = ({ icon }) => {
     switch (icon) {
-        case "github":
+        case "GitHub":
             return <SiGithub className="text-2xl" />;
-        case "linkedin":
+        case "LinkedIn":
             return <SiLinkedin className="text-2xl" />;
-        case "email":
+        case "Email":
             return <SiGmail className="text-2xl" />;
-        case "lightbulb":
+        case "Lightbulb":
             return <FaLightbulb className="text-3xl dark:text-yellow-300" />;
         default:
             return <p className="italic">Unknown Icon</p>;
