@@ -12,8 +12,6 @@ const Template: ComponentStory<typeof SummaryCard> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    bullets: ["testing", "data"],
     title: "Test Project",
-    tools: ["css", "go"],
     technologies: ["html", "react", "vue"],
 };

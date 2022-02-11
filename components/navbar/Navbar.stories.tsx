@@ -16,10 +16,5 @@ const Template: ComponentStory<typeof Navbar> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    links: [
-        { display: "About", url: "#" },
-        { display: "Job", url: "#" },
-        { display: "Projects", url: "#" },
-        { display: "Contact", url: "#" },
-    ],
+    homepageLinks: ["About", "Experience", "Projects", "Contact"],
 };

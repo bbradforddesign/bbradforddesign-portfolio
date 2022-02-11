@@ -9,8 +9,4 @@ export default {
 const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-    introduction: "Hello! My name is...",
-    name: "Blake Bradford",
-    summary: "...and I'm a full-stack developer from Kansas City.",
-};
+Default.args = {};

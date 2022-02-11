@@ -2,8 +2,8 @@
     "name": "bbradforddesign",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "contentful-types && next build",
+        "dev": "npm run contentful-types && next dev",
+        "build": "npm run contentful-types && next build",
         "start": "next start",
         "lint": "next lint",
         "storybook": "start-storybook -p 6006",
