@@ -41,6 +41,8 @@ const contactHandler = async (
                     resolve(success);
                 }
             });
+        }).catch(() => {
+            "invalid configuration";
         });
 
         await new Promise((resolve, reject) => {
@@ -64,6 +66,8 @@ const contactHandler = async (
                     }
                 }
             );
+        }).catch(() => {
+            throw "error while sending mail";
         });
 
         res.status(200).json({ message: "ok" });

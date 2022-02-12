@@ -34,7 +34,7 @@ export const Experience: React.FC<Props> = ({
                         rel="noreferrer"
                         aria-label="Full Resume"
                     >
-                        <button className="solid-button self-center mt-4">
+                        <button className="solid-button self-center mt-4 w-36">
                             Full Resume
                         </button>
                     </a>
