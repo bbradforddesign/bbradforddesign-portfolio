@@ -3,7 +3,8 @@ import type { ContactFields } from "../../components/contact/contactForm/Contact
 import nodemailer from "nodemailer";
 
 type Response = {
-    message: string;
+    message?: string;
+    error?: string;
 };
 
 const contactHandler = async (
@@ -42,7 +43,7 @@ const contactHandler = async (
                 }
             });
         }).catch(() => {
-            "invalid configuration";
+            throw "invalid Nodemailer config";
         });
 
         await new Promise((resolve, reject) => {
@@ -67,13 +68,13 @@ const contactHandler = async (
                 }
             );
         }).catch(() => {
-            throw "error while sending mail";
+            throw "error while sending message";
         });
 
-        res.status(200).json({ message: "ok" });
+        res.status(200).json({ message: "message sent" });
     } catch (err) {
         console.log(err);
-        res.status(500).json({ message: "failed to send message" });
+        res.status(500).send({ error: "server error" });
     }
 };
 
