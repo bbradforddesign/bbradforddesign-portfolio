@@ -1,24 +1,15 @@
-import { useState, useLayoutEffect } from "react";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
-
-import { useWindowSize } from "../../shared/hooks";
 
 type Props = {
     homepageLinks: string[];
 };
 
 export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
-    const [viewNavLinks, setViewNavLinks] = useState<boolean>(false);
-    const [viewAnimation, setViewAnimation] = useState<boolean>(false);
-    const [width, height] = useWindowSize();
+    const [openNav, setOpenNav] = useState<boolean>(false);
 
-    useLayoutEffect(() => {
-        setViewAnimation(false);
-    }, [width]);
-
-    // render links to same-page components; not generated pages
-    // uses Link to take advantage of Next's routing
+    // render links to homepage sections; not generated pages
     const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="m-2 lg:my-0" key={e}>
             <Link href={`#${e}`}>
@@ -28,11 +19,6 @@ export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
             </Link>
         </li>
     ));
-
-    const handleMenuButton = () => {
-        setViewNavLinks((viewNavLinks) => !viewNavLinks);
-        setViewAnimation(true);
-    };
 
     return (
         <nav className="flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 opacity-95 backdrop-blur-lg bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
@@ -44,20 +30,20 @@ export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
                 </Link>
                 <GiHamburgerMenu
                     className={`text-xl mr-2 ${
-                        viewNavLinks
-                            ? `rotate-90 ${
-                                  viewAnimation && "animate-menu-active"
-                              }`
-                            : `${viewAnimation && "animate-menu-inactive"}`
+                        openNav
+                            ? "rotate-90 animate-menu-active"
+                            : "animate-menu-inactive"
                     } lg:hidden`}
-                    onClick={handleMenuButton}
+                    onClick={() => setOpenNav((openNav) => !openNav)}
                 />
             </div>
-            {(width >= 1024 || viewNavLinks) && (
-                <ul className="flex flex-col w-full absolute top-14 left-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex-row lg:w-auto">
-                    {renderHomepageLinks}
-                </ul>
-            )}
+            <ul
+                className={`${openNav || "hidden"} ${
+                    !openNav || "flex"
+                } flex-col w-full absolute top-14 left-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex lg:flex-row lg:w-auto`}
+            >
+                {renderHomepageLinks}
+            </ul>
         </nav>
     );
 };
