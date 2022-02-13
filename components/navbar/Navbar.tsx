@@ -38,8 +38,8 @@ export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
                 </button>
             </div>
             <ul
-                className={`${openNav || "hidden"} ${
-                    !openNav || "flex"
+                className={`${
+                    openNav ? "flex" : "hidden"
                 } flex-col w-full absolute top-14 left-0 pb-4 lg:pb-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex lg:flex-row lg:w-auto`}
             >
                 {renderHomepageLinks}
