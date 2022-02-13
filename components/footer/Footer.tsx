@@ -1,19 +1,22 @@
 import { useTheme } from "next-themes";
-import { ISocialLink } from "../../@types/generated/contentful";
-
 import { Icon } from "../icon/Icon";
 
-type Props = {
-    links?: ISocialLink[];
-};
-
-export const Footer: React.FC<Props> = ({ links }) => {
+export const Footer: React.FC = () => {
     const { theme, setTheme } = useTheme();
+
+    const links = [
+        { title: "GitHub", url: "https://github.com/bbradforddesign" },
+        {
+            title: "LinkedIn",
+            url: "https://www.linkedin.com/in/blake-bradford/",
+        },
+        { title: "Email", url: "mailto:bbradforddesign@gmail.com" },
+    ];
 
     const renderSocialLinks =
         links &&
         links.map((e) => {
-            const { title, url } = e.fields;
+            const { title, url } = e;
 
             return (
                 <li key={title} className="w-min">
