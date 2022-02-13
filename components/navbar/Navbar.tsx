@@ -1,38 +1,21 @@
-import { useState, useLayoutEffect } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
 import Link from "next/link";
-
-import { useWindowSize } from "../../shared/hooks";
 
 type Props = {
     homepageLinks: string[];
 };
 
 export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
-    const [viewNavLinks, setViewNavLinks] = useState<boolean>(false);
-    const [viewAnimation, setViewAnimation] = useState<boolean>(false);
-    const [width, height] = useWindowSize();
+    const [openNav, setOpenNav] = useState<boolean>(false);
 
-    useLayoutEffect(() => {
-        setViewAnimation(false);
-    }, [width]);
-
-    // render links to same-page components; not generated pages
-    // uses Link to take advantage of Next's routing
+    // render links to homepage sections; not generated pages
     const renderHomepageLinks = homepageLinks.map((e) => (
-        <li className="m-2 lg:my-0" key={e}>
+        <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
             <Link href={`#${e}`}>
-                <a className="font-semibold hover:text-blue-600 dark:hover:text-yellow-300">
-                    {e}
-                </a>
+                <a className="nav-link">{e}</a>
             </Link>
         </li>
     ));
-
-    const handleMenuButton = () => {
-        setViewNavLinks((viewNavLinks) => !viewNavLinks);
-        setViewAnimation(true);
-    };
 
     return (
         <nav className="flex flex-col justify-between items-start p-4 w-full sticky top-0 -mb-12 z-10 opacity-95 backdrop-blur-lg bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
@@ -42,22 +25,25 @@ export const Navbar: React.FC<Props> = ({ homepageLinks }) => {
                         <h1 className="font-bold text-xl">bbradforddesign</h1>
                     </a>
                 </Link>
-                <GiHamburgerMenu
-                    className={`text-xl mr-2 ${
-                        viewNavLinks
-                            ? `rotate-90 ${
-                                  viewAnimation && "animate-menu-active"
-                              }`
-                            : `${viewAnimation && "animate-menu-inactive"}`
-                    } lg:hidden`}
-                    onClick={handleMenuButton}
-                />
+                <button
+                    className="lg:hidden relative h-6 w-8"
+                    aria-label="navigation toggle"
+                    onClick={() => setOpenNav((openNav) => !openNav)}
+                >
+                    <span
+                        className={`menu-button ${
+                            openNav ? "menu-active" : "menu-inactive"
+                        }`}
+                    />
+                </button>
             </div>
-            {(width >= 1024 || viewNavLinks) && (
-                <ul className="flex flex-col w-full absolute top-14 left-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex-row lg:w-auto">
-                    {renderHomepageLinks}
-                </ul>
-            )}
+            <ul
+                className={`${
+                    openNav ? "flex" : "hidden"
+                } flex-col w-full absolute top-14 left-0 pb-4 lg:pb-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex lg:flex-row lg:w-auto`}
+            >
+                {renderHomepageLinks}
+            </ul>
         </nav>
     );
 };
