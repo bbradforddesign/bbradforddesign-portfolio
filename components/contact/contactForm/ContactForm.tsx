@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 
-export type ContactFields = {
-    name: string;
-    email: string;
-    message: string;
-};
-
 type FormState = {
     error: boolean;
     sent: boolean;
@@ -21,7 +15,7 @@ export const ContactForm: React.FC = () => {
         pending: false,
     });
 
-    // post to api, display error message if failed to send
+    // post to api, trigger pending state, then display helper text on response
     const handleMessageSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
 
@@ -41,6 +35,7 @@ export const ContactForm: React.FC = () => {
             body: JSON.stringify(dataObject),
         });
 
+        // update form appearance; display appropriate success/error message
         setFormState((formState) => ({
             ...formState,
             pending: false,

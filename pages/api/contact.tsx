@@ -1,6 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import type { ContactFields } from "../../components/contact/contactForm/ContactForm";
 import nodemailer from "nodemailer";
+
+// fields contained in request body
+type ContactFields = {
+    name: string;
+    email: string;
+    message: string;
+};
 
 type Response = {
     message?: string;
@@ -12,7 +18,6 @@ const contactHandler = async (
     res: NextApiResponse<Response>
 ) => {
     try {
-        // enforce types from contact form component
         const { name, email, message } = req.body as ContactFields;
 
         const transporter = nodemailer.createTransport({
