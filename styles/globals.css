@@ -25,6 +25,54 @@ h4 {
     font-family: "Lora", serif;
 }
 
+.menu-line {
+    @apply h-1 w-full rounded-full bg-black dark:bg-white;
+}
+
+.menu-button {
+    @apply block w-full;
+}
+
+.menu-inactive {
+    @apply menu-line;
+}
+
+.menu-button::before,
+.menu-button::after {
+    @apply block absolute menu-line transition ease-in;
+    content: "";
+}
+
+.menu-inactive::before {
+    @apply -translate-y-2.5;
+}
+
+.menu-inactive::after {
+    @apply translate-y-2.5;
+}
+
+.menu-active::before {
+    @apply rotate-45;
+}
+
+.menu-active::after {
+    @apply -rotate-45;
+}
+
+.nav-link {
+    @apply relative font-semibold text-lg hover:text-blue-600 dark:hover:text-yellow-300;
+}
+
+.nav-link::after {
+    @apply absolute block -bottom-1 h-0.5 w-full bg-black dark:bg-white scale-x-0 transition ease-in origin-left;
+    content: "";
+}
+
+.nav-link:hover::after {
+    @apply scale-x-100 bg-blue-600 dark:bg-yellow-300;
+    content: "";
+}
+
 .required-label::after {
     content: " *";
     @apply text-red-500;
