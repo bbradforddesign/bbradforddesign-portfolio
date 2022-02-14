@@ -15,6 +15,4 @@ const Template: ComponentStory<typeof Navbar> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-    homepageLinks: ["About", "Experience", "Projects", "Contact"],
-};
+Default.args = {};

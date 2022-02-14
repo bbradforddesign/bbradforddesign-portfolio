@@ -7,7 +7,6 @@ import { About } from "../components/about/About";
 import { Experience } from "../components/experience/Experience";
 import { Projects } from "../components/projects/Projects";
 import { Contact } from "../components/contact/Contact";
-import { Footer } from "../components/footer/Footer";
 import { IHomepage, IHomepageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
@@ -51,32 +50,28 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
         tools,
         projects,
         contact,
-        socialLinks,
         resume,
     } = fields;
 
     return (
-        <div className="dark:bg-slate-900">
+        <>
             <Head>
                 <title>bbradforddesign</title>
                 <meta name="description" content="Blake Bradford" />
             </Head>
-            <main>
-                <Hero text={hero} />
-                <About text={about} photo={headshot} />
-                <Experience
-                    text={experience}
-                    languages={languages}
-                    frameworks={frameworks}
-                    databases={databases}
-                    tools={tools}
-                    resume={resume}
-                />
-                <Projects projects={projects} />
-                <Contact contact={contact} />
-            </main>
-            <Footer links={socialLinks} />
-        </div>
+            <Hero text={hero} />
+            <About text={about} photo={headshot} />
+            <Experience
+                text={experience}
+                languages={languages}
+                frameworks={frameworks}
+                databases={databases}
+                tools={tools}
+                resume={resume}
+            />
+            <Projects projects={projects} />
+            <Contact contact={contact} />
+        </>
     );
 };
 
