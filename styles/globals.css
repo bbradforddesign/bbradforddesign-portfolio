@@ -61,7 +61,15 @@ h4 {
 }
 
 .nav-link {
-    @apply relative font-semibold text-lg hover:text-blue-600 dark:hover:text-yellow-300;
+    @apply relative font-semibold text-lg;
+}
+
+.nav-link:hover {
+    @apply active-link;
+}
+
+.active-link {
+    @apply text-blue-600 dark:text-yellow-300;
 }
 
 .nav-link::after {
@@ -69,7 +77,7 @@ h4 {
     content: "";
 }
 
-.nav-link:hover::after {
+.active-link:hover::after {
     @apply scale-x-100 bg-blue-600 dark:bg-yellow-300;
     content: "";
 }

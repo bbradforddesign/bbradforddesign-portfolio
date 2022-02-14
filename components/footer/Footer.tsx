@@ -1,9 +1,6 @@
-import { useTheme } from "next-themes";
 import { Icon } from "../icon/Icon";
 
 export const Footer: React.FC = () => {
-    const { theme, setTheme } = useTheme();
-
     const links = [
         { title: "GitHub", url: "https://github.com/bbradforddesign" },
         {
@@ -33,15 +30,8 @@ export const Footer: React.FC = () => {
         });
 
     return (
-        <footer className="w-full p-4 bg-white dark:bg-slate-900 opacity-95 sticky bottom-0 flex justify-between">
+        <footer className="w-full p-4 bg-white dark:bg-slate-900 flex justify-between">
             <ul className="flex gap-4">{renderSocialLinks}</ul>
-            <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                name="Dark mode toggle"
-                aria-label="Dark mode toggle"
-            >
-                <Icon icon="Lightbulb" />
-            </button>
         </footer>
     );
 };
