@@ -16,7 +16,7 @@ export const Navbar: React.FC = () => {
     // render links to homepage sections; not generated pages
     const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
-            <Link href={`/#${e}`}>
+            <Link shallow={true} href={`/#${e}`}>
                 <a className="nav-link">{e}</a>
             </Link>
         </li>
