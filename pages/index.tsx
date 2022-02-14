@@ -2,7 +2,6 @@ import { createClient, Entry } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Layout } from "../components/layout/Layout";
 import { Hero } from "../components/hero/Hero";
 import { About } from "../components/about/About";
 import { Experience } from "../components/experience/Experience";
@@ -55,7 +54,7 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
     } = fields;
 
     return (
-        <Layout>
+        <>
             <Head>
                 <title>bbradforddesign</title>
                 <meta name="description" content="Blake Bradford" />
@@ -72,7 +71,7 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
             />
             <Projects projects={projects} />
             <Contact contact={contact} />
-        </Layout>
+        </>
     );
 };
 
