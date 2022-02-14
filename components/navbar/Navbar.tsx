@@ -16,14 +16,14 @@ export const Navbar: React.FC = () => {
     // render links to homepage sections; not generated pages
     const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
-            <Link shallow={true} scroll={false} href={`#${e}`}>
+            <Link shallow={true} href={`#${e}`}>
                 <a className="nav-link">{e}</a>
             </Link>
         </li>
     ));
 
     return (
-        <nav className="flex flex-col justify-between items-start p-4 w-full bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
+        <nav className="flex flex-col justify-between items-start p-4 w-full opacity-95 bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="#">
                     <a>
