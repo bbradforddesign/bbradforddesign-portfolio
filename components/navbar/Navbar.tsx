@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
     ));
 
     return (
-        <nav className="flex flex-col justify-between items-start p-4 w-full opacity-95 backdrop-blur-lg bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
+        <nav className="flex flex-col justify-between items-start p-4 w-full bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <h1 className="font-bold text-xl">
                     <Link href={{ pathname: "/", hash: "" }}>
