@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 
 export const Navbar: React.FC = () => {
     const [openNav, setOpenNav] = useState<boolean>(false);
-
-    const router = useRouter();
 
     // each link name keyword is tied to a specific component; constant is pre-defined for simplicity
     // links point to sections on homepage, not separate pages
@@ -20,13 +17,7 @@ export const Navbar: React.FC = () => {
     const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
             <Link shallow={true} href={`#${e}`}>
-                <a
-                    className={`nav-link ${
-                        router.asPath.slice(2) === e && "active-link"
-                    }`}
-                >
-                    {e}
-                </a>
+                <a className="nav-link">{e}</a>
             </Link>
         </li>
     ));
