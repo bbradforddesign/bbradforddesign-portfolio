@@ -15,13 +15,9 @@ export const Navbar: React.FC = () => {
 
     // render links to homepage sections; not generated pages
     const renderHomepageLinks = homepageLinks.map((e) => (
-        <li className="nav-link ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
-            <Link
-                shallow={true}
-                scroll={false}
-                href={{ pathname: "/", hash: e }}
-            >
-                {e}
+        <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
+            <Link shallow={true} scroll={false} href={`#${e}`}>
+                <a className="nav-link">{e}</a>
             </Link>
         </li>
     ));
@@ -29,11 +25,11 @@ export const Navbar: React.FC = () => {
     return (
         <nav className="flex flex-col justify-between items-start p-4 w-full bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
-                <h1 className="font-bold text-xl">
-                    <Link href={{ pathname: "/", hash: "" }}>
-                        bbradforddesign
-                    </Link>
-                </h1>
+                <Link href="#">
+                    <a>
+                        <h1 className="font-bold text-xl">bbradforddesign</h1>
+                    </a>
+                </Link>
                 <button
                     className="lg:hidden relative h-6 w-8"
                     aria-label="navigation toggle"
