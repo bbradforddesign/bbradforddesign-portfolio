@@ -47,8 +47,8 @@ const contactHandler = async (
                     resolve(success);
                 }
             });
-        }).catch(() => {
-            throw "invalid Nodemailer config";
+        }).catch((err) => {
+            throw err;
         });
 
         await new Promise((resolve, reject) => {
@@ -72,8 +72,8 @@ const contactHandler = async (
                     }
                 }
             );
-        }).catch(() => {
-            throw "error while sending message";
+        }).catch((err) => {
+            throw err;
         });
 
         res.status(200).json({ message: "message sent" });

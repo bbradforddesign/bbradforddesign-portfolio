@@ -18,30 +18,49 @@ export const ContactForm: React.FC = () => {
     // post to api, trigger pending state, then display helper text on response
     const handleMessageSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault();
-
-        // trigger loading state
         setFormState((formState) => ({ ...formState, pending: true }));
 
         // retrieve and package input values
         const formData = new FormData(e.target as HTMLFormElement);
         const dataObject = Object.fromEntries(formData);
 
-        const resp = await fetch("/api/contact", {
-            method: "POST",
-            headers: {
-                Accept: "application/json, text/plain, */*",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(dataObject),
-        });
+        // cancel request after prolonged server inactivity
+        const controller = new AbortController();
+        const timeout = setTimeout(() => {
+            controller.abort();
+            console.error("request timed out");
+        }, 8000);
 
-        // update form appearance; display appropriate success/error message
-        setFormState((formState) => ({
-            ...formState,
-            pending: false,
-            error: resp.status !== 200,
-            sent: true,
-        }));
+        try {
+            const resp = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json, text/plain, */*",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(dataObject),
+                signal: controller.signal,
+            });
+            clearTimeout(timeout);
+            if (resp.status !== 200) {
+                throw new Error("failed to send message");
+            }
+            // update form appearance; display helper message
+            setFormState((formState) => ({
+                ...formState,
+                pending: false,
+                error: false,
+                sent: true,
+            }));
+        } catch (err) {
+            console.error(err);
+            setFormState((formState) => ({
+                ...formState,
+                pending: false,
+                error: true,
+                sent: true,
+            }));
+        }
     };
 
     const renderButtonContent = () => {

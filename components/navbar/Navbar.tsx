@@ -4,8 +4,7 @@ import Link from "next/link";
 export const Navbar: React.FC = () => {
     const [openNav, setOpenNav] = useState<boolean>(false);
 
-    // each link name keyword is tied to a specific component; constant is pre-defined for simplicity
-    // links point to sections on homepage, not separate pages
+    // using an array to generate list of links for ease of styling
     const homepageLinks: string[] = [
         "About",
         "Experience",
@@ -13,7 +12,7 @@ export const Navbar: React.FC = () => {
         "Contact",
     ];
 
-    // render links to homepage sections; not generated pages
+    // render links to homepage sections; not separate pages
     const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
             <Link shallow={true} href={`#${e}`}>
