@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
         });
 
     return (
-        <footer className="w-full p-4 bg-white dark:bg-slate-900 flex justify-between">
+        <footer className="w-full p-4 bg-slate-50 dark:bg-slate-900 flex justify-between">
             <ul className="flex gap-4">{renderSocialLinks}</ul>
         </footer>
     );

@@ -14,14 +14,14 @@ export const SummaryCard: React.FC<IProjectFields> = ({
     return (
         <section className="w-full relative">
             <div
-                className={`relative h-60 md:h-80 lg:h-96 w-5/6 shadow-md rounded-md`}
+                className={`relative h-60 md:h-80 lg:h-96 w-5/6 shadow-md rounded-md bg-slate-900`}
             >
                 <Image
                     src={`https:${thumbnail.fields.file.url}`}
                     layout="fill"
                     objectFit="cover"
                     alt="Project thumbnail image"
-                    className="rounded-md"
+                    className="rounded-md opacity-50 hover:opacity-100 transition"
                 />
             </div>
             <div

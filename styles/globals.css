@@ -119,7 +119,7 @@ h4 {
 }
 
 .card {
-    @apply p-4 rounded-xl shadow-md dark:bg-slate-800;
+    @apply p-4 rounded-xl shadow-md bg-white dark:bg-slate-800;
 }
 
 .project-card-summary ul {

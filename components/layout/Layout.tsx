@@ -13,7 +13,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
             <header className="sticky z-40 absolute top-0 -mb-12">
                 <Navbar />
             </header>
-            <main className="dark:bg-slate-900">{children}</main>
+            <main className="bg-slate-50 dark:bg-slate-900">{children}</main>
             <ThemeToggle />
             <Footer />
         </ThemeProvider>

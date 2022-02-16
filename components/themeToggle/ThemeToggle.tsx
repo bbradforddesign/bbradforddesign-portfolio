@@ -10,7 +10,7 @@ export const ThemeToggle = () => {
             }}
             name="Dark mode toggle"
             aria-label="Dark mode toggle"
-            className="fixed right-4 bottom-4 bg-white dark:bg-slate-800 rounded-full p-2 shadow-md"
+            className="fixed z-20 right-4 bottom-4 bg-white dark:bg-slate-800 rounded-full p-2 shadow-md"
         >
             <Icon icon="Lightbulb" />
         </button>

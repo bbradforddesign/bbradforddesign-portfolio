@@ -22,7 +22,7 @@ export const Navbar: React.FC = () => {
     ));
 
     return (
-        <nav className="flex flex-col justify-between items-start p-4 w-full opacity-95 bg-white dark:bg-slate-900 border-b-2 lg:flex-row lg:items-center">
+        <nav className="flex flex-col justify-between items-start p-4 w-full opacity-95 bg-slate-50 dark:bg-slate-900 shadow-md lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="#">
                     <a>
@@ -44,7 +44,7 @@ export const Navbar: React.FC = () => {
             <ul
                 className={`${
                     openNav ? "flex" : "hidden"
-                } flex-col w-full absolute top-14 left-0 pb-4 lg:pb-0 bg-white dark:bg-slate-900 border-b-2 lg:relative lg:top-0 lg:border-none lg:flex lg:flex-row lg:w-auto`}
+                } flex-col w-full absolute top-14 left-0 pb-4 lg:pb-0 shadow-md lg:shadow-none bg-slate-50 dark:bg-slate-900 lg:relative lg:top-0 lg:flex lg:flex-row lg:w-auto`}
             >
                 {renderHomepageLinks}
             </ul>
