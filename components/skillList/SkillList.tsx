@@ -9,7 +9,7 @@ export const SkillList: React.FC<Props> = ({ title, list }) => {
             return (
                 <li
                     key={e}
-                    className="p-1 px-2 rounded-md highlight-background"
+                    className="p-1 px-2 rounded-md bg-slate-300 dark:bg-slate-600"
                 >
                     <p className="text-sm font-semibold">{e}</p>
                 </li>

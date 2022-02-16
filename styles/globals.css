@@ -139,10 +139,6 @@ h4 {
     font-family: "Lora", serif;
 }
 
-.highlight-background {
-    @apply bg-slate-300 dark:bg-slate-600;
-}
-
 .solid-button {
     @apply flex justify-center items-center font-bold text-base text-white shadow-md dark:text-slate-900 bg-blue-600 dark:bg-yellow-300 hover:opacity-50 rounded-md py-2 px-2;
 }

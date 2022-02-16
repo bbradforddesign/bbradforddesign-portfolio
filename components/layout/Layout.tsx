@@ -10,7 +10,7 @@ type Props = {
 export const Layout: React.FC<Props> = ({ children }) => {
     return (
         <ThemeProvider attribute="class">
-            <header className="sticky z-10 absolute top-0 -mb-12">
+            <header className="sticky z-40 absolute top-0 -mb-12">
                 <Navbar />
             </header>
             <main className="dark:bg-slate-900">{children}</main>
