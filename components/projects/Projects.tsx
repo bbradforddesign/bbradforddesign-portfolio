@@ -7,7 +7,8 @@ type Props = {
 
 export const Projects: React.FC<Props> = ({ projects }) => {
     const renderProjects = projects.map((project) => {
-        const { thumbnail, title, url, summary, technologies } = project.fields;
+        const { thumbnail, title, url, summary, technologies, slug } =
+            project.fields;
 
         return (
             <li key={project.sys.id} className="w-full">
@@ -17,6 +18,7 @@ export const Projects: React.FC<Props> = ({ projects }) => {
                     url={url}
                     summary={summary}
                     technologies={technologies}
+                    slug={slug}
                 />
             </li>
         );

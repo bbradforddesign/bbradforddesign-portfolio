@@ -31,9 +31,7 @@ export const getStaticProps = async () => {
     );
 
     return {
-        props: {
-            fields: response.fields,
-        },
+        props: response,
         revalidate: 10,
     };
 };

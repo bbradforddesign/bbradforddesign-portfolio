@@ -1,5 +1,6 @@
 import { IProjectFields } from "../../../@types/generated/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import Link from "next/link";
 
 import { SkillList } from "../../skillList/SkillList";
 import Image from "next/image";
@@ -10,6 +11,7 @@ export const SummaryCard: React.FC<IProjectFields> = ({
     url,
     summary,
     technologies,
+    slug,
 }) => {
     return (
         <section className="w-full relative">
@@ -46,7 +48,9 @@ export const SummaryCard: React.FC<IProjectFields> = ({
                         View Project
                     </a>
                     <span className="font-bold">|</span>
-                    <a className="nav-link">Learn More</a>
+                    <Link href={`projects/${slug}`}>
+                        <a className="nav-link">Learn More</a>
+                    </Link>
                 </div>
             </div>
         </section>
