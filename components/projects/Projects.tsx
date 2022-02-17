@@ -15,7 +15,7 @@ export const Projects: React.FC<Props> = ({ projects }) => {
     });
 
     return (
-        <section className="section-container" id="Projects">
+        <section className="section-container py-12" id="Projects">
             <header className="self-start my-8">
                 <h2 className="section-header">Projects</h2>
             </header>

@@ -10,7 +10,7 @@ type Props = {
 
 export const About: React.FC<Props> = ({ text, photo }) => {
     return (
-        <section className="section-container" id="About">
+        <section className="section-container py-12" id="About">
             <header className="self-start my-8">
                 <h2 className="section-header">About</h2>
             </header>

@@ -111,7 +111,7 @@ h4 {
 
 .section-container {
     min-height: calc(100vh - theme("spacing.80"));
-    @apply flex flex-col justify-center items-center w-full max-w-6xl h-auto mx-auto my-12;
+    @apply flex flex-col justify-center items-center w-full max-w-6xl h-auto mx-auto;
 }
 
 .section-header {

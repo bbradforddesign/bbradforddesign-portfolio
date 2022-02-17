@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { createClient, EntryCollection } from "contentful";
@@ -79,6 +80,8 @@ export const getStaticProps = async ({
 };
 
 const ProjectDetails: React.FC<IProject> = ({ fields }) => {
+    useEffect(() => window.scrollTo(0, 0), []);
+
     if (!fields || !fields.details) {
         return <div>Not found!</div>;
     }
@@ -86,7 +89,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
     const { title, details, thumbnail } = fields;
 
     return (
-        <article className="mx-auto w-full flex flex-col justify-start items-center max-w-6xl">
+        <article className="section-container">
             <header className="my-6 self-start">
                 <h2 className="section-header mb-6">{title}</h2>
                 <Link href="/#Projects">

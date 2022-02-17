@@ -21,7 +21,7 @@ export const Experience: React.FC<Props> = ({
     resume,
 }) => {
     return (
-        <section className="section-container" id="Experience">
+        <section className="section-container py-12" id="Experience">
             <header className="self-start my-8">
                 <h2 className="section-header">Experience</h2>
             </header>
