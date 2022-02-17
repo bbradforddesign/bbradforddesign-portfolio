@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { createClient, EntryCollection } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
@@ -81,13 +82,27 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
         return <div>Not found!</div>;
     }
 
-    const { title, details } = fields;
+    const { title, details, thumbnail } = fields;
 
     return (
-        <div className="section-container mt-16">
-            <h2>{title}</h2>
-            <div>{documentToReactComponents(details)}</div>
-        </div>
+        <article className="mx-auto min-h-screen w-full max-w-6xl flex flex-col justify-start items-center p-12">
+            <h2 className="section-header">{title}</h2>
+            <div className="grid lg:grid-cols-2">
+                <div className="lg:mx-8 max-w-xl">
+                    <Image
+                        src={`https:${thumbnail.fields.file.url}`}
+                        objectFit="cover"
+                        width={thumbnail.fields.file.details.image?.width}
+                        height={thumbnail.fields.file.details.image?.height}
+                        className="rounded-xl"
+                        alt={thumbnail.fields.description}
+                    />
+                </div>
+                <div className="body-text">
+                    {documentToReactComponents(details)}
+                </div>
+            </div>
+        </article>
     );
 };
 
