@@ -77,7 +77,7 @@ export const getStaticProps = async ({
 };
 
 const ProjectDetails: React.FC<IProject> = ({ fields }) => {
-    if (!fields) {
+    if (!fields || !fields.details) {
         return <div>Not found!</div>;
     }
 

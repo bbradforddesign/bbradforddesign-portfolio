@@ -5,14 +5,14 @@ import Link from "next/link";
 import { SkillList } from "../../skillList/SkillList";
 import Image from "next/image";
 
-export const SummaryCard: React.FC<IProjectFields> = ({
-    thumbnail,
-    title,
-    url,
-    summary,
-    technologies,
-    slug,
-}) => {
+type Props = {
+    fields: IProjectFields;
+};
+
+export const SummaryCard: React.FC<Props> = ({ fields }) => {
+    const { thumbnail, title, summary, technologies, url, details, slug } =
+        fields;
+
     return (
         <section className="w-full relative">
             <div
@@ -47,10 +47,14 @@ export const SummaryCard: React.FC<IProjectFields> = ({
                     >
                         View Project
                     </a>
-                    <span className="font-bold">|</span>
-                    <Link href={`projects/${slug}`}>
-                        <a className="nav-link">Learn More</a>
-                    </Link>
+                    {details && (
+                        <>
+                            <span className="font-bold">|</span>
+                            <Link href={`projects/${slug}`}>
+                                <a className="nav-link">Learn More</a>
+                            </Link>
+                        </>
+                    )}
                 </div>
             </div>
         </section>
