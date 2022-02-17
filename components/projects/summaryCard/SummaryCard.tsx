@@ -16,7 +16,7 @@ export const SummaryCard: React.FC<IProjectFields> = ({
     return (
         <section className="w-full relative">
             <div
-                className={`relative h-60 md:h-80 lg:h-96 w-5/6 shadow-md rounded-md bg-slate-900`}
+                className={`relative h-60 lg:h-80 w-5/6 shadow-md rounded-md bg-slate-900`}
             >
                 <Image
                     src={`https:${thumbnail.fields.file.url}`}
@@ -27,7 +27,7 @@ export const SummaryCard: React.FC<IProjectFields> = ({
                 />
             </div>
             <div
-                className={`z-10 absolute -bottom-24 md:-bottom-16 right-0 w-5/6 md:w-auto`}
+                className={`z-10 absolute -bottom-24 md:-bottom-16 right-0 w-5/6`}
             >
                 <div className="shadow-md bg-white dark:bg-slate-800 md:h-auto py-2 px-4 rounded-md mb-2">
                     <header className="text-xl font-bold my-2">

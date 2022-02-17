@@ -27,7 +27,9 @@ export const Projects: React.FC<Props> = ({ projects }) => {
     return (
         <section className="section-container" id="Projects">
             <h2 className="section-header">Projects</h2>
-            <ul className="w-full flex flex-col gap-36">{renderProjects}</ul>
+            <ul className="w-full grid lg:grid-cols-2 gap-y-36 gap-x-24">
+                {renderProjects}
+            </ul>
         </section>
     );
 };
