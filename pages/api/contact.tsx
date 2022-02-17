@@ -8,15 +8,12 @@ type ContactFields = {
     message: string;
 };
 
-type Response = {
+interface Response extends NextApiResponse {
     message?: string;
     error?: string;
-};
+}
 
-const contactHandler = async (
-    req: NextApiRequest,
-    res: NextApiResponse<Response>
-) => {
+const contactHandler = async (req: NextApiRequest, res: Response) => {
     try {
         const { name, email, message } = req.body as ContactFields;
 
