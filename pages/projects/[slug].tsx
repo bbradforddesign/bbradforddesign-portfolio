@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { createClient, EntryCollection } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
@@ -85,8 +86,13 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
     const { title, details, thumbnail } = fields;
 
     return (
-        <article className="mx-auto min-h-screen w-full max-w-6xl flex flex-col justify-start items-center p-12">
-            <h2 className="section-header">{title}</h2>
+        <article className="mx-auto w-full flex flex-col justify-start items-center max-w-6xl">
+            <header className="my-6 self-start">
+                <h2 className="section-header mb-6">{title}</h2>
+                <Link href="/#Projects">
+                    <a className="nav-link">Back to Projects</a>
+                </Link>
+            </header>
             <div className="grid lg:grid-cols-2">
                 <div className="lg:mx-8 max-w-xl">
                     <Image
@@ -97,8 +103,12 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                         className="rounded-xl"
                         alt={thumbnail.fields.description}
                     />
+                    <div className="flex gap-4">
+                        <p>Live App</p>
+                        <p>Source Code</p>
+                    </div>
                 </div>
-                <div className="body-text">
+                <div className="body-text flex flex-col">
                     {documentToReactComponents(details)}
                 </div>
             </div>

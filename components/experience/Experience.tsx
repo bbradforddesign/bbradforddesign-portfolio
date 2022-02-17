@@ -22,7 +22,9 @@ export const Experience: React.FC<Props> = ({
 }) => {
     return (
         <section className="section-container" id="Experience">
-            <h2 className="section-header">Experience</h2>
+            <header className="self-start my-8">
+                <h2 className="section-header">Experience</h2>
+            </header>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="flex flex-col md:w-4/5">
                     <div className="body-text w-full">

@@ -8,7 +8,7 @@ type Props = {
 export const Projects: React.FC<Props> = ({ projects }) => {
     const renderProjects = projects.map((project) => {
         return (
-            <li key={project.sys.id} className="w-full">
+            <li key={project.sys.id} className="w-full max-w-xl">
                 <SummaryCard fields={project.fields} />
             </li>
         );
@@ -16,8 +16,10 @@ export const Projects: React.FC<Props> = ({ projects }) => {
 
     return (
         <section className="section-container" id="Projects">
-            <h2 className="section-header">Projects</h2>
-            <ul className="w-full grid lg:grid-cols-2 gap-y-36 gap-x-24">
+            <header className="self-start my-8">
+                <h2 className="section-header">Projects</h2>
+            </header>
+            <ul className="w-full grid md:grid-cols-2 gap-y-36 gap-x-24">
                 {renderProjects}
             </ul>
         </section>
