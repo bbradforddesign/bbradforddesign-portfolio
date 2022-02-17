@@ -48,7 +48,7 @@ export const SummaryCard: React.FC<Props> = ({ fields }) => {
                     {details && (
                         <>
                             <span className="font-bold">|</span>
-                            <Link href={`projects/${slug}`}>
+                            <Link href={`/projects/${slug}`}>
                                 <a className="nav-link">Learn More</a>
                             </Link>
                         </>
