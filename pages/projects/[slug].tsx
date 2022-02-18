@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { createClient, EntryCollection } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
@@ -81,13 +84,57 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
         return <div>Not found!</div>;
     }
 
-    const { title, details } = fields;
+    const { title, details, thumbnail, url, sourceCode } = fields;
 
     return (
-        <div className="section-container mt-16">
-            <h2>{title}</h2>
-            <div>{documentToReactComponents(details)}</div>
-        </div>
+        <article className="section-container">
+            <header className="my-6 self-start">
+                <h2 className="section-header mb-6">{title}</h2>
+                <Link href="/#Projects">
+                    <a className="nav-link font-semibold text-lg">
+                        Back to Projects
+                    </a>
+                </Link>
+            </header>
+            <div className="grid lg:grid-cols-2">
+                <div className="lg:mx-8 max-w-xl">
+                    <Image
+                        src={`https:${thumbnail.fields.file.url}`}
+                        objectFit="cover"
+                        width={thumbnail.fields.file.details.image?.width}
+                        height={thumbnail.fields.file.details.image?.height}
+                        className="rounded-xl"
+                        alt={thumbnail.fields.description}
+                    />
+                    <div className="flex gap-2 font-semibold">
+                        <a
+                            href={url}
+                            className="nav-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Live Project
+                        </a>
+                        {sourceCode && (
+                            <>
+                                <span>|</span>
+                                <a
+                                    href={sourceCode}
+                                    className="nav-link"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Source Code
+                                </a>
+                            </>
+                        )}
+                    </div>
+                </div>
+                <div className="body-text flex flex-col">
+                    {documentToReactComponents(details)}
+                </div>
+            </div>
+        </article>
     );
 };
 

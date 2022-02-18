@@ -2,11 +2,11 @@ import { createClient, Entry } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Hero } from "../components/hero/Hero";
-import { About } from "../components/about/About";
-import { Experience } from "../components/experience/Experience";
-import { Projects } from "../components/projects/Projects";
-import { Contact } from "../components/contact/Contact";
+import { Hero } from "../components/index/hero/Hero";
+import { About } from "../components/index/about/About";
+import { Experience } from "../components/index/experience/Experience";
+import { Projects } from "../components/index/projects/Projects";
+import { Contact } from "../components/index/contact/Contact";
 import { IHomepage, IHomepageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {

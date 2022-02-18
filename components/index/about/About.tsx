@@ -10,8 +10,10 @@ type Props = {
 
 export const About: React.FC<Props> = ({ text, photo }) => {
     return (
-        <section className="section-container" id="About">
-            <h2 className="section-header">About</h2>
+        <section className="section-container py-12" id="About">
+            <header className="self-start my-8">
+                <h2 className="section-header">About</h2>
+            </header>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="flex justify-center max-h-96">
                     <Image

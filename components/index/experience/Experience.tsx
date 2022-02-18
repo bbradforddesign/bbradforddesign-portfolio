@@ -1,6 +1,6 @@
 import { Document } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { SkillList } from "../skillList/SkillList";
+import { SkillList } from "../../shared/skillList/SkillList";
 import { Asset } from "contentful";
 
 type Props = {
@@ -21,8 +21,10 @@ export const Experience: React.FC<Props> = ({
     resume,
 }) => {
     return (
-        <section className="section-container" id="Experience">
-            <h2 className="section-header">Experience</h2>
+        <section className="section-container py-12" id="Experience">
+            <header className="self-start my-8">
+                <h2 className="section-header">Experience</h2>
+            </header>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="flex flex-col md:w-4/5">
                     <div className="body-text w-full">
