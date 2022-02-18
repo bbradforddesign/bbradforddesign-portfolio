@@ -1,8 +1,8 @@
-import { IProjectFields } from "../../../@types/generated/contentful";
+import { IProjectFields } from "../../../../@types/generated/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Link from "next/link";
 
-import { SkillList } from "../../skillList/SkillList";
+import { SkillList } from "../../../shared/skillList/SkillList";
 import Image from "next/image";
 
 type Props = {
@@ -24,9 +24,7 @@ export const SummaryCard: React.FC<Props> = ({ fields }) => {
                     className="rounded-md"
                 />
             </div>
-            <div
-                className={`z-10 absolute -bottom-24 md:-bottom-16 right-0 w-5/6`}
-            >
+            <div className="z-10 absolute -bottom-24 md:-bottom-16 right-0 w-5/6">
                 <div className="shadow-md bg-white dark:bg-slate-800 md:h-auto py-2 px-4 rounded-md mb-2">
                     <header className="text-xl font-bold my-2">
                         <h3>{title}</h3>
@@ -38,18 +36,20 @@ export const SummaryCard: React.FC<Props> = ({ fields }) => {
                 </div>
                 <div className="flex justify-end gap-4">
                     <a
-                        className="nav-link"
+                        className="nav-link font-semibold"
                         href={url}
                         target="_blank"
                         rel="noreferrer"
                     >
-                        View Project
+                        Live Project
                     </a>
                     {details && (
                         <>
-                            <span className="font-bold">|</span>
+                            <span className="font-semibold">|</span>
                             <Link href={`/projects/${slug}`}>
-                                <a className="nav-link">Learn More</a>
+                                <a className="nav-link font-semibold">
+                                    Learn More
+                                </a>
                             </Link>
                         </>
                     )}

@@ -1,4 +1,4 @@
-import { IProject } from "../../@types/generated/contentful";
+import { IProject } from "../../../@types/generated/contentful";
 import { SummaryCard } from "./summaryCard/SummaryCard";
 
 type Props = {

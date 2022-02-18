@@ -1,4 +1,4 @@
-import { Icon } from "../icon/Icon";
+import { Icon } from "../../shared/icon/Icon";
 
 export const Footer: React.FC = () => {
     const links = [

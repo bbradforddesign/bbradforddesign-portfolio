@@ -1,7 +1,7 @@
-import { Navbar } from "../navbar/Navbar";
-import { Footer } from "../footer/Footer";
+import { Navbar } from "./navbar/Navbar";
+import { Footer } from "./footer/Footer";
 import { ThemeProvider } from "next-themes";
-import { ThemeToggle } from "../themeToggle/ThemeToggle";
+import { ThemeToggle } from "./themeToggle/ThemeToggle";
 
 type Props = {
     children: React.ReactNode;

@@ -64,7 +64,7 @@ h4 {
 }
 
 .nav-link {
-    @apply relative font-semibold text-lg;
+    @apply relative;
 }
 
 .nav-link:hover,

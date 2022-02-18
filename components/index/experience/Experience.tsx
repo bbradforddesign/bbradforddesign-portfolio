@@ -1,6 +1,6 @@
 import { Document } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { SkillList } from "../skillList/SkillList";
+import { SkillList } from "../../shared/skillList/SkillList";
 import { Asset } from "contentful";
 
 type Props = {

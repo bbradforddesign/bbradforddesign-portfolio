@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import { Icon } from "../icon/Icon";
+import { Icon } from "../../shared/icon/Icon";
 
 export const ThemeToggle = () => {
     const { theme, setTheme } = useTheme();

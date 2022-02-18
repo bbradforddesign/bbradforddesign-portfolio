@@ -84,14 +84,16 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
         return <div>Not found!</div>;
     }
 
-    const { title, details, thumbnail } = fields;
+    const { title, details, thumbnail, url, sourceCode } = fields;
 
     return (
         <article className="section-container">
             <header className="my-6 self-start">
                 <h2 className="section-header mb-6">{title}</h2>
                 <Link href="/#Projects">
-                    <a className="nav-link">Back to Projects</a>
+                    <a className="nav-link font-semibold text-lg">
+                        Back to Projects
+                    </a>
                 </Link>
             </header>
             <div className="grid lg:grid-cols-2">
@@ -104,9 +106,28 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                         className="rounded-xl"
                         alt={thumbnail.fields.description}
                     />
-                    <div className="flex gap-4">
-                        <p>Live App</p>
-                        <p>Source Code</p>
+                    <div className="flex gap-2 font-semibold">
+                        <a
+                            href={url}
+                            className="nav-link"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Live Project
+                        </a>
+                        {sourceCode && (
+                            <>
+                                <span>|</span>
+                                <a
+                                    href={sourceCode}
+                                    className="nav-link"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    Source Code
+                                </a>
+                            </>
+                        )}
                     </div>
                 </div>
                 <div className="body-text flex flex-col">
