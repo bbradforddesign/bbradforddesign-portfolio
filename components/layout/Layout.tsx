@@ -10,14 +10,16 @@ type Props = {
 export const Layout: React.FC<Props> = ({ children }) => {
     return (
         <ThemeProvider attribute="class">
-            <header className="sticky z-40 absolute top-0 -mb-12">
-                <Navbar />
-            </header>
-            <main className="bg-slate-50 dark:bg-slate-900 py-12 px-8">
-                {children}
-            </main>
-            <ThemeToggle />
-            <Footer />
+            <div className="min-h-screen flex flex-col space-between">
+                <header className="sticky z-40 absolute top-0 -mb-12">
+                    <Navbar />
+                </header>
+                <main className="flex-grow bg-slate-50 dark:bg-slate-900 py-12 px-8">
+                    {children}
+                </main>
+                <ThemeToggle />
+                <Footer />
+            </div>
         </ThemeProvider>
     );
 };

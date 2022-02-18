@@ -8,7 +8,7 @@ type Props = {
 
 export const Contact: React.FC<Props> = ({ contact }) => {
     return (
-        <section className="section-container mt-12 py-12" id="Contact">
+        <section className="section-container py-12" id="Contact">
             <header className="self-start my-8">
                 <h2 className="section-header">Contact</h2>
             </header>
