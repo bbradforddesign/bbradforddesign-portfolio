@@ -80,8 +80,6 @@ export const getStaticProps = async ({
 };
 
 const ProjectDetails: React.FC<IProject> = ({ fields }) => {
-    useEffect(() => window.scrollTo(0, 0), []);
-
     if (!fields || !fields.details) {
         return <div>Not found!</div>;
     }
