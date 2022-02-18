@@ -21,6 +21,20 @@ a {
 
 * {
     box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(148 163 184) rgb(248 250 252);
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(248 250 252);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(148 163 184);
 }
 
 h2,
