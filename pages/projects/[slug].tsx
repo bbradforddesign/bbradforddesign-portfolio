@@ -1,9 +1,9 @@
-import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { createClient, EntryCollection } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
+import { Skeleton } from "../../components/projects/Skeleton";
 
 export const getStaticPaths = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -81,7 +81,7 @@ export const getStaticProps = async ({
 
 const ProjectDetails: React.FC<IProject> = ({ fields }) => {
     if (!fields || !fields.details) {
-        return <div>Not found!</div>;
+        return <Skeleton />;
     }
 
     const { title, details, thumbnail, url, sourceCode } = fields;
