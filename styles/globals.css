@@ -106,11 +106,11 @@ h4 {
 }
 
 .hero-text p {
-    @apply text-xl font-medium max-w-2xl px-8 my-2;
+    @apply text-xl md:text-2xl font-medium max-w-2xl px-8 my-2;
 }
 
 .hero-text p b {
-    @apply text-4xl;
+    @apply text-4xl md:text-5xl;
 }
 
 .body-text p {
@@ -128,15 +128,15 @@ h4 {
 }
 
 .section-header {
-    @apply font-bold text-4xl;
+    @apply font-bold text-4xl md:text-5xl;
 }
 
 .body-text {
-    @apply text-sm my-2 max-w-prose;
+    @apply text-sm md:text-base my-2 max-w-prose;
 }
 
 .card {
-    @apply p-4 rounded-xl shadow-md bg-white dark:bg-slate-800;
+    @apply p-3 md:p-4 rounded-xl shadow-md bg-white dark:bg-slate-800;
 }
 
 .project-card-summary ul {
