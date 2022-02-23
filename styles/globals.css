@@ -105,10 +105,12 @@ h4 {
     @apply text-red-500;
 }
 
+/* text surrounding name in main hero */
 .hero-text p {
     @apply text-xl md:text-2xl font-medium max-w-2xl px-8 my-2;
 }
 
+/* name in main hero */
 .hero-text p b {
     @apply text-4xl md:text-5xl;
 }
@@ -117,9 +119,33 @@ h4 {
     @apply my-2;
 }
 
+/* greeting in about section */
 #About b {
     font-family: "Lora", serif;
     @apply text-xl;
+}
+
+/* experience company/organization */
+.experience-body h3 {
+    @apply text-2xl md:text-3xl;
+}
+
+/* experience title and dates */
+.experience-body > p {
+    @apply flex justify-between my-4;
+}
+
+.experience-body > p > b {
+    @apply text-lg md:text-xl;
+}
+
+.experience-body > p > i {
+    @apply text-base md:text-lg;
+}
+
+/* experience description */
+.experience-body > ul {
+    @apply mb-8 list-disc pl-8;
 }
 
 .section-container {
@@ -129,6 +155,10 @@ h4 {
 
 .section-header {
     @apply font-bold text-4xl md:text-5xl;
+}
+
+.sticky-header {
+    @apply self-start w-full my-4 py-4 bg-slate-50 dark:bg-slate-900 sticky top-14;
 }
 
 .body-text {
@@ -161,5 +191,5 @@ h4 {
 }
 
 .outline-button {
-    @apply rounded-lg border-4 shadow-md border-blue-600 font-bold text-blue-600 dark:border-yellow-300 dark:text-yellow-300 hover:opacity-50 px-2 py-1 w-fit h-fit;
+    @apply rounded-lg border-4 shadow-md border-blue-600 text-lg text-blue-600 dark:border-yellow-300 dark:text-yellow-300 hover:opacity-50 px-3 py-1 w-fit h-fit;
 }

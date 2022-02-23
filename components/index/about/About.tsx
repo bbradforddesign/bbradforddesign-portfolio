@@ -10,11 +10,11 @@ type Props = {
 
 export const About: React.FC<Props> = ({ text, photo }) => {
     return (
-        <section className="section-container py-12" id="About">
-            <header className="self-start my-8">
+        <section className="section-container" id="About">
+            <header className="sticky-header z-10">
                 <h2 className="section-header">About</h2>
             </header>
-            <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">
+            <div className="w-full mb-8 grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="flex justify-center max-h-96">
                     <Image
                         src={`https:${photo.fields.file.url}`}

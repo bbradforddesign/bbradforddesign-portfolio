@@ -15,11 +15,11 @@ export const Projects: React.FC<Props> = ({ projects }) => {
     });
 
     return (
-        <section className="section-container py-12" id="Projects">
-            <header className="self-start my-8">
+        <section className="section-container" id="Projects">
+            <header className="sticky-header z-30">
                 <h2 className="section-header">Projects</h2>
             </header>
-            <ul className="w-full grid md:grid-cols-2 gap-y-36 gap-x-24">
+            <ul className="w-full px-1 mb-36 grid md:grid-cols-2 gap-36">
                 {renderProjects}
             </ul>
         </section>
