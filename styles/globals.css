@@ -148,6 +148,14 @@ h4 {
     @apply mb-8 list-disc pl-8;
 }
 
+.project-body > h3 {
+    @apply text-2xl my-2;
+}
+
+.project-body > ul {
+    @apply list-disc pl-8;
+}
+
 .section-container {
     min-height: calc(100vh - theme("spacing.80"));
     @apply flex flex-col justify-center items-center w-full max-w-6xl h-auto mx-auto;

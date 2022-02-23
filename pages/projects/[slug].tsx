@@ -97,7 +97,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                 </Link>
             </header>
             <div className="grid lg:grid-cols-2">
-                <div className="lg:mx-8 max-w-xl">
+                <div className="lg:mx-8 max-w-xl mb-4">
                     <Image
                         src={`https:${thumbnail.fields.file.url}`}
                         objectFit="cover"
@@ -106,7 +106,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                         className="rounded-xl"
                         alt={thumbnail.fields.description}
                     />
-                    <div className="flex gap-2 font-semibold">
+                    <div className="flex gap-2 font-semibold my-4">
                         <a
                             href={url}
                             className="nav-link"
@@ -130,7 +130,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                         )}
                     </div>
                 </div>
-                <div className="body-text flex flex-col">
+                <div className="project-body body-text flex flex-col">
                     {documentToReactComponents(details)}
                 </div>
             </div>
