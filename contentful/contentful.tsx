@@ -1,7 +1,7 @@
 import { createClient } from "contentful";
 
 // configures credentials, returns client
-const client = () => {
+export default function client() {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
     const space = process.env.CONTENTFUL_SPACE_ID;
 
@@ -15,6 +15,4 @@ const client = () => {
         accessToken: token,
         space: space,
     });
-};
-
-export default client;
+}
