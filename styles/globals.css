@@ -147,10 +147,6 @@ h4 {
     @apply font-bold text-4xl md:text-5xl;
 }
 
-.sticky-header {
-    @apply self-start w-full my-4 py-4 bg-slate-50 dark:bg-slate-900 sticky top-14;
-}
-
 .body-text {
     @apply text-sm md:text-base my-2 max-w-prose;
 }
