@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { createClient, EntryCollection } from "contentful";
+import { EntryCollection } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import client from "../../contentful/contentful";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
 import { Skeleton } from "../../components/projects/Skeleton";
 
@@ -15,12 +17,7 @@ export const getStaticPaths = async () => {
         );
     }
 
-    // configure Contentful credentials
-    const client = createClient({
-        accessToken: token,
-        space: space,
-    });
-    const res: EntryCollection<IProjectFields> = await client.getEntries({
+    const res: EntryCollection<IProjectFields> = await client().getEntries({
         content_type: "project",
     });
 
@@ -43,22 +40,8 @@ export const getStaticProps = async ({
 }: {
     params: IProjectFields;
 }) => {
-    const token = process.env.CONTENTFUL_ACCESS_TOKEN;
-    const space = process.env.CONTENTFUL_SPACE_ID;
-
-    if (!token || !space) {
-        throw new Error(
-            "Contentful Space ID and Access Token must be provided"
-        );
-    }
-
-    // configure Contentful credentials
-    const client = createClient({
-        accessToken: token,
-        space: space,
-    });
     // always returns array, even if single item
-    const { items }: EntryCollection<IProject> = await client.getEntries({
+    const { items }: EntryCollection<IProject> = await client().getEntries({
         content_type: "project",
         "fields.slug": params.slug, // get item by slug
     });

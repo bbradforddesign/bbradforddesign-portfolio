@@ -1,7 +1,8 @@
-import { createClient, Entry } from "contentful";
+import { Entry } from "contentful";
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import client from "../contentful/contentful";
 import { Hero } from "../components/index/hero/Hero";
 import { About } from "../components/index/about/About";
 import { Experience } from "../components/index/experience/Experience";
@@ -10,23 +11,8 @@ import { Contact } from "../components/index/contact/Contact";
 import { IHomepage, IHomepageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
-    const token = process.env.CONTENTFUL_ACCESS_TOKEN;
-    const space = process.env.CONTENTFUL_SPACE_ID;
-
-    if (!token || !space) {
-        throw new Error(
-            "Contentful Space ID and Access Token must be provided"
-        );
-    }
-
-    // configure Contentful credentials
-    const client = createClient({
-        accessToken: token,
-        space: space,
-    });
-
     // retrieve homepage content by ID
-    const response: Entry<IHomepageFields> = await client.getEntry(
+    const response: Entry<IHomepageFields> = await client().getEntry(
         "LBrW2sfLs2xkMbx4o2jJU"
     );
 
