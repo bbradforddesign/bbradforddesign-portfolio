@@ -37,7 +37,7 @@ export const Experience: React.FC<Props> = ({
                 <h2 className="section-header">Experience</h2>
             </header>
             <div className="w-full grid grid-cols-1 md:gap-12 md:grid-cols-3">
-                <ul className="flex flex-col gap-4 experience-body body-text md:col-span-2">
+                <ul className="experience-body w-full md:col-span-2 divide-y-2">
                     {renderExperience()}
                 </ul>
                 <div className="flex flex-col gap-4">
@@ -55,7 +55,7 @@ export const Experience: React.FC<Props> = ({
                         aria-label="Full Resume"
                         className="my-8"
                     >
-                        <button className="outline-button">Resume PDF</button>
+                        <button className="outline-button">PDF Resume</button>
                     </a>
                 </div>
             </div>

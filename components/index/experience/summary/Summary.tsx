@@ -16,30 +16,36 @@ export const ExperienceSummary: React.FC<Props> = ({ fields }) => {
         format(new Date(dateString), "MMM yyyy");
 
     return (
-        <section className="card">
-            <header className="flex justify-between">
+        <section className="p-4">
+            <header className="flex justify-between items-center">
                 <h3 className="text-xl md:text-2xl">{organization}</h3>
                 <button
                     onClick={() =>
                         setOpenDetails((openDetails) => !openDetails)
                     }
-                    className="text-2xl font-black"
+                    className="w-4 md:w-5 h-4 md:h-5 relative"
                 >
-                    {openDetails ? "-" : "+"}
+                    <span
+                        className={`summary-toggle ${
+                            openDetails
+                                ? "summary-toggle-active"
+                                : "summary-toggle-inactive"
+                        }`}
+                    />
                 </button>
             </header>
-            <p className="flex justify-between my-4">
+            <p className="flex justify-between items-center my-2">
                 <span className="font-semibold text-base md:text-lg">
                     {title}
                 </span>
-                <span className="italic text-base md:text-lg">
+                <span className="italic text-sm md:text-base">
                     {`${formatDate(startDate)} | ${
                         endDate ? formatDate(endDate) : "Present"
                     }`}
                 </span>
             </p>
             {openDetails && (
-                <div className="experience-body">
+                <div className="experience-body body-text pt-2">
                     {documentToReactComponents(summary)}
                 </div>
             )}

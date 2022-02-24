@@ -47,16 +47,19 @@ h4 {
     @apply h-1 w-full rounded-full bg-black dark:bg-white;
 }
 
-.menu-button {
+.menu-button,
+.summary-toggle {
     @apply block w-full;
 }
 
-.menu-inactive {
+.menu-inactive,
+.summary-toggle {
     @apply menu-line;
 }
 
 .menu-button::before,
-.menu-button::after {
+.menu-button::after,
+.summary-toggle::before {
     @apply block absolute menu-line transition ease-in;
     content: "";
 }
@@ -75,6 +78,18 @@ h4 {
 
 .menu-active::after {
     @apply -rotate-45;
+}
+
+.summary-toggle::before {
+    @apply rotate-90;
+}
+
+.summary-toggle-active::before {
+    @apply scale-x-0;
+}
+
+.summary-toggle-inactive::before {
+    @apply scale-x-100;
 }
 
 .nav-link {
@@ -127,7 +142,7 @@ h4 {
 
 /* experience description */
 .experience-body > ul {
-    @apply mb-8 list-disc pl-8;
+    @apply list-disc pl-8;
 }
 
 /* project details subheaders */
