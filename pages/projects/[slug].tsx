@@ -98,14 +98,15 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
             </header>
             <div className="grid lg:grid-cols-2">
                 <div className="lg:mx-8 max-w-xl mb-4">
-                    <Image
-                        src={`https:${thumbnail.fields.file.url}`}
-                        objectFit="cover"
-                        width={thumbnail.fields.file.details.image?.width}
-                        height={thumbnail.fields.file.details.image?.height}
-                        className="rounded-xl"
-                        alt={thumbnail.fields.description}
-                    />
+                    <div className="relative w-full h-96 shadow-md rounded-md">
+                        <Image
+                            src={`https:${thumbnail.fields.file.url}`}
+                            layout="fill"
+                            objectFit="cover"
+                            className="rounded-md"
+                            alt={thumbnail.fields.description}
+                        />
+                    </div>
                     <div className="flex gap-2 font-semibold my-4">
                         <a
                             href={url}
