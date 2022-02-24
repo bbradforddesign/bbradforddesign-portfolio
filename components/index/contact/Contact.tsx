@@ -9,7 +9,7 @@ type Props = {
 export const Contact: React.FC<Props> = ({ contact }) => {
     return (
         <section className="section-container" id="Contact">
-            <header className="sticky-header z-30">
+            <header className="self-start w-full my-12 pt-12">
                 <h2 className="section-header">Contact</h2>
             </header>
             <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2">

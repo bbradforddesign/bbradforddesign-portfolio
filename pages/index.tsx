@@ -60,7 +60,7 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
             <Hero text={hero} />
             <About text={about} photo={headshot} />
             <Experience
-                text={experience}
+                experience={experience}
                 languages={languages}
                 frameworks={frameworks}
                 databases={databases}

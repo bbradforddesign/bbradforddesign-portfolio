@@ -16,7 +16,7 @@ export const Projects: React.FC<Props> = ({ projects }) => {
 
     return (
         <section className="section-container" id="Projects">
-            <header className="sticky-header z-30">
+            <header className="self-start w-full my-12 pt-12">
                 <h2 className="section-header">Projects</h2>
             </header>
             <ul className="w-full px-1 mb-36 grid md:grid-cols-2 gap-36">

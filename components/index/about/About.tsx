@@ -11,7 +11,7 @@ type Props = {
 export const About: React.FC<Props> = ({ text, photo }) => {
     return (
         <section className="section-container" id="About">
-            <header className="sticky-header z-10">
+            <header className="self-start w-full my-12 pt-12">
                 <h2 className="section-header">About</h2>
             </header>
             <div className="w-full mb-8 grid grid-cols-1 gap-4 md:grid-cols-2">
