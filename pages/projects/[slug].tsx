@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { EntryCollection } from "contentful";
@@ -63,11 +64,29 @@ export const getStaticProps = async ({
 };
 
 const ProjectDetails: React.FC<IProject> = ({ fields }) => {
+    const [currentImage, setCurrentImage] = useState<number>(0);
+
     if (!fields || !fields.details) {
         return <Skeleton />;
     }
 
-    const { title, details, thumbnail, url, sourceCode } = fields;
+    const { title, details, thumbnail, url, sourceCode, featuredImages } =
+        fields;
+
+    const renderFeaturedImages = featuredImages?.map((e, index) => {
+        const { description, file } = e.fields;
+        return (
+            <Image
+                key={index}
+                src={`https:${file.url}`}
+                alt={description}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md"
+                priority={true}
+            />
+        );
+    });
 
     return (
         <article className="section-container">
@@ -82,13 +101,32 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
             <div className="grid lg:grid-cols-2">
                 <div className="lg:mx-8 max-w-xl mb-4">
                     <div className="relative w-full h-96 shadow-md rounded-md">
-                        <Image
-                            src={`https:${thumbnail.fields.file.url}`}
-                            layout="fill"
-                            objectFit="cover"
-                            className="rounded-md"
-                            alt={thumbnail.fields.description}
-                        />
+                        {renderFeaturedImages[currentImage]}
+                    </div>
+                    <div>
+                        <button
+                            onClick={() =>
+                                setCurrentImage(
+                                    (currentImage) => currentImage - 1
+                                )
+                            }
+                            disabled={currentImage <= 0}
+                        >
+                            Prev
+                        </button>
+                        <button
+                            onClick={() =>
+                                setCurrentImage(
+                                    (currentImage) => currentImage + 1
+                                )
+                            }
+                            disabled={
+                                currentImage >= renderFeaturedImages.length - 1
+                            }
+                        >
+                            Next
+                        </button>
+                        {currentImage}
                     </div>
                     <div className="flex gap-2 font-semibold my-4">
                         <a
