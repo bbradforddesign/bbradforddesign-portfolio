@@ -120,6 +120,10 @@ h4 {
     @apply text-red-500;
 }
 
+.hero-text {
+    @apply w-fit mx-auto;
+}
+
 /* text surrounding name in main hero */
 .hero-text p {
     @apply text-xl md:text-2xl font-medium max-w-2xl px-8 my-2;
@@ -157,11 +161,11 @@ h4 {
 
 .section-container {
     min-height: calc(100vh - theme("spacing.80"));
-    @apply flex flex-col justify-center items-center w-full max-w-6xl h-auto mx-auto;
+    @apply w-full max-w-6xl h-auto mx-auto;
 }
 
 .section-header {
-    @apply font-bold text-4xl md:text-5xl;
+    @apply font-bold text-5xl;
 }
 
 .body-text {

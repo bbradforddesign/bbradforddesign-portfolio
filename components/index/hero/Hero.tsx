@@ -7,7 +7,7 @@ type Props = {
 
 export const Hero: React.FC<Props> = ({ text }) => {
     return (
-        <section className="section-container">
+        <section className="section-container pt-24">
             <div className="hero-text">
                 {text && documentToReactComponents(text)}
             </div>

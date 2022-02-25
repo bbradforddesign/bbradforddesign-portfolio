@@ -89,8 +89,8 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
     });
 
     return (
-        <article className="section-container">
-            <header className="my-6 self-start">
+        <article className="section-container pt-9">
+            <header className="mb-6 self-start">
                 <h2 className="section-header mb-6">{title}</h2>
                 <Link href="/#Projects">
                     <a className="nav-link font-semibold text-lg">

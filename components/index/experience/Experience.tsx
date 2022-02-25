@@ -32,8 +32,8 @@ export const Experience: React.FC<Props> = ({
     };
 
     return (
-        <section className="section-container" id="Experience">
-            <header className="self-start w-full my-12 pt-12">
+        <section className="section-container pt-24" id="Experience">
+            <header className="self-start w-full mb-12">
                 <h2 className="section-header">Experience</h2>
             </header>
             <div className="w-full grid grid-cols-1 md:gap-12 md:grid-cols-3">
