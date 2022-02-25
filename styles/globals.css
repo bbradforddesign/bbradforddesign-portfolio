@@ -161,7 +161,7 @@ h4 {
 
 .section-container {
     min-height: calc(100vh - theme("spacing.80"));
-    @apply w-full max-w-6xl h-auto mx-auto;
+    @apply w-full max-w-6xl h-auto mx-auto flex flex-col items-center;
 }
 
 .section-header {

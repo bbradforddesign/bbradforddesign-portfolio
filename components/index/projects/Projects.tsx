@@ -19,7 +19,7 @@ export const Projects: React.FC<Props> = ({ projects }) => {
             <header className="self-start w-full mb-12">
                 <h2 className="section-header">Projects</h2>
             </header>
-            <ul className="w-full mb-24 grid justify-center lg:grid-cols-2 gap-36">
+            <ul className="w-full mb-24 grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-36">
                 {renderProjects}
             </ul>
         </section>

@@ -17,7 +17,7 @@ export const SkillList: React.FC<Props> = ({ title, list }) => {
         });
 
     return title ? (
-        <section className="w-full">
+        <section className="w-full max-w-prose">
             <h3 className="text-xl font-bold my-3 md:my-4">{title}</h3>
             <ul className="flex gap-2 flex-wrap">{renderSkills()}</ul>
         </section>

@@ -15,7 +15,7 @@ export const SummaryCard: React.FC<Props> = ({ fields }) => {
 
     return (
         <section className="w-full relative">
-            <div className={`relative w-96 h-96 shadow-md rounded-md`}>
+            <div className={`relative w-full h-96 shadow-md rounded-md`}>
                 <Image
                     src={`https:${thumbnail.fields.file.url}`}
                     layout="fill"
