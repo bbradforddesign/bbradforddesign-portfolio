@@ -44,7 +44,7 @@ h4 {
 }
 
 .menu-line {
-    @apply h-1 w-full rounded-full bg-black dark:bg-white;
+    @apply h-1 w-full rounded-full bg-blue-600 dark:bg-yellow-300;
 }
 
 .menu-button,
@@ -194,9 +194,9 @@ h4 {
 }
 
 .solid-button {
-    @apply flex justify-center items-center font-bold text-base text-white shadow-md dark:text-slate-900 bg-blue-600 dark:bg-yellow-300 hover:opacity-50 rounded-md py-2 px-2;
+    @apply flex justify-center items-center font-semibold text-base text-white shadow-md dark:text-slate-900 bg-blue-600 dark:bg-yellow-300 hover:opacity-50 rounded-md py-2 px-2;
 }
 
 .outline-button {
-    @apply rounded-lg border-4 shadow-md border-blue-600 text-lg text-blue-600 dark:border-yellow-300 dark:text-yellow-300 hover:opacity-50 px-3 py-1 w-fit h-fit;
+    @apply rounded-lg border-4 shadow-md border-blue-600 font-semibold text-base text-blue-600 dark:border-yellow-300 dark:text-yellow-300 hover:opacity-50 px-3 py-1 w-fit h-fit;
 }

@@ -18,12 +18,12 @@ export const ExperienceSummary: React.FC<Props> = ({ fields }) => {
     return (
         <section className="p-4">
             <header className="flex justify-between items-center">
-                <h3 className="text-xl md:text-2xl">{organization}</h3>
+                <h3 className="text-2xl">{organization}</h3>
                 <button
                     onClick={() =>
                         setOpenDetails((openDetails) => !openDetails)
                     }
-                    className="w-4 md:w-5 h-4 md:h-5 relative"
+                    className="w-4 h-4 relative"
                 >
                     <span
                         className={`summary-toggle ${
@@ -35,10 +35,8 @@ export const ExperienceSummary: React.FC<Props> = ({ fields }) => {
                 </button>
             </header>
             <p className="flex justify-between items-center my-2">
-                <span className="font-semibold text-base md:text-lg">
-                    {title}
-                </span>
-                <span className="italic text-sm md:text-base">
+                <span className="font-semibold">{title}</span>
+                <span className="italic">
                     {`${formatDate(startDate)} | ${
                         endDate ? formatDate(endDate) : "Present"
                     }`}

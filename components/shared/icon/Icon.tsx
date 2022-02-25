@@ -13,8 +13,6 @@ export const Icon: React.FC<Props> = ({ icon }) => {
             return <SiLinkedin className="text-2xl" />;
         case "Email":
             return <SiGmail className="text-2xl" />;
-        case "Lightbulb":
-            return <FaLightbulb className="text-3xl dark:text-yellow-300" />;
         default:
             return <p className="italic">Unknown Icon</p>;
     }

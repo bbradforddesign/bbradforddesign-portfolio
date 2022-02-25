@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import { Icon } from "../../shared/icon/Icon";
+import { FaLightbulb } from "react-icons/fa";
 
 export const ThemeToggle = () => {
     const { theme, setTheme } = useTheme();
@@ -12,7 +12,7 @@ export const ThemeToggle = () => {
             aria-label="Dark mode toggle"
             className="fixed z-20 right-4 bottom-4 bg-white dark:bg-slate-800 rounded-full p-2 shadow-md"
         >
-            <Icon icon="Lightbulb" />
+            <FaLightbulb className="text-3xl text-slate-900 dark:text-yellow-300" />
         </button>
     );
 };
