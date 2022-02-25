@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { EntryCollection } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
@@ -7,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import client from "../../contentful/contentful";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
 import { Skeleton } from "../../components/projects/Skeleton";
+import { ImageStepper } from "../../components/shared/imageStepper/ImageStepper";
 
 export const getStaticPaths = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -64,29 +63,11 @@ export const getStaticProps = async ({
 };
 
 const ProjectDetails: React.FC<IProject> = ({ fields }) => {
-    const [currentImage, setCurrentImage] = useState<number>(0);
-
     if (!fields || !fields.details) {
         return <Skeleton />;
     }
 
-    const { title, details, thumbnail, url, sourceCode, featuredImages } =
-        fields;
-
-    const renderFeaturedImages = featuredImages?.map((e, index) => {
-        const { description, file } = e.fields;
-        return (
-            <Image
-                key={index}
-                src={`https:${file.url}`}
-                alt={description}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-md"
-                priority={true}
-            />
-        );
-    });
+    const { title, details, url, sourceCode, featuredImages } = fields;
 
     return (
         <article className="section-container pt-9">
@@ -100,39 +81,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
             </header>
             <div className="grid lg:grid-cols-2">
                 <div className="lg:mx-8 max-w-xl mb-4">
-                    {renderFeaturedImages && (
-                        <>
-                            <div className="relative w-full h-96 shadow-md rounded-md">
-                                {renderFeaturedImages[currentImage]}
-                            </div>
-                            <div>
-                                <button
-                                    onClick={() =>
-                                        setCurrentImage(
-                                            (currentImage) => currentImage - 1
-                                        )
-                                    }
-                                    disabled={currentImage <= 0}
-                                >
-                                    Prev
-                                </button>
-                                <button
-                                    onClick={() =>
-                                        setCurrentImage(
-                                            (currentImage) => currentImage + 1
-                                        )
-                                    }
-                                    disabled={
-                                        currentImage >=
-                                        renderFeaturedImages.length - 1
-                                    }
-                                >
-                                    Next
-                                </button>
-                                {currentImage}
-                            </div>
-                        </>
-                    )}
+                    <ImageStepper images={featuredImages} />
                     <div className="flex gap-2 font-semibold my-4">
                         <a
                             href={url}
