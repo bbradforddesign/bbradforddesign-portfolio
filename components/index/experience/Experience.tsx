@@ -36,7 +36,7 @@ export const Experience: React.FC<Props> = ({
             <header className="self-start w-full mb-12">
                 <h2 className="section-header">Experience</h2>
             </header>
-            <div className="w-full grid grid-cols-1 md:gap-12 md:grid-cols-3">
+            <div className="w-full grid grid-cols-1 justify-items-center gap-12 md:grid-cols-3">
                 <ul className="experience-body w-full md:col-span-2 divide-y-2">
                     {renderExperience()}
                 </ul>

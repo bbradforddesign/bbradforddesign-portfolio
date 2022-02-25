@@ -126,12 +126,12 @@ h4 {
 
 /* text surrounding name in main hero */
 .hero-text p {
-    @apply text-xl md:text-2xl font-medium max-w-2xl px-8 my-2;
+    @apply text-2xl font-medium max-w-2xl px-8 my-2;
 }
 
 /* name in main hero */
 .hero-text p b {
-    @apply text-4xl md:text-5xl;
+    @apply text-5xl;
 }
 
 .body-text p {
@@ -169,7 +169,7 @@ h4 {
 }
 
 .body-text {
-    @apply text-sm md:text-base my-2 max-w-prose;
+    @apply my-2 max-w-prose;
 }
 
 .card {
@@ -194,9 +194,9 @@ h4 {
 }
 
 .solid-button {
-    @apply flex justify-center items-center font-semibold text-base text-white shadow-md dark:text-slate-900 bg-blue-600 dark:bg-yellow-300 hover:opacity-50 rounded-md py-2 px-2;
+    @apply flex justify-center items-center font-semibold text-base text-white shadow-md dark:text-slate-900 bg-blue-600 dark:bg-yellow-300 hover:bg-blue-300 dark:hover:bg-yellow-100 rounded-md py-2 px-2;
 }
 
 .outline-button {
-    @apply rounded-lg border-4 shadow-md border-blue-600 font-semibold text-base text-blue-600 dark:border-yellow-300 dark:text-yellow-300 hover:opacity-50 px-3 py-1 w-fit h-fit;
+    @apply rounded-lg border-4 shadow-md border-blue-600 font-semibold text-base text-blue-600 dark:border-yellow-300 dark:text-yellow-300 hover:border-blue-300 hover:text-blue-300 dark:hover:border-yellow-100 dark:hover:text-yellow-100 px-3 py-1 w-fit h-fit;
 }

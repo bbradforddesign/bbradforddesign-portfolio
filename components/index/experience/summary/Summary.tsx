@@ -26,7 +26,7 @@ export const ExperienceSummary: React.FC<Props> = ({ fields }) => {
                     className="w-4 h-4 relative"
                 >
                     <span
-                        className={`summary-toggle ${
+                        className={`summary-toggle hover:opacity-50 ${
                             openDetails
                                 ? "summary-toggle-active"
                                 : "summary-toggle-inactive"

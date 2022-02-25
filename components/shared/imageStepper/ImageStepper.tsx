@@ -38,14 +38,14 @@ export const ImageStepper: React.FC<Props> = ({ images }) => {
                 <button
                     onClick={() => handleStepper(-1)}
                     disabled={currentImage == 0}
-                    className="text-3xl disabled:text-slate-500 text-slate-900"
+                    className="text-3xl disabled:text-slate-200 text-slate-900 hover:text-slate-500"
                 >
                     <IoIosArrowDropleftCircle />
                 </button>
                 <button
                     onClick={() => handleStepper(1)}
                     disabled={currentImage == renderImages.length - 1}
-                    className="text-3xl disabled:text-slate-500 text-slate-900"
+                    className="text-3xl disabled:text-slate-200 text-slate-900 hover:text-slate-500"
                 >
                     <IoIosArrowDroprightCircle />
                 </button>

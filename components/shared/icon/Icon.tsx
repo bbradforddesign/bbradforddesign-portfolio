@@ -1,5 +1,4 @@
 import { SiLinkedin, SiGithub, SiGmail } from "react-icons/si";
-import { FaLightbulb } from "react-icons/fa";
 
 type Props = {
     icon: string;
@@ -8,11 +7,11 @@ type Props = {
 export const Icon: React.FC<Props> = ({ icon }) => {
     switch (icon) {
         case "GitHub":
-            return <SiGithub className="text-2xl" />;
+            return <SiGithub />;
         case "LinkedIn":
-            return <SiLinkedin className="text-2xl" />;
+            return <SiLinkedin />;
         case "Email":
-            return <SiGmail className="text-2xl" />;
+            return <SiGmail />;
         default:
             return <p className="italic">Unknown Icon</p>;
     }

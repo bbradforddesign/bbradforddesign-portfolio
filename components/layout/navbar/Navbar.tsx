@@ -26,11 +26,13 @@ export const Navbar: React.FC = () => {
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="/#">
                     <a>
-                        <h1 className="font-bold text-xl">bbradforddesign</h1>
+                        <h1 className="font-bold text-xl hover:text-slate-400">
+                            bbradforddesign
+                        </h1>
                     </a>
                 </Link>
                 <button
-                    className="lg:hidden relative h-6 w-8"
+                    className="lg:hidden relative h-6 w-8 hover:opacity-50"
                     aria-label="navigation toggle"
                     onClick={() => setOpenNav((openNav) => !openNav)}
                 >
