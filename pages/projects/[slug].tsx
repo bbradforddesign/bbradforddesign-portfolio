@@ -100,34 +100,39 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
             </header>
             <div className="grid lg:grid-cols-2">
                 <div className="lg:mx-8 max-w-xl mb-4">
-                    <div className="relative w-full h-96 shadow-md rounded-md">
-                        {renderFeaturedImages[currentImage]}
-                    </div>
-                    <div>
-                        <button
-                            onClick={() =>
-                                setCurrentImage(
-                                    (currentImage) => currentImage - 1
-                                )
-                            }
-                            disabled={currentImage <= 0}
-                        >
-                            Prev
-                        </button>
-                        <button
-                            onClick={() =>
-                                setCurrentImage(
-                                    (currentImage) => currentImage + 1
-                                )
-                            }
-                            disabled={
-                                currentImage >= renderFeaturedImages.length - 1
-                            }
-                        >
-                            Next
-                        </button>
-                        {currentImage}
-                    </div>
+                    {renderFeaturedImages && (
+                        <>
+                            <div className="relative w-full h-96 shadow-md rounded-md">
+                                {renderFeaturedImages[currentImage]}
+                            </div>
+                            <div>
+                                <button
+                                    onClick={() =>
+                                        setCurrentImage(
+                                            (currentImage) => currentImage - 1
+                                        )
+                                    }
+                                    disabled={currentImage <= 0}
+                                >
+                                    Prev
+                                </button>
+                                <button
+                                    onClick={() =>
+                                        setCurrentImage(
+                                            (currentImage) => currentImage + 1
+                                        )
+                                    }
+                                    disabled={
+                                        currentImage >=
+                                        renderFeaturedImages.length - 1
+                                    }
+                                >
+                                    Next
+                                </button>
+                                {currentImage}
+                            </div>
+                        </>
+                    )}
                     <div className="flex gap-2 font-semibold my-4">
                         <a
                             href={url}
