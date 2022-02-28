@@ -24,6 +24,7 @@ export const ExperienceSummary: React.FC<Props> = ({ fields }) => {
                         setOpenDetails((openDetails) => !openDetails)
                     }
                     className="w-4 h-4 relative"
+                    aria-label="Summary toggle"
                 >
                     <span
                         className={`summary-toggle hover:opacity-50 ${

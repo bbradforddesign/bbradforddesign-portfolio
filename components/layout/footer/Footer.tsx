@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={title}
-                        className="text-2xl hover:text-slate-500"
+                        className="text-2xl hover:opacity-50"
                     >
                         <Icon icon={title} />
                     </a>

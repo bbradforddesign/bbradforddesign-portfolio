@@ -131,7 +131,7 @@ export const ContactForm: React.FC = () => {
                 />
             </div>
             <button
-                className="w-40 self-center mt-4 mb-2 solid-button"
+                className="self-center mt-4 mb-2 solid-button"
                 type="submit"
             >
                 {renderButtonContent()}

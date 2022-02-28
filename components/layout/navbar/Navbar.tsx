@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../../../public/logo.svg";
 
 export const Navbar: React.FC = () => {
     const [openNav, setOpenNav] = useState<boolean>(false);
@@ -25,10 +27,8 @@ export const Navbar: React.FC = () => {
         <nav className="flex flex-col justify-between items-start p-4 w-full bg-slate-50 dark:bg-slate-900 shadow-md lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="/#">
-                    <a>
-                        <h1 className="font-bold text-xl hover:text-slate-400">
-                            bbradforddesign
-                        </h1>
+                    <a className="relative w-10 h-10">
+                        <Image src={logo} alt="personal logo" layout="fill" />
                     </a>
                 </Link>
                 <button
