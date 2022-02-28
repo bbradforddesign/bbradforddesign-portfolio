@@ -48,7 +48,7 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
                 <title>Blake Bradford</title>
                 <meta
                     name="description"
-                    content="Blake Bradford's personal portfolio site"
+                    content="Blake Bradford's software engineering portfolio"
                 />
             </Head>
             <Hero text={hero} />
