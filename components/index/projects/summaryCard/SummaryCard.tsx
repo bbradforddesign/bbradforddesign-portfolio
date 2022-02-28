@@ -29,14 +29,14 @@ export const SummaryCard: React.FC<Props> = ({ fields }) => {
                     <header className="text-xl font-bold my-2">
                         <h3>{title}</h3>
                     </header>
-                    <div className="project-card-summary body-text my-2 w-auto">
+                    <div className="body-text w-auto">
                         {documentToReactComponents(summary)}
                     </div>
                     <SkillList list={technologies} />
                 </div>
                 <div className="flex justify-end gap-4">
                     <a
-                        className="nav-link font-semibold"
+                        className="animated-link font-semibold"
                         href={url}
                         target="_blank"
                         rel="noreferrer"
@@ -47,7 +47,7 @@ export const SummaryCard: React.FC<Props> = ({ fields }) => {
                         <>
                             <span className="font-semibold">|</span>
                             <Link href={`/projects/${slug}`}>
-                                <a className="nav-link font-semibold">
+                                <a className="animated-link font-semibold">
                                     Learn More
                                 </a>
                             </Link>

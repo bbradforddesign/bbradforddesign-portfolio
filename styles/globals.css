@@ -43,10 +43,12 @@ h4 {
     font-family: "Lora", serif;
 }
 
+/* line shape to create plus, minus, hamburger, etc. */
 .menu-line {
     @apply h-1 w-full rounded-full bg-sky-400;
 }
 
+/* animated buttons */
 .menu-button,
 .summary-toggle {
     @apply block w-full;
@@ -64,6 +66,7 @@ h4 {
     content: "";
 }
 
+/* hamburger menu animation */
 .menu-inactive::before {
     @apply -translate-y-2.5;
 }
@@ -80,6 +83,7 @@ h4 {
     @apply -rotate-45;
 }
 
+/* experience plus/minus animation */
 .summary-toggle::before {
     @apply rotate-90;
 }
@@ -92,12 +96,13 @@ h4 {
     @apply scale-x-100;
 }
 
-.nav-link {
+/* links with animated underline */
+.animated-link {
     @apply relative;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.animated-link:hover,
+.animated-link:focus {
     @apply active-link;
 }
 
@@ -105,7 +110,7 @@ h4 {
     @apply text-sky-400;
 }
 
-.nav-link::after {
+.animated-link::after {
     @apply absolute block -bottom-1 h-0.5 w-full bg-black dark:bg-white scale-x-0 transition ease-in origin-left;
     content: "";
 }
@@ -115,82 +120,40 @@ h4 {
     content: "";
 }
 
-.required-label::after {
-    content: " *";
-    @apply text-red-500;
-}
-
-.hero-text {
-    @apply w-fit mx-auto;
-}
-
-/* text surrounding name in main hero */
-.hero-text p {
-    @apply text-2xl font-medium max-w-2xl px-8 my-2;
-}
-
-/* name in main hero */
+/* name in main hero; not selectable through typography plugin */
 .hero-text p b {
     @apply text-5xl;
 }
 
-.body-text p {
-    @apply my-2;
-}
-
-/* greeting in about section */
+/* greeting in about section; not selectable with typography plugin */
 #About b {
     font-family: "Lora", serif;
     @apply text-xl;
 }
 
-/* experience description */
-.experience-body > ul {
-    @apply list-disc pl-8;
-}
-
-/* project details subheaders */
-.project-body > h3 {
-    @apply text-2xl my-2;
-}
-
-/* project details requirements list */
-.project-body > ul {
-    @apply list-disc pl-8;
-}
-
+/* container utility for page sections */
 .section-container {
     min-height: calc(100vh - theme("spacing.80"));
     @apply w-full max-w-6xl h-auto mx-auto flex flex-col items-center;
 }
 
+/* style top-level header in page section */
 .section-header {
     @apply font-bold text-5xl;
 }
 
+/* consistent spacing for larger blocks of text */
 .body-text {
     @apply my-2 max-w-prose;
 }
 
+/* simple reuseable components */
 .card {
-    @apply p-3 md:p-4 rounded-xl shadow-md bg-white dark:bg-slate-800;
-}
-
-.project-card-summary ul {
-    @apply list-disc;
-}
-
-.project-card-summary ul li {
-    @apply text-sm;
+    @apply p-3 md:p-4 rounded-md shadow-md bg-white dark:bg-slate-800;
 }
 
 .form-input {
-    @apply py-1 px-2 border border-2 border-slate-300 dark:border-slate-600 w-full rounded;
-}
-
-.highlight-text {
-    @apply text-sky-400;
-    font-family: "Lora", serif;
+    @apply py-1 px-2 border-2 border-slate-300 dark:border-slate-600 w-full rounded;
 }
 
 .solid-button {

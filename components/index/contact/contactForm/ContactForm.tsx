@@ -96,7 +96,10 @@ export const ContactForm: React.FC = () => {
             onSubmit={handleMessageSubmit}
         >
             <div className="flex flex-col items-start">
-                <label htmlFor="name" className="my-2 required-label">
+                <label
+                    htmlFor="name"
+                    className="my-2 after:content-['*'] after:text-red-500"
+                >
                     Name
                 </label>
                 <input
@@ -108,7 +111,10 @@ export const ContactForm: React.FC = () => {
                 />
             </div>
             <div className="flex flex-col items-start">
-                <label htmlFor="email" className="my-2 required-label">
+                <label
+                    htmlFor="email"
+                    className="my-2 after:content-['*'] after:text-red-500"
+                >
                     Email
                 </label>
                 <input
@@ -120,7 +126,10 @@ export const ContactForm: React.FC = () => {
                 />
             </div>
             <div className="flex flex-col items-start">
-                <label htmlFor="message" className="my-2 required-label">
+                <label
+                    htmlFor="message"
+                    className="my-2 after:content-['*'] after:text-red-500"
+                >
                     Message
                 </label>
                 <textarea

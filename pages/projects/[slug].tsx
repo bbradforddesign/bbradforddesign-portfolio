@@ -74,7 +74,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
             <header className="mb-6 self-start">
                 <h2 className="section-header mb-6">{title}</h2>
                 <Link href="/#Projects">
-                    <a className="nav-link font-semibold text-lg">
+                    <a className="animated-link font-semibold text-lg">
                         Back to Projects
                     </a>
                 </Link>
@@ -85,7 +85,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                     <div className="flex gap-2 font-semibold my-4">
                         <a
                             href={url}
-                            className="nav-link"
+                            className="animated-link"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -96,7 +96,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                                 <span>|</span>
                                 <a
                                     href={sourceCode}
-                                    className="nav-link"
+                                    className="animated-link"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -106,7 +106,7 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
                         )}
                     </div>
                 </div>
-                <div className="project-body body-text flex flex-col">
+                <div className="prose-h3:text-3xl prose-h3:mt-4 prose-h3:mb-2 prose-ul:list-disc prose-ul:ml-10 prose-p:my-2 body-text flex flex-col">
                     {documentToReactComponents(details)}
                 </div>
             </div>

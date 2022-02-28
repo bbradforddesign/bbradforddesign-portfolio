@@ -9,6 +9,9 @@ module.exports = {
         },
     },
     theme: {
+        fontFamily: {
+            serif: ["Lora", "Georgia", "Times New Roman", "serif"],
+        },
         extend: {
             keyframes: {
                 "fade-in": {
@@ -25,5 +28,5 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [require("@tailwindcss/typography")],
 };

@@ -18,13 +18,13 @@ export const Navbar: React.FC = () => {
     const renderHomepageLinks = homepageLinks.map((e) => (
         <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4" key={e}>
             <Link shallow={true} href={`/#${e}`}>
-                <a className="nav-link font-semibold text-lg">{e}</a>
+                <a className="animated-link font-semibold text-lg">{e}</a>
             </Link>
         </li>
     ));
 
     return (
-        <nav className="flex flex-col justify-between items-start p-4 w-full bg-slate-50 dark:bg-slate-900 shadow-md lg:flex-row lg:items-center">
+        <nav className="flex flex-col justify-between items-start py-4 px-8 w-full bg-slate-50 dark:bg-slate-900 shadow-md lg:flex-row lg:items-center">
             <div className="flex flex-row justify-between items-center w-full">
                 <Link href="/#">
                     <a className="relative w-10 h-10">

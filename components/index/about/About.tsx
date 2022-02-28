@@ -25,7 +25,7 @@ export const About: React.FC<Props> = ({ text, photo }) => {
                         alt="Professional headshot for About section"
                     />
                 </div>
-                <div className="w-full body-text">
+                <div className="w-full body-text prose-p:my-2">
                     {documentToReactComponents(text)}
                 </div>
             </div>

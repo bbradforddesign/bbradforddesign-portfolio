@@ -44,7 +44,7 @@ export const ExperienceSummary: React.FC<Props> = ({ fields }) => {
                 </span>
             </p>
             {openDetails && (
-                <div className="experience-body body-text pt-2">
+                <div className="body-text pt-2 prose-ul:list-disc prose-ul:pl-8 prose-p:my-2">
                     {documentToReactComponents(summary)}
                 </div>
             )}
