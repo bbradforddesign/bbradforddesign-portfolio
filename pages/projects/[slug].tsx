@@ -6,6 +6,7 @@ import client from "../../contentful/contentful";
 import { IProject, IProjectFields } from "../../@types/generated/contentful";
 import { Skeleton } from "../../components/projects/Skeleton";
 import { ImageStepper } from "../../components/shared/imageStepper/ImageStepper";
+import Head from "next/head";
 
 export const getStaticPaths = async () => {
     const token = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -70,47 +71,56 @@ const ProjectDetails: React.FC<IProject> = ({ fields }) => {
     const { title, details, url, sourceCode, featuredImages } = fields;
 
     return (
-        <article className="section-container pt-9">
-            <header className="mb-6 self-start">
-                <h2 className="section-header mb-6">{title}</h2>
-                <Link href="/#Projects">
-                    <a className="animated-link font-semibold text-lg">
-                        Back to Projects
-                    </a>
-                </Link>
-            </header>
-            <div className="grid lg:grid-cols-2">
-                <div className="lg:mx-8 max-w-xl mb-4">
-                    <ImageStepper images={featuredImages} />
-                    <div className="flex gap-2 font-semibold my-4">
-                        <a
-                            href={url}
-                            className="animated-link"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Live Project
+        <>
+            <Head>
+                <title>Blake Bradford | {title}</title>
+                <meta
+                    name="description"
+                    content={`Project details page for ${title}`}
+                />
+            </Head>
+            <article className="section-container pt-9">
+                <header className="mb-6 self-start">
+                    <h2 className="section-header mb-6">{title}</h2>
+                    <Link href="/#Projects">
+                        <a className="animated-link font-semibold text-lg">
+                            Back to Projects
                         </a>
-                        {sourceCode && (
-                            <>
-                                <span>|</span>
-                                <a
-                                    href={sourceCode}
-                                    className="animated-link"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Source Code
-                                </a>
-                            </>
-                        )}
+                    </Link>
+                </header>
+                <div className="grid lg:grid-cols-2">
+                    <div className="lg:mx-8 max-w-xl mb-4">
+                        <ImageStepper images={featuredImages} />
+                        <div className="flex gap-2 font-semibold my-4">
+                            <a
+                                href={url}
+                                className="animated-link"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                Live Project
+                            </a>
+                            {sourceCode && (
+                                <>
+                                    <span>|</span>
+                                    <a
+                                        href={sourceCode}
+                                        className="animated-link"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        Source Code
+                                    </a>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                    <div className="prose-h3:text-3xl prose-h3:mt-4 prose-h3:mb-2 prose-ul:list-disc prose-ul:ml-10 prose-p:my-2 body-text flex flex-col">
+                        {documentToReactComponents(details)}
                     </div>
                 </div>
-                <div className="prose-h3:text-3xl prose-h3:mt-4 prose-h3:mb-2 prose-ul:list-disc prose-ul:ml-10 prose-p:my-2 body-text flex flex-col">
-                    {documentToReactComponents(details)}
-                </div>
-            </div>
-        </article>
+            </article>
+        </>
     );
 };
 
