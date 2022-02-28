@@ -1,5 +1,4 @@
 import { SkillList } from "../../shared/skillList/SkillList";
-import { Asset } from "contentful";
 import { IExperience } from "../../../@types/generated/contentful";
 
 import { ExperienceSummary } from "./summary/Summary";
@@ -10,7 +9,6 @@ type Props = {
     frameworks: string[];
     databases: string[];
     tools: string[];
-    resume: Asset;
 };
 
 export const Experience: React.FC<Props> = ({
@@ -19,7 +17,6 @@ export const Experience: React.FC<Props> = ({
     frameworks,
     databases,
     tools,
-    resume,
 }) => {
     const renderExperience = () => {
         return experience.map((e, index) => {
@@ -48,15 +45,6 @@ export const Experience: React.FC<Props> = ({
                     />
                     <SkillList title="Databases" list={databases} />
                     <SkillList title="Tools & Services" list={tools} />
-                    <a
-                        href={resume.fields.file.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label="Full Resume"
-                        className="my-8"
-                    >
-                        <button className="outline-button">PDF Resume</button>
-                    </a>
                 </div>
             </div>
         </section>

@@ -46,9 +46,19 @@ export const Navbar: React.FC = () => {
             <ul
                 className={`${
                     openNav ? "flex" : "hidden"
-                } flex-col w-full absolute top-14 left-0 pb-4 lg:pb-0 shadow-md lg:shadow-none bg-slate-50 dark:bg-slate-900 lg:relative lg:top-0 lg:flex lg:flex-row lg:w-auto`}
+                } flex-col w-full absolute top-14 left-0 pb-4 lg:pb-0 shadow-md lg:shadow-none bg-slate-50 dark:bg-slate-900 lg:relative lg:top-0 lg:flex lg:flex-row lg:items-center lg:w-auto`}
             >
                 {renderHomepageLinks}
+                <li className="ml-12 my-2 w-fit lg:my-0 lg:ml-4">
+                    <a
+                        href="/resume.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Full Resume"
+                    >
+                        <button className="outline-button">Resume</button>
+                    </a>
+                </li>
             </ul>
         </nav>
     );

@@ -11,9 +11,15 @@ import { Contact } from "../components/index/contact/Contact";
 import { IHomepage, IHomepageFields } from "../@types/generated/contentful";
 
 export const getStaticProps = async () => {
+    const homepageID = process.env.CONTENTFUL_HOMEPAGE_ID;
+
+    if (!homepageID) {
+        throw new Error("homepage content ID must be provided");
+    }
+
     // retrieve homepage content by ID
     const response: Entry<IHomepageFields> = await client().getEntry(
-        "LBrW2sfLs2xkMbx4o2jJU"
+        homepageID
     );
 
     return {
@@ -34,7 +40,6 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
         tools,
         projects,
         contact,
-        resume,
     } = fields;
 
     return (
@@ -51,7 +56,6 @@ const Home: NextPage<IHomepage> = ({ fields }) => {
                 frameworks={frameworks}
                 databases={databases}
                 tools={tools}
-                resume={resume}
             />
             <Projects projects={projects} />
             <Contact contact={contact} />
